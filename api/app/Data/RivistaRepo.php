@@ -10,7 +10,7 @@ class RivistaRepo implements IRivistaRepo
 {
     public function paginate()
     {
-        return Rivista::paginate();
+        return Rivista::withCount('likes')->paginate();
     }
 
     public function get($id): ?Rivista
