@@ -32,7 +32,7 @@ class UserController extends Controller
         unset($validatedData['password']);
 
         if ($this->userRepo->save($user, $validatedData))
-            return Response::NoContent();
+            return Response::Ok($user);
 
         return Response::BadRequest('Could not update this user.');
     }
