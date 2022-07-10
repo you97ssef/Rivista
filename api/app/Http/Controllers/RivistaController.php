@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Response;
+use App\Interfaces\ILikeRepo;
 use App\Interfaces\IRivistaRepo;
 use App\Models\Rivista;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RivistaController extends Controller
 {
-    private $rivistaRepo;
+    private $rivistaRepo, $likeRepo;
 
-    public function __construct(IRivistaRepo $rivistaRepo)
+    public function __construct(IRivistaRepo $rivistaRepo, ILikeRepo $likeRepo)
     {
         $this->rivistaRepo = $rivistaRepo;
+        $this->likeRepo = $likeRepo;
     }
 
     public function paginate()
@@ -31,7 +34,10 @@ class RivistaController extends Controller
 
         $this->rivistaRepo->save($rivista, $data);
 
-        return Response::Ok($this->rivistaRepo->getWithSlug($slug));
+        if ($user = auth('sanctum')->user())
+            $rivista->liked = $this->likeRepo->getByUserAndRivista($user->id, $rivista->id);
+
+        return Response::Ok($rivista);
     }
 
     public function new(Request $request)
