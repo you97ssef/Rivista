@@ -21,7 +21,7 @@ class RivistaRepo implements IRivistaRepo
     // TODO refactor or better performance
     public function getWithSlug(String $slug): ?Rivista
     {
-        return Rivista::with('comments')->withCount('likes')->where('slug', $slug)->first();
+        return Rivista::with('comments', 'comments.user')->withCount('likes')->where('slug', $slug)->first();
     }
 
     // public function likes($id)

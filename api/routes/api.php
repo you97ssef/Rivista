@@ -38,7 +38,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
 
     // COMMENT ROUTES
-    Route::post('/connected/comments', [CommentController::class, 'save']);
+    Route::post('/connected-comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);
 
     // LIKE ROUTES
