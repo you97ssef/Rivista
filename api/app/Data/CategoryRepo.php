@@ -17,7 +17,7 @@ class CategoryRepo implements ICategoryRepo
     // {
     //     return Category::find($id);
     // }
-    
+
     public function getWithSlug(String $slug): ?Category
     {
         return Category::with(['rivistas' => function ($query) {

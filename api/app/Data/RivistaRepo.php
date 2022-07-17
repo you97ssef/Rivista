@@ -12,12 +12,12 @@ class RivistaRepo implements IRivistaRepo
     {
         return Rivista::paginate();
     }
-    
+
     public function get($id): ?Rivista
     {
         return Rivista::find($id);
     }
-    
+
     // TODO refactor or better performance
     public function getWithSlug(String $slug): ?Rivista
     {
