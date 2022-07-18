@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Interfaces;
+namespace App\Data;
 
+use App\Interfaces\IRivistaRepo;
 use App\Models\Rivista;
 use Illuminate\Support\Str;
 

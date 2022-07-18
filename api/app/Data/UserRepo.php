@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Interfaces;
+namespace App\Data;
 
+use App\Interfaces\IUserRepo;
 use App\Models\User;
 
 class UserRepo implements IUserRepo
