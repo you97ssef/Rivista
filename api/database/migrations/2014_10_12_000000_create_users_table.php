@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->enum('role', [UserRole::ADMIN, UserRole::USER])->default(UserRole::USER);
             $table->string('email')->unique();
+            $table->string('image')->nullable();
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
