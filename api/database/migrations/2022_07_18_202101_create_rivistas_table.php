@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rivistas', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // TODO change to uuid
 
             $table->string('title');
             $table->string('slug');

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // TODO change to uuid
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->text('text');
