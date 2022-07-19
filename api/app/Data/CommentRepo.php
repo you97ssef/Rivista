@@ -8,6 +8,11 @@ use App\Models\Rivista;
 
 class CommentRepo implements ICommentRepo
 {
+    public function get($id)
+    {
+        return Comment::find($id);
+    }
+
     public function rivisitas($id)
     {
         // TODO: get only some data to improve performance
