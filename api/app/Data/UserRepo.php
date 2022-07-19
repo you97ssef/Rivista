@@ -4,6 +4,7 @@ namespace App\Data;
 
 use App\Interfaces\IUserRepo;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class UserRepo implements IUserRepo
 {
@@ -45,11 +46,16 @@ class UserRepo implements IUserRepo
 
     public function save(User $user, array $data): bool
     {
-        if (array_key_exists('first_name', $data)) $user->first_name = $data['first_name'];
-        if (array_key_exists('last_name', $data)) $user->last_name = $data['last_name'];
+        if (array_key_exists('first_name', $data)) {
+            $user->first_name = $data['first_name'];
+            $user->slug = Str::slug($data['first_name'] . ' ' . $data['last_name']);
+        }
+        if (array_key_exists('last_name', $data)) {
+            $user->last_name = $data['last_name'];
+            $user->slug = Str::slug($data['first_name'] . ' ' . $data['last_name']);
+        }
         if (array_key_exists('email', $data)) $user->email = $data['email'];
         if (array_key_exists('password', $data)) $user->password = $data['password'];
-        if (array_key_exists('slug', $data)) $user->slug = $data['slug'];
         if (array_key_exists('image', $data)) $user->image = $data['image'];
         if (array_key_exists('role', $data)) $user->role = $data['role'];
 
