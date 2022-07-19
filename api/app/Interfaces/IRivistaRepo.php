@@ -6,7 +6,7 @@ use App\Models\Rivista;
 
 interface IRivistaRepo
 {
-    public function all();
+    public function paginate();
     public function get($id): ?Rivista;
     public function getWithSlug(String $slug): ?Rivista;
 

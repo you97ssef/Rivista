@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class RivistaRepo implements IRivistaRepo
 {
-    public function all()
+    public function paginate()
     {
         return Rivista::paginate();
     }
