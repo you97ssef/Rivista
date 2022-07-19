@@ -18,12 +18,17 @@ class LikeRepo implements ILikeRepo
     {
         $like->user_id = $data['user_id'];
         $like->rivista_id = $data['rivista_id'];
-    
+
         return $like->save();
     }
 
     public function delete(Like $like): bool
     {
         return $like->delete();
+    }
+
+    public function getByUserAndRivista(int $userId, int $rivistaId): ?Like
+    {
+        return Like::where('user_id', $userId)->where('rivista_id', $rivistaId)->first();
     }
 }
