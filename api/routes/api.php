@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\RivistaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,11 @@ Route::middleware('auth:sanctum')->group(function () {
     // LIKE ROUTES
     Route::post('/likes', [LikeController::class, 'like']);
     Route::delete('/likes/{id}', [LikeController::class, 'unlike']);
+
+    // RIVISTA ROUTES
+    Route::get('/rivistas', [RivistaController::class, 'paginate']);
+    Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
+    Route::post('/rivistas', [RivistaController::class, 'new']);
+    Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
+    Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
 });
