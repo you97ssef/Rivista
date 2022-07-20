@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // COMMENT ROUTES
     Route::post('/comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);
+
+    // LIKE ROUTES
+    Route::post('/likes', [LikeController::class, 'like']);
+    Route::delete('/likes/{id}', [LikeController::class, 'unlike']);
 });
