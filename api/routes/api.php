@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,11 @@ Route::middleware('auth:sanctum')->group(function () {
     // AUTH ROUTES   
     Route::delete('/logout', [AuthController::class, 'logout']);
     Route::post('/resend-email-verification', [AuthController::class, 'resendEmailVerification']);
+
+    // CATEGORY ROUTES
+    Route::get('/categories', [CategoryController::class, 'all']);
+    Route::get('/categories/{slug}', [CategoryController::class, 'getWithSlug']);
+    Route::post('/categories', [CategoryController::class, 'new']);
+    Route::put('/categories/{slug}', [CategoryController::class, 'update']);
+    Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
 });
