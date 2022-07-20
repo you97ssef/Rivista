@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/categories', [CategoryController::class, 'new']);
     Route::put('/categories/{slug}', [CategoryController::class, 'update']);
     Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
+
+    // COMMENT ROUTES
+    Route::post('/comments', [CommentController::class, 'save']);
+    Route::delete('/comments/{id}', [CommentController::class, 'delete']);
 });
