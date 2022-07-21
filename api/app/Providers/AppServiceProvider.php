@@ -10,9 +10,9 @@ use App\Data\CommentRepo;
 use App\Interfaces\ILikeRepo;
 use App\Data\LikeRepo;
 use App\Interfaces\IRivistaRepo;
-use App\Interfaces\RivistaRepo;
+use App\Data\RivistaRepo;
 use App\Interfaces\IUserRepo;
-use App\Interfaces\UserRepo;
+use App\Data\UserRepo;
 
 class AppServiceProvider extends ServiceProvider
 {
