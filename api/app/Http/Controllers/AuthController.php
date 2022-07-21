@@ -24,17 +24,17 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validatedData = $request->validate([
-            'email' => 'required|string',
+            'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
-
+        
         if (!$user = $this->userRepo->getWithEmail($validatedData['email']))
             return Response::BadRequest('Invalid Email');
 
         if (!Hash::check($validatedData['password'], $user->password))
             return Response::BadRequest('Invalid Password');
 
-        $responseData['token'] = $user->createToken('authToken')->accessToken;
+        $responseData['token'] = $user->createToken('authToken')->plainTextToken;
         $responseData['user'] = $user;
 
         return Response::Ok($responseData);

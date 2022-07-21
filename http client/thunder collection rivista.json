@@ -1,0 +1,40 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Rivista",
+    "dateExported": "2022-07-21T11:22:30.945Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "59852a07-14ff-460f-ac3b-780e517b085e",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2022-07-21T10:57:56.684Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "3656d0c6-9aed-4cad-bbd3-31b391b6667f",
+            "colId": "8430cb14-b3ae-45cd-a28f-455eedb6a945",
+            "containerId": "59852a07-14ff-460f-ac3b-780e517b085e",
+            "name": "login",
+            "url": "http://localhost:8000/api/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2022-07-21T10:58:04.739Z",
+            "modified": "2022-07-21T11:20:33.922Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"qmarks@example.com\",\n  \"password\": \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [{ "name": "Accept", "value": "application/json" }],
+        "tests": []
+    }
+}
