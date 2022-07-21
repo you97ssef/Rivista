@@ -27,7 +27,7 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
-        
+
         if (!$user = $this->userRepo->getWithEmail($validatedData['email']))
             return Response::BadRequest('Invalid Email');
 
@@ -61,7 +61,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
+        $request->user()->currentAccessToken()->delete();
 
         return Response::NoContent();
     }
