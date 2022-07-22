@@ -38,8 +38,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/categories', [CategoryController::class, 'new']);
     Route::put('/categories/{slug}', [CategoryController::class, 'update']);
     Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
-    
-    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     // RIVISTA ROUTES
     Route::get('/rivistas', [RivistaController::class, 'paginate']);
     Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
@@ -47,6 +46,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
     Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
     
+    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // COMMENT ROUTES
     Route::post('/comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);

@@ -23,7 +23,7 @@ class RivistaController extends Controller
 
     public function getWithSlug(String $slug)
     {
-        $rivista = $this->rivistaRepo->getWithSlug($slug);
+        if (!$rivista = $this->rivistaRepo->getWithSlug($slug)) return Response::BadRequest('Rivista not found');
 
         $data['views'] = $rivista->views + 1;
 
@@ -36,7 +36,6 @@ class RivistaController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|string',
-            'slug' => 'required|string',
             'text' => 'required|string',
             'category_id' => 'required|integer|exists:categories,id',
         ]);
