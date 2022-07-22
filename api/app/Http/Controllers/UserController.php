@@ -71,4 +71,21 @@ class UserController extends Controller
 
         return Response::BadRequest('Could not delete this user.');
     }
+
+    public function get(Request $request)
+    {
+        return Response::Ok($request->user());
+    }
+
+    public function all()
+    {
+        return Response::Ok($this->userRepo->all());
+    }
+
+    public function getWithSlug($slug)
+    {
+        if (!$user = $this->userRepo->getWithSlug($slug)) return Response::BadRequest('User dose not exist');
+
+        return Response::Ok($user);
+    }
 }

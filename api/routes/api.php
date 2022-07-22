@@ -33,15 +33,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification.verify');
 
     // CATEGORY ROUTES
-    Route::get('/categories', [CategoryController::class, 'all']);
-    Route::get('/categories/{slug}', [CategoryController::class, 'getWithSlug']);
     Route::post('/categories', [CategoryController::class, 'new']);
     Route::put('/categories/{slug}', [CategoryController::class, 'update']);
     Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
 
     // RIVISTA ROUTES
-    Route::get('/rivistas', [RivistaController::class, 'paginate']);
-    Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
     Route::post('/rivistas', [RivistaController::class, 'new']);
     Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
     Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
@@ -55,6 +51,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/likes', [LikeController::class, 'unlike']);
 
     // USER ROUTES
+    Route::get('/user', [UserController::class, 'get']); //TODO test
     Route::put('/user', [UserController::class, 'update']);
     Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
     Route::delete('/user', [UserController::class, 'delete']);
@@ -67,5 +64,16 @@ Route::any('/test', function () {
     return Response::Ok("Test Works!");
 });
 
+// CATEGORY ROUTES
+Route::get('/categories', [CategoryController::class, 'all']);
+Route::get('/categories/{slug}', [CategoryController::class, 'getWithSlug']);
+
+// RIVISTA ROUTES
+Route::get('/rivistas', [RivistaController::class, 'paginate']);
+Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
+
+// USER ROUTES
+Route::get('/users', [UserController::class, 'all']); //TODO test
+Route::get('/users/{slug}', [UserController::class, 'getWithSlug']); //TODO test
+
 // TODO make and add and test middleware
-// TODO get users, rivistas, categories, comments for not connected user (all, one)

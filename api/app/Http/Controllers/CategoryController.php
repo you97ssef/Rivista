@@ -23,6 +23,7 @@ class CategoryController extends Controller
 
     public function getWithSlug(String $slug)
     {
+        // TODO get rivistats with
         if (!$category = $this->categoryRepo->getWithSlug($slug))
             return Response::NotFound();
 
