@@ -46,21 +46,23 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
     Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
     
-    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // COMMENT ROUTES
-    Route::post('/comments', [CommentController::class, 'save']);
+    Route::post('/connected/comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);
-
+    
+    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // LIKE ROUTES
     Route::post('/likes', [LikeController::class, 'like']);
     Route::delete('/likes/{id}', [LikeController::class, 'unlike']);
-
+    
     // USER ROUTES
     Route::put('/user', [UserController::class, 'update']);
     Route::get('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
     Route::delete('/user', [UserController::class, 'delete']);
 });
 
+// COMMENT ROUTE
+Route::post('/guest-comments', [CommentController::class, 'save']);
 
 Route::any('/test', function () {
     return Response::Ok("Test Works!");
