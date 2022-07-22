@@ -21,12 +21,12 @@ return new class extends Migration
             $table->text('text');
             $table->string('image')->nullable();
             $table->integer('views')->default(0);
-            
+
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();
 
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->nullOnDelete();
 
             $table->timestamps();
         });

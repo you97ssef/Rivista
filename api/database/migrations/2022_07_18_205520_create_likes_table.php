@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('rivista_id');
-            $table->foreign('rivista_id')->references('id')->on('rivistas');
+            $table->foreign('rivista_id')->references('id')->on('rivistas')->onDelete('cascade');
 
             $table->unique(['user_id', 'rivista_id']);
 

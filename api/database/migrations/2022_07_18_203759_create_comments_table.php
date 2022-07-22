@@ -20,10 +20,10 @@ return new class extends Migration
             $table->text('text');
 
             $table->unsignedBigInteger('rivista_id');
-            $table->foreign('rivista_id')->references('id')->on('rivistas');
+            $table->foreign('rivista_id')->references('id')->on('rivistas')->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
             $table->timestamps();
         });
