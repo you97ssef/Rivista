@@ -50,7 +50,6 @@ class AuthController extends Controller
             'password' => 'required|string|confirmed',
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
         $validatedData['role'] = UserRole::USER;
         $validatedData['views'] = 0;
 
