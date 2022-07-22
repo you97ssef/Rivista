@@ -53,8 +53,16 @@ class AuthController extends Controller
         $validatedData['role'] = UserRole::USER;
         $validatedData['views'] = 0;
 
-        if ($this->userRepo->save($user = new User(), $validatedData))
-            return Response::Created($user);
+        if ($this->userRepo->save($user = new User(), $validatedData)) {
+            
+            // TODO: add email verification
+            //$user->sendEmailVerificationNotification();
+
+            $responseData['token'] = $user->createToken('authToken')->plainTextToken;
+            $responseData['user'] = $user;
+
+            return Response::Created($responseData, 'Account created successfully');
+        }
 
         return Response::BadRequest('Could not create this user.');
     }
