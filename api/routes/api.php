@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\RivistaController;
 use App\Http\Controllers\UserController;
+use App\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/user', [UserController::class, 'update']);
     Route::get('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
     Route::delete('/user', [UserController::class, 'delete']);
+});
+
+
+Route::any('/test', function () {
+    return Response::Ok("Test Works!");
 });
