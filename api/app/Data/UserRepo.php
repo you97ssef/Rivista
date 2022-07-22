@@ -48,11 +48,11 @@ class UserRepo implements IUserRepo
     {
         if (array_key_exists('first_name', $data)) {
             $user->first_name = $data['first_name'];
-            $user->slug = Str::slug($data['first_name'] . ' ' . $data['last_name']);
+            $user->slug = Str::slug($data['first_name'] . ' ' . $data['last_name'] . ' ' . Str::random(10));
         }
         if (array_key_exists('last_name', $data)) {
             $user->last_name = $data['last_name'];
-            $user->slug = Str::slug($data['first_name'] . ' ' . $data['last_name']);
+            $user->slug = Str::slug($data['first_name'] . ' ' . $data['last_name'] . ' ' . Str::random(10));
         }
         if (array_key_exists('email', $data)) $user->email = $data['email'];
         if (array_key_exists('password', $data)) $user->password = $data['password'];

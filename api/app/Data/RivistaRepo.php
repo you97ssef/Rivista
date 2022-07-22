@@ -48,7 +48,7 @@ class RivistaRepo implements IRivistaRepo
     {
         if (array_key_exists('title', $data)) {
             $rivista->title = $data['title'];
-            $rivista->slug = Str::slug($data['title']);
+            $rivista->slug = Str::slug($data['title'] . ' ' . Str::random(10));
         }
         if (array_key_exists('text', $data)) $rivista->text = $data['text'];
         if (array_key_exists('image', $data)) $rivista->image = $data['image'];

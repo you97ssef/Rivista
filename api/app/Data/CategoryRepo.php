@@ -32,7 +32,7 @@ class CategoryRepo implements ICategoryRepo
     {
         if (array_key_exists('name', $data)) {
             $category->name = $data['name'];
-            $category->slug = Str::slug($data['name']);
+            $category->slug = Str::slug($data['name'] . ' ' . Str::random(10));
         }
         if (array_key_exists('description', $data)) $category->description = $data['description'];
         if (array_key_exists('image', $data)) $category->image = $data['image'];

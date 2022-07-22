@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id(); // TODO change to uuid
 
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('text');
             $table->string('image')->nullable();
             $table->integer('views')->default(0);
