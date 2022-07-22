@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Response;
 use App\Interfaces\ICommentRepo;
 use App\Models\Comment;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
@@ -40,9 +41,11 @@ class CommentController extends Controller
         return Response::BadRequest('Could not create comment.');
     }
 
-    public function delete($id)
+    public function delete($id, Request $request)
     {
         if (!$comment = $this->commentRepo->get($id)) return Response::BadRequest('Comment not found.');
+
+        if ($request->user()->id != $comment->user_id) return Response::BadRequest('You are not allowed to delete this comment.');
 
         if ($this->commentRepo->delete($comment))
             return Response::NoContent();

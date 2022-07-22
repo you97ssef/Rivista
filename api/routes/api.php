@@ -33,9 +33,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification.verify');
 
     // CATEGORY ROUTES
-    Route::post('/categories', [CategoryController::class, 'new']);
-    Route::put('/categories/{slug}', [CategoryController::class, 'update']);
-    Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
+    Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
+    Route::put('/categories/{slug}', [CategoryController::class, 'update']); // ADMIN ONLY
+    Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
 
     // RIVISTA ROUTES
     Route::post('/rivistas', [RivistaController::class, 'new']);
@@ -73,7 +73,7 @@ Route::get('/rivistas', [RivistaController::class, 'paginate']);
 Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
 
 // USER ROUTES
-Route::get('/users', [UserController::class, 'all']); //TODO test
-Route::get('/users/{slug}', [UserController::class, 'getWithSlug']); //TODO test
+Route::get('/users', [UserController::class, 'all']);
+Route::get('/users/{slug}', [UserController::class, 'getWithSlug']);
 
 // TODO make and add and test middleware
