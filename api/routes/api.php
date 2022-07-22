@@ -37,9 +37,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/categories/{slug}', [CategoryController::class, 'getWithSlug']);
     Route::post('/categories', [CategoryController::class, 'new']);
     Route::put('/categories/{slug}', [CategoryController::class, 'update']);
-    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
-
+    
+    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // RIVISTA ROUTES
+    Route::get('/rivistas', [RivistaController::class, 'paginate']);
+    Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
+    Route::post('/rivistas', [RivistaController::class, 'new']);
+    Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
+    Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
+    
     // COMMENT ROUTES
     Route::post('/comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);
@@ -47,13 +54,6 @@ Route::middleware('auth:sanctum')->group(function () {
     // LIKE ROUTES
     Route::post('/likes', [LikeController::class, 'like']);
     Route::delete('/likes/{id}', [LikeController::class, 'unlike']);
-
-    // RIVISTA ROUTES
-    Route::get('/rivistas', [RivistaController::class, 'paginate']);
-    Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
-    Route::post('/rivistas', [RivistaController::class, 'new']);
-    Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
-    Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
 
     // USER ROUTES
     Route::put('/user', [UserController::class, 'update']);
