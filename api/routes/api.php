@@ -54,10 +54,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/likes', [LikeController::class, 'like']);
     Route::delete('/likes', [LikeController::class, 'unlike']);
 
-    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // USER ROUTES
     Route::put('/user', [UserController::class, 'update']);
-    Route::get('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
+    Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
     Route::delete('/user', [UserController::class, 'delete']);
 });
 
@@ -69,3 +68,4 @@ Route::any('/test', function () {
 });
 
 // TODO make and add and test middleware
+// TODO get users, rivistas, categories, comments for not connected user (all, one)

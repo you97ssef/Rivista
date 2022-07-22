@@ -22,12 +22,14 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'first_name' => 'nullable|string',
             'last_name' => 'nullable|string',
-            'password' => 'required|string|confirmed',
+            'password' => 'required|string',
         ]);
 
         $user = $request->user();
 
-        if(!Hash::check($validatedData['password'], $user->password)) return Response::BadRequest('Invalid password');
+        if (!Hash::check($validatedData['password'], $user->password)) return Response::BadRequest('Invalid password');
+
+        unset($validatedData['password']);
 
         if ($this->userRepo->save($user, $validatedData))
             return Response::NoContent();
@@ -38,11 +40,11 @@ class UserController extends Controller
     public function changeRole(Request $request)
     {
         $validatedData = $request->validate([
-            'role' => "required|string|in:${UserRole::ADMIN},${UserRole::USER}",
+            'role' => 'required|string|in:' . UserRole::ADMIN . ',' . UserRole::USER,
             'user_id' => 'required|integer',
         ]);
 
-        if(!$user = $this->userRepo->get($validatedData['user_id'])) return Response::BadRequest('User not found');
+        if (!$user = $this->userRepo->get($validatedData['user_id'])) return Response::BadRequest('User not found');
 
         if ($this->userRepo->save($user, $validatedData))
             return Response::NoContent();
@@ -53,13 +55,13 @@ class UserController extends Controller
     public function delete(Request $request)
     {
         $validatedData = $request->validate([
-            'password' => 'required|integer',
+            'password' => 'required|string',
         ]);
 
         $user = $request->user();
 
-        if(!Hash::check($validatedData['password'], $user->password)) return Response::BadRequest('Invalid password');
-        
+        if (!Hash::check($validatedData['password'], $user->password)) return Response::BadRequest('Invalid password');
+
         foreach ($user->tokens as $token) {
             $token->delete();
         }
