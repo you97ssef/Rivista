@@ -37,6 +37,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/categories/{slug}', [CategoryController::class, 'getWithSlug']);
     Route::post('/categories', [CategoryController::class, 'new']);
     Route::put('/categories/{slug}', [CategoryController::class, 'update']);
+    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Route::delete('/categories/{slug}', [CategoryController::class, 'delete']);
 
     // COMMENT ROUTES
@@ -64,3 +65,5 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::any('/test', function () {
     return Response::Ok("Test Works!");
 });
+
+// TODO make and add and test middleware
