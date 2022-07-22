@@ -7,6 +7,7 @@ use App\Http\Response;
 use App\Interfaces\IUserRepo;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
@@ -55,8 +56,7 @@ class AuthController extends Controller
 
         if ($this->userRepo->save($user = new User(), $validatedData)) {
             
-            // TODO: add email verification
-            //$user->sendEmailVerificationNotification();
+            $user->sendEmailVerificationNotification();
 
             $responseData['token'] = $user->createToken('authToken')->plainTextToken;
             $responseData['user'] = $user;
@@ -116,5 +116,12 @@ class AuthController extends Controller
         return $status === Password::PASSWORD_RESET
             ? Response::Ok(null, __($status))
             : Response::BadRequest(__($status));
+    }
+
+    public function verify(EmailVerificationRequest $request)
+    {
+        $request->fulfill();
+
+        return Response::Ok(null, 'Email verified successfully');
     }
 }
