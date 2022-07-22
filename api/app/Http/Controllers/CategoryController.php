@@ -20,10 +20,13 @@ class CategoryController extends Controller
     {
         return $this->categoryRepo->all();
     }
-    
+
     public function getWithSlug(String $slug)
     {
-        return $this->categoryRepo->getWithSlug($slug);
+        if (!$category = $this->categoryRepo->getWithSlug($slug))
+            return Response::NotFound();
+
+        return Response::Ok($category);
     }
 
     public function new(Request $request)
@@ -46,7 +49,7 @@ class CategoryController extends Controller
             'description' => 'nullable|string|max:255',
         ]);
 
-        if(!$category = $this->categoryRepo->getWithSlug($slug)) return Response::BadRequest('Category not found.');
+        if (!$category = $this->categoryRepo->getWithSlug($slug)) return Response::BadRequest('Category not found.');
 
         if ($this->categoryRepo->save($category, $validatedData))
             return Response::NoContent();
@@ -56,7 +59,7 @@ class CategoryController extends Controller
 
     public function delete($slug)
     {
-        if(!$category = $this->categoryRepo->getWithSlug($slug)) return Response::BadRequest('Category not found.');
+        if (!$category = $this->categoryRepo->getWithSlug($slug)) return Response::BadRequest('Category not found.');
 
         if ($this->categoryRepo->delete($category))
             return Response::NoContent();
