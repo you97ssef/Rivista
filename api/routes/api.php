@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword']);
-Route::put('/reset-password', [AuthController::class, 'resetPassword']);
+Route::put('/reset-password', [AuthController::class, 'resetPassword'])->name('password.reset');
 
 
 Route::middleware('auth:sanctum')->group(function () {
