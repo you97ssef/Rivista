@@ -45,16 +45,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/rivistas', [RivistaController::class, 'new']);
     Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
     Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
-    
+
     // COMMENT ROUTES
     Route::post('/connected/comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);
-    
-    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     // LIKE ROUTES
     Route::post('/likes', [LikeController::class, 'like']);
-    Route::delete('/likes/{id}', [LikeController::class, 'unlike']);
-    
+    Route::delete('/likes', [LikeController::class, 'unlike']);
+
+    // TODO TEST LINE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // USER ROUTES
     Route::put('/user', [UserController::class, 'update']);
     Route::get('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY

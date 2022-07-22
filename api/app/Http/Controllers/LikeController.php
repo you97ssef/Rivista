@@ -32,7 +32,7 @@ class LikeController extends Controller
         return Response::BadRequest('Could not like this rivista.');
     }
 
-    public function unlike(Request $request, $id)
+    public function unlike(Request $request)
     {
         $validatedData = $request->validate([
             'rivista_id' => 'required|integer',
