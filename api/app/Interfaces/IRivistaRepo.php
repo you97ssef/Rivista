@@ -10,10 +10,10 @@ interface IRivistaRepo
     public function get($id): ?Rivista;
     public function getWithSlug(String $slug): ?Rivista;
 
-    public function likes($id);
-    public function comments($id);
-    public function category($id);
-    public function user($id);
+    // public function likes($id);
+    // public function comments($id);
+    // public function category($id);
+    // public function user($id);
 
     public function save(Rivista $rivista, array $data): bool;
 

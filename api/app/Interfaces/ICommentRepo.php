@@ -8,7 +8,7 @@ interface ICommentRepo
 {
     public function get($id);
 
-    public function rivisitas($id);
+    // public function rivisitas($id);
 
     public function save(Comment $comment, array $data): bool;
 

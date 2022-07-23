@@ -24,25 +24,25 @@ class RivistaRepo implements IRivistaRepo
         return Rivista::with('comments')->withCount('likes')->where('slug', $slug)->first();
     }
 
-    public function likes($id)
-    {
-        return Rivista::find($id)->likes;
-    }
+    // public function likes($id)
+    // {
+    //     return Rivista::find($id)->likes;
+    // }
 
-    public function comments($id)
-    {
-        return Rivista::find($id)->comments;
-    }
+    // public function comments($id)
+    // {
+    //     return Rivista::find($id)->comments;
+    // }
 
-    public function category($id)
-    {
-        return Rivista::find($id)->category;
-    }
+    // public function category($id)
+    // {
+    //     return Rivista::find($id)->category;
+    // }
 
-    public function user($id)
-    {
-        return Rivista::find($id)->user;
-    }
+    // public function user($id)
+    // {
+    //     return Rivista::find($id)->user;
+    // }
 
     public function save(Rivista $rivista, array $data): bool
     {

@@ -30,20 +30,20 @@ class UserRepo implements IUserRepo
         return User::where('slug', $slug)->first();
     }
 
-    public function rivistas($id)
-    {
-        return User::find($id)->rivistas;
-    }
+    // public function rivistas($id)
+    // {
+    //     return User::find($id)->rivistas;
+    // }
 
-    public function likes($id)
-    {
-        return User::find($id)->likes;
-    }
+    // public function likes($id)
+    // {
+    //     return User::find($id)->likes;
+    // }
 
-    public function comments($id)
-    {
-        return User::find($id)->comments;
-    }
+    // public function comments($id)
+    // {
+    //     return User::find($id)->comments;
+    // }
 
     public function save(User $user, array $data): bool
     {

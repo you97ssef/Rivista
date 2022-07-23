@@ -11,9 +11,9 @@ interface IUserRepo
     public function getWithEmail(String $email): ?User;
     public function getWithSlug(String $slug): ?User;
 
-    public function rivistas($id);
-    public function likes($id);
-    public function comments($id);
+    // public function rivistas($id);
+    // public function likes($id);
+    // public function comments($id);
 
     public function save(User $user, array $data): bool;
     
