@@ -1,0 +1,9 @@
+{
+    "require": {},
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    },
+    "scripts": {
+        "post-install-cmd": "cd ./api && composer install"
+    }
+}
