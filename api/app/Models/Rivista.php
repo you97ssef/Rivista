@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Rivista extends Model
 {
     use HasFactory;
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

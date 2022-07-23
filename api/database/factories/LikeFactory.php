@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class LikeFactory extends Factory
 {
+    private $likes = [];
+
     /**
      * Define the model's default state.
      *
@@ -16,9 +18,15 @@ class LikeFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'user_id' => $this->faker->numberBetween(1, 10),
-            'rivista_id' => $this->faker->unique()->numberBetween(1, 1000),
-        ];
+        do {
+            $like = [
+                'user_id' => $this->faker->numberBetween(1, 100),
+                'rivista_id' => $this->faker->numberBetween(1, 1000),
+            ];
+        } while (in_array($like, $this->likes));
+
+        $this->likes[] = $like;
+
+        return $like;
     }
 }
