@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: #1E2022;
+$secondary: #52616B;
+$info: #C9D6DF;
+$success: #1FAB89;
+$danger: #E23E57;
+$warning: #FFD369;
+$light: #F0F5F9;
+$dark: #000000;
+
+$border-radius: .70rem;
+$border-radius-lg: .70rem;
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $primary;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $warning; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $danger; 
+}
+
+@import "~/node_modules/bootstrap/scss/bootstrap";
