@@ -10,6 +10,14 @@ $dark: #000000;
 $border-radius: .70rem;
 $border-radius-lg: .70rem;
 
+
+.toast-success {
+    background-color: $primary !important;
+}
+.toast-error {
+    background-color: $secondary !important;
+}
+
 .fs-8 {
     font-size: 8em;
 }
@@ -34,4 +42,5 @@ $border-radius-lg: .70rem;
     background: $danger; 
 }
 
+@import '~ngx-toastr/toastr';
 @import "~/node_modules/bootstrap/scss/bootstrap";
