@@ -4,29 +4,39 @@
       class="card shadow border border-2 border-primary"
       style="width: 500px"
     >
-      <form class="card-body">
+      <form class="card-body" #form="ngForm" (ngSubmit)="login()">
         <div class="text-center my-3">
-            <i class="fas fa-user-circle fs-8"></i>
+          <i class="fas fa-user-circle fs-8"></i>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" />
+          <input type="email" class="form-control" id="email" required />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" />
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            id="password"
+            required
+          />
           <div class="form-text text-end">
             Forgot your password?
             <a routerLink="/forgot-password">forgot password</a>
           </div>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="checkPassword"
+            (click)="showPasswordToggle()"
+          />
+          <label class="form-check-label" for="checkPassword">
             Show password
           </label>
         </div>
-        <button button type="submit" class="btn btn-primary shadow">
+        <button class="btn btn-primary shadow" [disabled]="!form.valid">
           <i class="me-2 fas fa-sign-in-alt"></i>
           Login
         </button>
