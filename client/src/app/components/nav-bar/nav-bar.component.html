@@ -17,10 +17,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
       <div class="d-flex">
-        <a class="btn btn-info" routerLink="/login">
+        <a class="btn btn-info" routerLink="/login" *ngIf="!isAuthenticated()">
           <i class="me-2 fa-regular fa-user"></i>
           Login
         </a>
+        <span *ngIf="isAuthenticated()" class="me-2 mt-2 text-light">
+          Hello <b>{{ getName() }}</b> 
+        </span>
+        <button
+          *ngIf="isAuthenticated()"
+          class="btn btn-info"
+          (click)="logout()"
+        >
+          <i class="me-2 fa-solid fa-arrow-right-from-bracket"></i>
+          Logout
+        </button>
       </div>
     </div>
   </div>

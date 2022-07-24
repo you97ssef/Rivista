@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   };
   showPassword = false;
 
-  constructor(private authService: AuthService, private toastr: ToastrService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.credentials).subscribe((response: any) => {
-      console.log(response);
+    this.authService.login(this.credentials).subscribe(() => {
+      this.router.navigateByUrl('/');
     });
   }
 }
