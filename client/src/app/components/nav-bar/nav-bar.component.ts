@@ -5,14 +5,12 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  constructor(private authService: AuthService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   isAuthenticated() {
     return this.authService.isAuthenticated();
@@ -25,7 +23,6 @@ export class NavBarComponent implements OnInit {
   }
 
   getName() {
-    console.log(this.authService.getUser());
     return this.authService.getUser().first_name;
   }
 }

@@ -11,13 +11,25 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  saveCredentials(response: any) {
+    localStorage.setItem('token', response.data.token);
+    localStorage.setItem('user', JSON.stringify(response.data.user));
+
+    return response;
+  }
+
   login(user: any) {
     return this.http.post(this.api + '/login', user).pipe(
       map((response: any) => {
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        this.saveCredentials(response);
+      })
+    );
+  }
 
-        return response;
+  register(user: any) {
+    return this.http.post(this.api + '/register', user).pipe(
+      map((response: any) => {
+        this.saveCredentials(response);
       })
     );
   }
