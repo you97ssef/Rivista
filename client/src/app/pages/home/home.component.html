@@ -1,6 +1,25 @@
 <div class="container">
-    <app-resend-verification-email
-  *ngIf="!isVerified()"
-></app-resend-verification-email>
-    <div class="fs-1 my-5 text-center">Welcome to rivista</div>
+  <app-resend-verification-email
+    *ngIf="!isVerified()"
+  ></app-resend-verification-email>
+  <div class="text-center mt-5">
+    <img src="assets/images/logo.svg" alt="" width="250px">
+  </div>
+  <p class="mb-5 text-center">Welcome to <b>Rivista</b> online blog created by <a href="https://youssefb.netlify.app">Youssef BAHI.</a></p>
+  <div class="row justify-content-center" *ngIf="categories">
+    <div class="col-12 text-center fs-2">Our Categories</div>
+    <div
+      class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+      *ngFor="let category of categories"
+    >
+      <div class="shadow card border border-dark border-2 bg-info h-100">
+        <div class="card-body">
+          <h5 class="fs-3 text-center">
+            {{ category.name }}
+          </h5>
+          <p class="m-0">{{ category.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

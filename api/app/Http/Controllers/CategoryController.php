@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
     public function all()
     {
-        return $this->categoryRepo->all();
+        return Response::Ok($this->categoryRepo->all());
     }
 
     public function getWithSlug(String $slug)
