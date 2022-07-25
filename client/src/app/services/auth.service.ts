@@ -49,7 +49,7 @@ export class AuthService {
   }
 
   sendEmailVerification() {
-    return this.http.post(this.api + '/send-verification-email', {});
+    return this.http.post(this.api + '/resend-email-verification', {});
   }
 
   verifyEmail(verify_url: string) {

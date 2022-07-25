@@ -1,0 +1,17 @@
+<div
+  class="card shadow border-dark text-center mx-auto mt-4"
+  style="max-width: 48em"
+>
+  <div class="card-body">
+    <h5 class="card-title">You didn't receive an verification email</h5>
+    <p class="card-text">
+      click on the button below to resend the verification email
+    </p>
+    <form #resendForm="ngForm" (ngSubmit)="resendVerificationEmail()">
+      <button type="submit" class="btn btn-dark">
+        <i class="fa-solid fa-envelope me-2"></i>
+        <span> Resend verification email </span>
+      </button>
+    </form>
+  </div>
+</div>
