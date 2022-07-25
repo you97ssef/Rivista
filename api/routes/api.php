@@ -30,7 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // AUTH ROUTES   
     Route::delete('/logout', [AuthController::class, 'logout']);
     Route::post('/resend-email-verification', [AuthController::class, 'resendEmailVerification']);
-    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification.verify');
+    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification');
 
     // CATEGORY ROUTES
     Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
