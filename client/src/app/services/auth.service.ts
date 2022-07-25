@@ -63,4 +63,8 @@ export class AuthService {
   setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }
+
+  forgotPassword(credentials: any) {
+    return this.http.post(this.api + '/forgot-password', credentials);
+  }
 }
