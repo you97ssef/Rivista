@@ -67,4 +67,8 @@ export class AuthService {
   forgotPassword(credentials: any) {
     return this.http.post(this.api + '/forgot-password', credentials);
   }
+
+  resetPassword(credentials: any) {
+    return this.http.put(this.api + '/reset-password', credentials);
+  }
 }

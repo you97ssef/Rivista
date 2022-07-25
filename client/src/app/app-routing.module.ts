@@ -10,11 +10,13 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
 
 
 import { HomeComponent } from './pages/home/home.component';
+import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NonAuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [NonAuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [NonAuthGuard] },
+  { path: 'reset-password', component: ResetPasswordComponent, canActivate: [NonAuthGuard] },
   { path: '', component: HomeComponent },
 ];
 

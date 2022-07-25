@@ -13,11 +13,15 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 import { AppComponent } from './app.component';
+
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
 import { LoginComponent } from './pages/auth/login/login.component';
-import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
+
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
