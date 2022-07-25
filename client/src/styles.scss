@@ -34,12 +34,12 @@ $border-radius-lg: .70rem;
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $warning; 
+    background: $light; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: $danger; 
+    background: $info; 
 }
 
 @import '~ngx-toastr/toastr';

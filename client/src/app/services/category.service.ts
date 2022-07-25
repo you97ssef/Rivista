@@ -13,4 +13,8 @@ export class CategoryService {
   all() {
     return this.http.get(`${this.api}/categories`);
   }
+
+  get(slug: string) {
+    return this.http.get(`${this.api}/categories/${slug}`);
+  }
 }

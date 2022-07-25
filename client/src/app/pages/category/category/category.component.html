@@ -1,0 +1,26 @@
+<div class="container" *ngIf="category">
+    <h1 class="mt-4 fs-1 text-center">{{ category.name }}</h1>
+    <p>{{ category.description }}</p>
+
+    <div class="row justify-content-center">
+        <div class="col-12 text-center fs-2">Rivistas</div>
+        <div
+          class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+          *ngFor="let rivista of category.rivistas"
+        >
+          <a [routerLink]="'/rivistas/'+ rivista.slug" class="text-decoration-none shadow card border border-dark border-2 h-100">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="fs-5 text-center my-1">
+                {{ rivista.title }}
+              </h5>
+              <p class="my-1">{{ rivista.text }}...</p>
+              <div class="row text-center my-1">
+                <div class="col"><i class="far fa-eye"></i> {{ rivista.views }}</div>
+                <div class="col"><i class="far fa-thumbs-up"></i> {{ rivista.likes_count }}</div>
+              </div>
+              <h6 class="text-center my-1">Post date: {{ rivista.updated_at | date }}</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+</div>

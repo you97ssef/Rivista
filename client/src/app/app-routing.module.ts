@@ -9,10 +9,12 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 
 
-import { HomeComponent } from './pages/home/home.component';
 import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
 import { AuthGuard } from './guards/auth.guard';
 import { VerifyEmailComponent } from './pages/auth/verify-email/verify-email.component';
+
+import { HomeComponent } from './pages/home/home.component';
+import { CategoryComponent } from './pages/category/category/category.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NonAuthGuard] },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent, canActivate: [NonAuthGuard] },
   { path: 'verify', component: VerifyEmailComponent, canActivate: [AuthGuard] },
   { path: '', component: HomeComponent },
+  { path: 'category/:slug', component: CategoryComponent },
 ];
 
 @NgModule({
