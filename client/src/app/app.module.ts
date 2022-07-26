@@ -25,6 +25,7 @@ import { VerifyEmailComponent } from './pages/auth/verify-email/verify-email.com
 import { HomeComponent } from './pages/home/home.component';
 import { ResendVerificationEmailComponent } from './components/resend-verification-email/resend-verification-email.component';
 import { CategoryComponent } from './pages/category/category/category.component';
+import { RivistaComponent } from './pages/rivista/rivista/rivista.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CategoryComponent } from './pages/category/category/category.component'
     ResetPasswordComponent,
     VerifyEmailComponent,
     ResendVerificationEmailComponent,
-    CategoryComponent
+    CategoryComponent,
+    RivistaComponent
   ],
   imports: [
     BrowserModule,
