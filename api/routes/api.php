@@ -32,11 +32,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/resend-email-verification', [AuthController::class, 'resendEmailVerification']);
     Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification');
 
-    // CATEGORY ROUTES
-    Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
-    Route::put('/categories/{slug}', [CategoryController::class, 'update']); // ADMIN ONLY
-    Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
-
     // RIVISTA ROUTES
     Route::post('/rivistas', [RivistaController::class, 'new']);
     Route::put('/rivistas/{id}', [RivistaController::class, 'update']);
@@ -51,10 +46,18 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/likes', [LikeController::class, 'unlike']);
 
     // USER ROUTES
-    Route::get('/user', [UserController::class, 'get']); //TODO test
+    Route::get('/user', [UserController::class, 'get']);
     Route::put('/user', [UserController::class, 'update']);
-    Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
     Route::delete('/user', [UserController::class, 'delete']);
+    
+    Route::middleware('admin')->group(function () {
+        // CATEGORY ROUTES
+        Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
+        Route::put('/categories/{slug}', [CategoryController::class, 'update']); // ADMIN ONLY
+        Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
+        
+        Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
+    });
 });
 
 // COMMENT ROUTE
