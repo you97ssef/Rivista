@@ -8,7 +8,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./resend-verification-email.component.scss'],
 })
 export class ResendVerificationEmailComponent implements OnInit {
-
   constructor(
     private authService: AuthService,
     private toastr: ToastrService

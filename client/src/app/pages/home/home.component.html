@@ -3,16 +3,22 @@
     *ngIf="!isVerified()"
   ></app-resend-verification-email>
   <div class="text-center mt-5">
-    <img src="assets/images/logo.svg" alt="" width="250px">
+    <img src="assets/images/logo.svg" alt="" width="250px" />
   </div>
-  <p class="mb-5 text-center">Welcome to <b>Rivista</b> online blog created by <a href="https://youssefb.netlify.app">Youssef BAHI.</a></p>
+  <p class="mb-5 text-center">
+    Welcome to <b>Rivista</b> online blog created by
+    <a href="https://youssefb.netlify.app">Youssef BAHI.</a>
+  </p>
   <div class="row justify-content-center" *ngIf="categories">
     <div class="col-12 text-center fs-2">Our Categories</div>
     <div
       class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
       *ngFor="let category of categories"
     >
-      <a [routerLink]="'/category/'+ category.slug" class="text-decoration-none shadow card border border-dark border-2 bg-info h-100">
+      <a
+        [routerLink]="'/category/' + category.slug"
+        class="text-decoration-none shadow card border border-dark border-2 bg-info h-100"
+      >
         <div class="card-body">
           <h5 class="fs-3 text-center">
             {{ category.name }}

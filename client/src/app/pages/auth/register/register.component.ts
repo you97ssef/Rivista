@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   credentials = {
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
     first_name: '',
     last_name: '',
     password: '',
-    password_confirmation: ''
+    password_confirmation: '',
   };
   showPassword = false;
 

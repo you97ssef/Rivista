@@ -1,47 +1,47 @@
-$primary: #1E2022;
-$secondary: #52616B;
-$info: #C9D6DF;
-$success: #1FAB89;
-$danger: #E23E57;
-$warning: #FFD369;
-$light: #F0F5F9;
+$primary: #1e2022;
+$secondary: #52616b;
+$info: #c9d6df;
+$success: #1fab89;
+$danger: #e23e57;
+$warning: #ffd369;
+$light: #f0f5f9;
 $dark: #000000;
 
-$border-radius: .70rem;
-$border-radius-lg: .70rem;
+$border-radius: 0.7rem;
+$border-radius-lg: 0.7rem;
 
 $font-size-base: 1.2rem;
 
 .toast-success {
-    background-color: $primary !important;
+  background-color: $primary !important;
 }
 .toast-error {
-    background-color: $secondary !important;
+  background-color: $secondary !important;
 }
 
 .fs-8 {
-    font-size: 8em;
+  font-size: 8em;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: $primary;
+  background: $primary;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $light; 
+  background: $light;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: $info; 
+  background: $info;
 }
 
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
 @import "~/node_modules/bootstrap/scss/bootstrap";

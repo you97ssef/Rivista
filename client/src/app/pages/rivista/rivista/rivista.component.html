@@ -33,6 +33,9 @@
   </div>
   <div class="row justify-content-center my-5">
     <div class="col-12 text-center fs-2">New Comment</div>
-    <app-new-comment [rivista_id]="rivista.id" (commentPosted)="newComment($event)"></app-new-comment>
+    <app-new-comment
+      [rivista_id]="rivista.id"
+      (commentPosted)="newComment($event)"
+    ></app-new-comment>
   </div>
 </div>
