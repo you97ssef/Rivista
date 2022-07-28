@@ -28,4 +28,8 @@ export class RivistaComponent implements OnInit {
       this.router.navigateByUrl('/');
     }
   }
+
+  newComment(comment: any) {
+    this.rivista.comments.push(comment);
+  }
 }
