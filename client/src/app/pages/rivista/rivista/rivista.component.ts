@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { RivistaService } from 'src/app/services/rivista.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { RivistaService } from 'src/app/services/rivista.service';
 })
 export class RivistaComponent implements OnInit {
   rivista: any = null;
+  owner: boolean = false;
 
   constructor(
     private rivistaService: RivistaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -22,7 +25,7 @@ export class RivistaComponent implements OnInit {
     if (slug) {
       this.rivistaService.get(slug).subscribe((response: any) => {
         this.rivista = response.data;
-        console.log(response);
+        this.owner = this.auth.getUser().id == this.rivista.user_id;
       });
     } else {
       this.router.navigateByUrl('/');

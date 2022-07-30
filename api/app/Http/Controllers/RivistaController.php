@@ -25,7 +25,7 @@ class RivistaController extends Controller
     {
         // TODO get likes count and comments with
         // TODO get user with
-        if (!$rivista = $this->rivistaRepo->getWithSlug($slug)) return Response::BadRequest('Rivista not found');
+        if (!$rivista = $this->rivistaRepo->getWithSlug($slug)) return Response::NotFound('Rivista not found');
 
         $data['views'] = $rivista->views + 1;
 
@@ -65,7 +65,7 @@ class RivistaController extends Controller
         ]);
 
         if ($this->rivistaRepo->save($rivista, $validatedData))
-            return Response::NoContent();
+            return Response::Ok($rivista);
 
         return Response::BadRequest('Could not update this rivista.');
     }

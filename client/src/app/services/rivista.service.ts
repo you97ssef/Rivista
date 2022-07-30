@@ -21,4 +21,8 @@ export class RivistaService {
   new(rivista: any) {
     return this.http.post(`${this.api}/rivistas`, rivista);
   }
+
+  update(rivista: any) {
+    return this.http.put(`${this.api}/rivistas/${rivista.id}`, rivista);
+  }
 }

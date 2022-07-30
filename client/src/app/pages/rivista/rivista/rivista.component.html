@@ -1,5 +1,12 @@
 <div class="container" *ngIf="rivista">
   <h1 class="fs-1 text-center mt-5 mb-3">{{ rivista.title }}</h1>
+  <div class="text-center" *ngIf="owner">
+    <a
+      class="btn btn-primary btn-sm mb-3"
+      [routerLink]="'/update-rivista/' + rivista.slug"
+      ><i class="fa-solid fa-pen-to-square me-2"></i>Update rivista</a
+    >
+  </div>
   <h6 class="text-center my-1">Post date: {{ rivista.updated_at | date }}</h6>
   <div class="row text-center my-1 mb-3">
     <div class="col"><i class="far fa-eye"></i> Views: {{ rivista.views }}</div>
