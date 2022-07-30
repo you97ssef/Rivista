@@ -13,4 +13,8 @@ export class UserService {
   all(){
     return this.http.get(`${this.api}/users`);
   }
+
+  get(slug: string){
+    return this.http.get(`${this.api}/users/${slug}`);
+  }
 }

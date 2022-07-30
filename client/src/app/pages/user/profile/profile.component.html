@@ -1,0 +1,22 @@
+<div class="container" *ngIf="user">
+  <div class="text-center mt-5">
+    <img src="assets/images/profile.svg" alt="" width="250px" />
+  </div>
+  <h1 class="mt-4 fs-1 text-center">
+    {{ user.first_name }} {{ user.last_name }}
+  </h1>
+  <div class="text-center my-4">
+    <p class="m-0">{{ user.email }}</p>
+    <small>User since: {{ user.created_at | date }}</small>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 text-center fs-2">Rivistas</div>
+    <div
+      class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+      *ngFor="let rivista of user.rivistas"
+    >
+      <app-rivista-card [rivista]="rivista"></app-rivista-card>
+    </div>
+  </div>
+</div>
