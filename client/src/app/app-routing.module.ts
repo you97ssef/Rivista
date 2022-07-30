@@ -16,6 +16,7 @@ import { VerifyEmailComponent } from './pages/auth/verify-email/verify-email.com
 import { HomeComponent } from './pages/home/home.component';
 import { CategoryComponent } from './pages/category/category/category.component';
 import { RivistaComponent } from './pages/rivista/rivista/rivista.component';
+import { RivistasComponent } from './pages/rivista/rivistas/rivistas.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NonAuthGuard] },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category/:slug', component: CategoryComponent },
   { path: 'rivistas/:slug', component: RivistaComponent },
+  { path: 'rivistas', component: RivistasComponent },
 ];
 
 @NgModule({

@@ -27,7 +27,9 @@ import { ResendVerificationEmailComponent } from './components/resend-verificati
 import { CategoryComponent } from './pages/category/category/category.component';
 import { RivistaComponent } from './pages/rivista/rivista/rivista.component';
 import { NewCommentComponent } from './components/new-comment/new-comment.component';
+import { RivistasComponent } from './pages/rivista/rivistas/rivistas.component';
 import { RivistaCardComponent } from './components/rivista-card/rivista-card.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { RivistaCardComponent } from './components/rivista-card/rivista-card.com
     CategoryComponent,
     RivistaComponent,
     NewCommentComponent,
+    RivistasComponent,
     RivistaCardComponent
   ],
   imports: [
@@ -56,7 +59,8 @@ import { RivistaCardComponent } from './components/rivista-card/rivista-card.com
       }
     ),
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [
     {

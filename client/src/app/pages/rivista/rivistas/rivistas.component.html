@@ -1,0 +1,19 @@
+<div class="container" *ngIf="rivistas">
+  <p class="mt-4 fs-1 text-center">All rivistas</p>
+  <div class="row justify-content-center">
+    <div
+      class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+      *ngFor="let rivista of rivistas | paginate: pageConfig"
+    >
+      <app-rivista-card [rivista]="rivista"></app-rivista-card>
+    </div>
+  </div>
+</div>
+
+<div class="py-4">
+  <pagination-controls
+    class="text-center"
+    id="user-pagination"
+    (pageChange)="changePage($event)"
+  ></pagination-controls>
+</div>

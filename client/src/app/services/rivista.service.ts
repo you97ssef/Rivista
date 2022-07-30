@@ -13,4 +13,8 @@ export class RivistaService {
   get(slug: string) {
     return this.http.get(`${this.api}/rivistas/${slug}`);
   }
+
+  paginate(page: number = 1) {
+    return this.http.get(`${this.api}/rivistas`, { params: { page } });
+  }
 }
