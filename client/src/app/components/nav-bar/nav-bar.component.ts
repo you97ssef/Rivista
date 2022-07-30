@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  getName() {
-    return this.authService.getUser().first_name;
+  getUser() {
+    return this.authService.getUser();
   }
 }

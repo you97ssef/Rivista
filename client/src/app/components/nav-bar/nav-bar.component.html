@@ -20,13 +20,19 @@
           <a class="nav-link" aria-current="page" routerLink="/">Categories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/rivistas">Rivistas</a>
+          <a class="nav-link" aria-current="page" routerLink="/rivistas"
+            >Rivistas</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/profiles">Profiles</a>
+          <a class="nav-link" aria-current="page" routerLink="/profiles"
+            >Profiles</a
+          >
         </li>
         <li class="nav-item" *ngIf="isAuthenticated()">
-          <a class="nav-link" aria-current="page" routerLink="/new-rivista">New Rivista</a>
+          <a class="nav-link" aria-current="page" routerLink="/new-rivista"
+            >New Rivista</a
+          >
         </li>
       </ul>
       <div class="d-flex">
@@ -47,7 +53,12 @@
           Register
         </a>
         <span *ngIf="isAuthenticated()" class="me-2 mt-2 text-light">
-          Hello <b>{{ getName() }}</b>
+          Hello
+          <b>
+            <a class="text-light" [routerLink]="'/profiles/' + getUser().slug">
+              {{ getUser().first_name }}
+            </a>
+          </b>
         </span>
         <button
           *ngIf="isAuthenticated()"
