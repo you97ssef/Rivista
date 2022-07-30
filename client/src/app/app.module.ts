@@ -32,6 +32,7 @@ import { RivistaCardComponent } from './components/rivista-card/rivista-card.com
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProfilesComponent } from './pages/user/profiles/profiles.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
+import { NewRivistaComponent } from './pages/rivista/new-rivista/new-rivista.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
     RivistasComponent,
     RivistaCardComponent,
     ProfilesComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewRivistaComponent
   ],
   imports: [
     BrowserModule,

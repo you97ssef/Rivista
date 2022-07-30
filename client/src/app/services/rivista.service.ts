@@ -17,4 +17,8 @@ export class RivistaService {
   paginate(page: number = 1) {
     return this.http.get(`${this.api}/rivistas`, { params: { page } });
   }
+
+  new(rivista: any) {
+    return this.http.post(`${this.api}/rivistas`, rivista);
+  }
 }
