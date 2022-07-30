@@ -26,6 +26,7 @@ export class RivistaComponent implements OnInit {
       this.rivistaService.get(slug).subscribe((response: any) => {
         this.rivista = response.data;
         this.owner = this.auth.getUser().id == this.rivista.user_id;
+        console.log(this.rivista);
       });
     } else {
       this.router.navigateByUrl('/');

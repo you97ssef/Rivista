@@ -1,6 +1,6 @@
 <div class="shadow card border border-dark border-2 col-12 my-3">
   <form class="card-body" #form="ngForm" (ngSubmit)="submit()">
-    <div class="mb-3">
+    <div class="mb-3" *ngIf="!connected">
       <label for="name" class="form-label">Your Name</label>
       <input
         type="text"
@@ -10,7 +10,7 @@
         [(ngModel)]="comment.name"
       />
     </div>
-    <div class="mb-3">
+    <div class="mb-3" *ngIf="!connected">
       <label for="email" class="form-label">Your Email</label>
       <input
         type="email"

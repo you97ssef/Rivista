@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
@@ -10,13 +11,18 @@ export class NewCommentComponent implements OnInit {
   @Output() commentPosted = new EventEmitter<any>();
   @Input() rivista_id: any;
   comment: any;
+  connected = false;
 
-  constructor(private commentService: CommentService) {
+  constructor(
+    private commentService: CommentService,
+    private authService: AuthService
+  ) {
     this.initComment();
   }
 
   ngOnInit(): void {
     this.comment.rivista_id = this.rivista_id;
+    this.connected = this.authService.isAuthenticated();
   }
 
   initComment() {
@@ -28,11 +34,20 @@ export class NewCommentComponent implements OnInit {
   }
 
   submit() {
-    this.commentService
-      .newFromGuest(this.comment)
-      .subscribe((response: any) => {
-        this.commentPosted.emit(response.data);
-        this.initComment();
-      });
+    if (this.connected) {
+      this.commentService
+        .newFromConnected(this.comment)
+        .subscribe((response: any) => {
+          this.commentPosted.emit(response.data);
+          this.initComment();
+        });
+    } else {
+      this.commentService
+        .newFromGuest(this.comment)
+        .subscribe((response: any) => {
+          this.commentPosted.emit(response.data);
+          this.initComment();
+        });
+    }
   }
 }

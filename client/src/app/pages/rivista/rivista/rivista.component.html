@@ -7,10 +7,7 @@
     >
       <i class="fa-solid fa-pen-to-square me-2"></i>Update rivista
     </a>
-    <button
-      class="btn btn-danger btn-sm m-1 mb-3"
-      (click)="deleteRivista()"
-    >
+    <button class="btn btn-danger btn-sm m-1 mb-3" (click)="deleteRivista()">
       <i class="fa-solid fa-trash me-2"></i>Delete rivista
     </button>
   </div>
@@ -29,14 +26,22 @@
       class="col-sm-12 col-md-6 py-3"
       *ngFor="let comment of rivista.comments"
     >
-      <div
-        [routerLink]="'/rivistas/' + rivista.slug"
-        class="shadow card border border-dark border-2 h-100"
-      >
+      <div class="shadow card border border-dark border-2 h-100">
         <div class="card-body d-flex flex-column justify-content-between">
           <p class="my-1">{{ comment.text }}</p>
           <hr />
-          <div>
+          <div *ngIf="comment.user">
+            <a [routerLink]="'/profiles/' + comment.user.slug">
+              <i class="me-2 fa-solid fa-user"></i>
+              {{ comment.user.first_name + " " + comment.user.last_name }}
+            </a>
+            <div>
+              <i class="me-2 fa-solid fa-at"></i>
+              {{ comment.user.email }}
+            </div>
+            Commented on: {{ comment.created_at | date }}
+          </div>
+          <div *ngIf="!comment.user">
             <div><i class="me-2 fa-solid fa-user"></i>{{ comment.name }}</div>
             <div><i class="me-2 fa-solid fa-at"></i>{{ comment.email }}</div>
             Commented on: {{ comment.created_at | date }}

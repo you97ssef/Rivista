@@ -13,4 +13,8 @@ export class CommentService {
   newFromGuest(comment: any) {
     return this.http.post(`${this.api}/guest-comments`, comment);
   }
+
+  newFromConnected(comment: any) {
+    return this.http.post(`${this.api}/connected-comments`, comment);
+  }
 }
