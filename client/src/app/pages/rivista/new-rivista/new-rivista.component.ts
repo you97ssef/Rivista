@@ -23,8 +23,7 @@ export class NewRivistaComponent implements OnInit {
       this.categories = response.data;
     });
   }
-
-  submit() {
+  newRivista = (): void => {
     this.rivistaService.new(this.rivista).subscribe((response: any) => {
       this.router.navigate(['/rivistas', response.data.slug]);
     });
