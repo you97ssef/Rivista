@@ -15,7 +15,9 @@ export class NewCommentComponent implements OnInit {
     this.initComment();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.comment.rivista_id = this.rivista_id;
+  }
 
   initComment() {
     this.comment = {
@@ -26,7 +28,6 @@ export class NewCommentComponent implements OnInit {
   }
 
   submit() {
-    this.comment.rivista_id = this.rivista_id;
     this.commentService
       .newFromGuest(this.comment)
       .subscribe((response: any) => {
