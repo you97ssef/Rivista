@@ -35,4 +35,10 @@ export class RivistaComponent implements OnInit {
   newComment(comment: any) {
     this.rivista.comments.push(comment);
   }
+
+  deleteRivista() {
+    this.rivistaService.delete(this.rivista.id).subscribe(() => {
+      this.router.navigateByUrl('/');
+    });
+  }
 }

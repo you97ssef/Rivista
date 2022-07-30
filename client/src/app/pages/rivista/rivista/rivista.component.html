@@ -2,10 +2,17 @@
   <h1 class="fs-1 text-center mt-5 mb-3">{{ rivista.title }}</h1>
   <div class="text-center" *ngIf="owner">
     <a
-      class="btn btn-primary btn-sm mb-3"
+      class="btn btn-primary btn-sm m-1 mb-3"
       [routerLink]="'/update-rivista/' + rivista.slug"
-      ><i class="fa-solid fa-pen-to-square me-2"></i>Update rivista</a
     >
+      <i class="fa-solid fa-pen-to-square me-2"></i>Update rivista
+    </a>
+    <button
+      class="btn btn-danger btn-sm m-1 mb-3"
+      (click)="deleteRivista()"
+    >
+      <i class="fa-solid fa-trash me-2"></i>Delete rivista
+    </button>
   </div>
   <h6 class="text-center my-1">Post date: {{ rivista.updated_at | date }}</h6>
   <div class="row text-center my-1 mb-3">

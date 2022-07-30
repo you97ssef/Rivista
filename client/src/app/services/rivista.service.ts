@@ -25,4 +25,8 @@ export class RivistaService {
   update(rivista: any) {
     return this.http.put(`${this.api}/rivistas/${rivista.id}`, rivista);
   }
+
+  delete(rivista_id: any) {
+    return this.http.delete(`${this.api}/rivistas/${rivista_id}`);
+  }
 }
