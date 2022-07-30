@@ -17,4 +17,8 @@ export class CommentService {
   newFromConnected(comment: any) {
     return this.http.post(`${this.api}/connected-comments`, comment);
   }
+
+  delete(id: number) {
+    return this.http.delete(`${this.api}/comments/${id}`);
+  }
 }

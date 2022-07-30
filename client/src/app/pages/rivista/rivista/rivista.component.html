@@ -31,20 +31,28 @@
           <p class="my-1">{{ comment.text }}</p>
           <hr />
           <div *ngIf="comment.user">
-            <a [routerLink]="'/profiles/' + comment.user.slug">
-              <i class="me-2 fa-solid fa-user"></i>
-              {{ comment.user.first_name + " " + comment.user.last_name }}
-            </a>
+            <div *ngIf="comment.user.id == user_id">
+              <button class="btn btn-sm btn-danger m-1" (click)="deleteComment(comment.id)">
+                <i class="fa-solid fa-trash me-2"></i>
+                Delete comment
+              </button>
+            </div>
+            <div>
+              <a [routerLink]="'/profiles/' + comment.user.slug">
+                <i class="me-2 fa-solid fa-user"></i>
+                {{ comment.user.first_name + " " + comment.user.last_name }}
+              </a>
+            </div>
             <div>
               <i class="me-2 fa-solid fa-at"></i>
               {{ comment.user.email }}
             </div>
-            Commented on: {{ comment.created_at | date }}
+            <small> Commented on: {{ comment.created_at | date }} </small>
           </div>
           <div *ngIf="!comment.user">
             <div><i class="me-2 fa-solid fa-user"></i>{{ comment.name }}</div>
             <div><i class="me-2 fa-solid fa-at"></i>{{ comment.email }}</div>
-            Commented on: {{ comment.created_at | date }}
+            <small> Commented on: {{ comment.created_at | date }} </small>
           </div>
         </div>
       </div>
