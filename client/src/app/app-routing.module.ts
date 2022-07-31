@@ -21,6 +21,7 @@ import { ProfilesComponent } from './pages/user/profiles/profiles.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { NewRivistaComponent } from './pages/rivista/new-rivista/new-rivista.component';
 import { UpdateRivistaComponent } from './pages/rivista/update-rivista/update-rivista.component';
+import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NonAuthGuard] },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'rivistas', component: RivistasComponent },
   { path: 'profiles', component: ProfilesComponent },
   { path: 'profiles/:slug', component: ProfileComponent },
+  { path: 'edit-profile', component: UpdateProfileComponent },
   { path: 'new-rivista', component: NewRivistaComponent },
   { path: 'update-rivista/:slug', component: UpdateRivistaComponent },
 ];

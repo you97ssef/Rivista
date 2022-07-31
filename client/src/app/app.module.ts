@@ -35,6 +35,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { NewRivistaComponent } from './pages/rivista/new-rivista/new-rivista.component';
 import { RivistaFormComponent } from './components/rivista-form/rivista-form.component';
 import { UpdateRivistaComponent } from './pages/rivista/update-rivista/update-rivista.component';
+import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UpdateRivistaComponent } from './pages/rivista/update-rivista/update-ri
     ProfileComponent,
     NewRivistaComponent,
     RivistaFormComponent,
-    UpdateRivistaComponent
+    UpdateRivistaComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
