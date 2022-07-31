@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { CommentService } from 'src/app/services/comment.service';
+import { LikeService } from 'src/app/services/like.service';
 import { RivistaService } from 'src/app/services/rivista.service';
 
 @Component({
@@ -11,15 +12,15 @@ import { RivistaService } from 'src/app/services/rivista.service';
 })
 export class RivistaComponent implements OnInit {
   rivista: any = null;
-  owner: boolean = false;
-  user_id = null;
+  user: any;
 
   constructor(
     private commentService: CommentService,
     private rivistaService: RivistaService,
     private router: Router,
     private route: ActivatedRoute,
-    private auth: AuthService
+    private auth: AuthService,
+    private likeService: LikeService
   ) {}
 
   ngOnInit(): void {
@@ -28,9 +29,7 @@ export class RivistaComponent implements OnInit {
     if (slug) {
       this.rivistaService.get(slug).subscribe((response: any) => {
         this.rivista = response.data;
-        this.owner = this.auth.getUser().id == this.rivista.user_id;
-        this.user_id = this.auth.getUser().id;
-        console.log(this.rivista);
+        this.user = this.auth.getUser();
       });
     } else {
       this.router.navigateByUrl('/');
@@ -54,4 +53,21 @@ export class RivistaComponent implements OnInit {
       );
     });
   }
+
+  like() {
+    this.likeService.like({ rivista_id: this.rivista.id }).subscribe(() => {
+      this.rivista.likes += 1;
+      this.rivista.liked = true;
+    });
+  }
+
+  unlike() {
+    this.likeService.unlike({ rivista_id: this.rivista.id }).subscribe(() => {
+      this.rivista.likes -= 1;
+      this.rivista.liked = false;
+    });
+  }
 }
+
+
+

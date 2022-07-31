@@ -1,6 +1,6 @@
 <div class="container" *ngIf="rivista">
   <h1 class="fs-1 text-center mt-5 mb-3">{{ rivista.title }}</h1>
-  <div class="text-center" *ngIf="owner">
+  <div class="text-center" *ngIf="user && user.id == this.rivista.user_id">
     <a
       class="btn btn-primary btn-sm m-1 mb-3"
       [routerLink]="'/update-rivista/' + rivista.slug"
@@ -19,6 +19,14 @@
     </div>
   </div>
   <p>{{ rivista.text }}</p>
+  <div class="text-center" *ngIf="user">
+    <button class="btn btn-primary shadow" *ngIf="!rivista.liked" (click)="like()">
+      <i class="fa-solid fa-thumbs-up me-2"></i> Like
+    </button>
+    <button class="btn btn-outline-primary shadow" *ngIf="rivista.liked" (click)="unlike()">
+      <i class="fa-solid fa-thumbs-down me-2"></i> Unlike
+    </button>
+  </div>
   <hr />
   <div class="row justify-content-center">
     <div class="col-12 text-center fs-2">Comments</div>
@@ -31,8 +39,11 @@
           <p class="my-1">{{ comment.text }}</p>
           <hr />
           <div *ngIf="comment.user">
-            <div *ngIf="comment.user.id == user_id">
-              <button class="btn btn-sm btn-danger m-1" (click)="deleteComment(comment.id)">
+            <div *ngIf="user && comment.user.id == user.id">
+              <button
+                class="btn btn-sm btn-danger m-1"
+                (click)="deleteComment(comment.id)"
+              >
                 <i class="fa-solid fa-trash me-2"></i>
                 Delete comment
               </button>
