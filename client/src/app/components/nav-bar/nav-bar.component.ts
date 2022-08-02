@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserRole } from 'src/app/enums/UserRole';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -24,5 +25,13 @@ export class NavBarComponent implements OnInit {
 
   getUser() {
     return this.authService.getUser();
+  }
+
+  isAdmin() {
+    let user = this.authService.getUser();
+
+    if (!user) return false;
+
+    return user.role == UserRole.Admin;
   }
 }

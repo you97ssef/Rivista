@@ -36,6 +36,8 @@ import { NewRivistaComponent } from './pages/rivista/new-rivista/new-rivista.com
 import { RivistaFormComponent } from './components/rivista-form/rivista-form.component';
 import { UpdateRivistaComponent } from './pages/rivista/update-rivista/update-rivista.component';
 import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
+import { NewCategoryComponent } from './pages/category/new-category/new-category.component';
+import { CategoryFormComponent } from './components/category-form/category-form.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { UpdateProfileComponent } from './pages/user/update-profile/update-profi
     NewRivistaComponent,
     RivistaFormComponent,
     UpdateRivistaComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    NewCategoryComponent,
+    CategoryFormComponent
   ],
   imports: [
     BrowserModule,

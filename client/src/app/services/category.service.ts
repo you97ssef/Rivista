@@ -17,4 +17,8 @@ export class CategoryService {
   get(slug: string) {
     return this.http.get(`${this.api}/categories/${slug}`);
   }
+
+  new(category: any) {
+    return this.http.post(`${this.api}/categories`, category);
+  }
 }
