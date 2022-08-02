@@ -21,4 +21,12 @@ export class CategoryService {
   new(category: any) {
     return this.http.post(`${this.api}/categories`, category);
   }
+
+  update(category: any) {
+    return this.http.put(`${this.api}/categories/${category.slug}`, category);
+  }
+
+  getForAdmin(slug: string) {
+    return this.http.get(`${this.api}/admin/categories/${slug}`);
+  }
 }

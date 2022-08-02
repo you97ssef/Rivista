@@ -23,6 +23,7 @@ import { NewRivistaComponent } from './pages/rivista/new-rivista/new-rivista.com
 import { UpdateRivistaComponent } from './pages/rivista/update-rivista/update-rivista.component';
 import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 import { NewCategoryComponent } from './pages/category/new-category/new-category.component';
+import { UpdateCategoryComponent } from './pages/category/update-category/update-category.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NonAuthGuard] },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'new-rivista', component: NewRivistaComponent },
   { path: 'update-rivista/:slug', component: UpdateRivistaComponent },
   { path: 'new-category', component: NewCategoryComponent },
+  { path: 'update-category/:slug', component: UpdateCategoryComponent },
 ];
 
 @NgModule({

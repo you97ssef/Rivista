@@ -38,6 +38,7 @@ import { UpdateRivistaComponent } from './pages/rivista/update-rivista/update-ri
 import { UpdateProfileComponent } from './pages/user/update-profile/update-profile.component';
 import { NewCategoryComponent } from './pages/category/new-category/new-category.component';
 import { CategoryFormComponent } from './components/category-form/category-form.component';
+import { UpdateCategoryComponent } from './pages/category/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { CategoryFormComponent } from './components/category-form/category-form.
     UpdateRivistaComponent,
     UpdateProfileComponent,
     NewCategoryComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,13 @@
 <div class="container" *ngIf="category">
   <h1 class="mt-4 fs-1 text-center">{{ category.name }}</h1>
+  <div class="text-center" *ngIf="true">
+    <a
+      class="btn btn-primary btn-sm m-1 mb-3"
+      [routerLink]="'/update-category/' + category.slug"
+    >
+      <i class="fa-solid fa-pen-to-square me-2"></i>Update rivista
+    </a>
+  </div>
   <p>{{ category.description }}</p>
 
   <div class="row justify-content-center">
