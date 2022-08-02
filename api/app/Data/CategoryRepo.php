@@ -13,10 +13,10 @@ class CategoryRepo implements ICategoryRepo
         return Category::all();
     }
 
-    // public function get($id): ?Category
-    // {
-    //     return Category::find($id);
-    // }
+    public function get($slug): ?Category
+    {
+        return Category::where('slug', $slug)->first();
+    }
 
     public function getWithSlug(String $slug): ?Category
     {

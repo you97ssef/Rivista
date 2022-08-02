@@ -53,7 +53,7 @@ class CategoryController extends Controller
         if (!$category = $this->categoryRepo->getWithSlug($slug)) return Response::BadRequest('Category not found.');
 
         if ($this->categoryRepo->save($category, $validatedData))
-            return Response::NoContent();
+            return Response::Ok($category);
 
         return Response::BadRequest('Could not update category.');
     }
@@ -66,5 +66,12 @@ class CategoryController extends Controller
             return Response::NoContent();
 
         return Response::BadRequest('Could not delete category.');
+    }
+
+    public function get($slug)
+    {
+        if (!$category = $this->categoryRepo->get($slug)) return Response::BadRequest('Category not found.');
+
+        return Response::Ok($category);
     }
 }

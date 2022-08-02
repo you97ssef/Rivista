@@ -7,7 +7,7 @@ use App\Models\Category;
 interface ICategoryRepo
 {
     public function all();
-    // public function get($id): ?Category;
+    public function get($slug): ?Category;
     public function getWithSlug(String $slug): ?Category;
 
     // public function rivistas($id);

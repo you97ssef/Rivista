@@ -52,6 +52,7 @@ Route::middleware('auth:sanctum')->group(function () {
     
     Route::middleware('admin')->group(function () {
         // CATEGORY ROUTES
+        Route::get('/admin/categories/{slug}', [CategoryController::class, 'get']); // ADMIN ONLY
         Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
         Route::put('/categories/{slug}', [CategoryController::class, 'update']); // ADMIN ONLY
         Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
