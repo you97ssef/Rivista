@@ -1,6 +1,6 @@
 <div class="container" *ngIf="category">
   <h1 class="mt-4 fs-1 text-center">{{ category.name }}</h1>
-  <div class="text-center" *ngIf="true">
+  <div class="text-center" *ngIf="user && user.role == this.Admin">
     <a
       class="btn btn-primary btn-sm m-1 mb-3"
       [routerLink]="'/update-category/' + category.slug"
