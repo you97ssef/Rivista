@@ -29,4 +29,8 @@ export class CategoryService {
   getForAdmin(slug: string) {
     return this.http.get(`${this.api}/admin/categories/${slug}`);
   }
+
+  delete(slug: string) {
+    return this.http.delete(`${this.api}/categories/${slug}`);
+  }
 }

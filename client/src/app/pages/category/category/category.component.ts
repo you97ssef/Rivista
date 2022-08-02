@@ -27,4 +27,10 @@ export class CategoryComponent implements OnInit {
       this.router.navigateByUrl('/');
     }
   }
+
+  deleteCategory() {
+    this.categoryService.delete(this.category.slug).subscribe(() => {
+      this.router.navigateByUrl('/');
+    });
+  }
 }
