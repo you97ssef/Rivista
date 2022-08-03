@@ -46,6 +46,8 @@ class UserController extends Controller
 
         if (!$user = $this->userRepo->get($validatedData['user_id'])) return Response::BadRequest('User not found');
 
+        if ($user->id == 1) return Response::BadRequest('You cannot change the role of this user.');
+
         if ($this->userRepo->save($user, $validatedData))
             return Response::NoContent();
 
