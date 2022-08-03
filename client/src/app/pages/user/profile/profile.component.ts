@@ -26,28 +26,28 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private auth: AuthService,
-    private toastr: ToastrService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
-    let slug = this.route.snapshot.paramMap.get('slug');
+    this.route.params.subscribe((routeParams: any) => {
+      if (routeParams.slug) {
+        let user = this.auth.getUser();
+        if (user && user.role == UserRole.Admin) this.isAdmin = true;
 
-    if (slug) {
-      let user = this.auth.getUser();
-      if (user && user.role == UserRole.Admin) this.isAdmin = true;
+        this.userService.get(routeParams.slug).subscribe((response: any) => {
+          this.user = response.data;
+          this.userRole = this.user.role;
 
-      this.userService.get(slug).subscribe((response: any) => {
-        this.user = response.data;
-        this.userRole = this.user.role;
-
-        if (user.slug === this.user.slug) {
-          this.currentUser = true;
-          this.isAdmin = false;
-        }
-      });
-    } else {
-      this.router.navigateByUrl('/');
-    }
+          if (user.slug === this.user.slug) {
+            this.currentUser = true;
+            this.isAdmin = false;
+          }
+        });
+      } else {
+        this.router.navigateByUrl('/');
+      }
+    });
   }
 
   changeRole() {
