@@ -90,4 +90,9 @@ class UserController extends Controller
 
         return Response::Ok($user);
     }
+
+    public function views()
+    {
+        return Response::Ok($this->userRepo->views());
+    }
 }

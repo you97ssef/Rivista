@@ -80,4 +80,9 @@ Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
 Route::get('/users', [UserController::class, 'all']);
 Route::get('/users/{slug}', [UserController::class, 'getWithSlug']);
 
+// VIEWS ROUTES
+Route::get('/views/rivistas', [RivistaController::class, 'views']);
+Route::get('/views/categories', [CategoryController::class, 'views']);
+Route::get('/views/users', [UserController::class, 'views']);
+
 // TODO make and add and test middleware

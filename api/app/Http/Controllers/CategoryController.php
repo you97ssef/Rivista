@@ -74,4 +74,9 @@ class CategoryController extends Controller
 
         return Response::Ok($category);
     }
+
+    public function views()
+    {
+        return Response::Ok($this->categoryRepo->views());
+    }
 }

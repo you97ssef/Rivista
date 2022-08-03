@@ -4,6 +4,7 @@ namespace App\Data;
 
 use App\Interfaces\ICategoryRepo;
 use App\Models\Category;
+use App\Models\Rivista;
 use Illuminate\Support\Str;
 
 class CategoryRepo implements ICategoryRepo
@@ -48,5 +49,10 @@ class CategoryRepo implements ICategoryRepo
     public function delete(Category $category): bool
     {
         return $category->delete();
+    }
+
+    public function views()
+    {
+        return Rivista::with('category')->selectRaw('category_id, SUM(views) as views')->groupBy('category_id')->orderBy('views', 'desc')->get();
     }
 }

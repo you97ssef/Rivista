@@ -15,4 +15,6 @@ interface ICategoryRepo
     public function save(Category $category, array $data): bool;
 
     public function delete(Category $category): bool;
+
+    public function views();
 }

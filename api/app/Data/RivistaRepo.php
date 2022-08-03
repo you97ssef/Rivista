@@ -63,4 +63,9 @@ class RivistaRepo implements IRivistaRepo
     {
         return $rivista->delete();
     }
+    
+    public function views()
+    {
+        return Rivista::orderBy('views', 'desc')->paginate();
+    }
 }

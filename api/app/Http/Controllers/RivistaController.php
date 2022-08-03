@@ -87,4 +87,9 @@ class RivistaController extends Controller
 
         return Response::BadRequest('Could not delete this rivista.');
     }
+
+    public function views()
+    {
+        return Response::Ok($this->rivistaRepo->views());
+    }
 }

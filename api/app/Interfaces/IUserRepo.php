@@ -18,4 +18,6 @@ interface IUserRepo
     public function save(User $user, array $data): bool;
 
     public function delete(User $user): Bool;
+
+    public function views();
 }

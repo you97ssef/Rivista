@@ -3,6 +3,7 @@
 namespace App\Data;
 
 use App\Interfaces\IUserRepo;
+use App\Models\Rivista;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -70,5 +71,10 @@ class UserRepo implements IUserRepo
     public function delete(User $user): bool
     {
         return $user->delete();
+    }
+
+    public function views()
+    {
+        return Rivista::with('user')->selectRaw('user_id, SUM(views) as views')->groupBy('user_id')->orderBy('views', 'desc')->get();
     }
 }
