@@ -92,4 +92,9 @@ class RivistaController extends Controller
     {
         return Response::Ok($this->rivistaRepo->views());
     }
+
+    public function likes()
+    {
+        return Response::Ok($this->rivistaRepo->likes());
+    }
 }

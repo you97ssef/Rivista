@@ -85,4 +85,9 @@ Route::get('/views/rivistas', [RivistaController::class, 'views']);
 Route::get('/views/categories', [CategoryController::class, 'views']);
 Route::get('/views/users', [UserController::class, 'views']);
 
+// LIKES ROUTES
+Route::get('/likes/rivistas', [RivistaController::class, 'likes']);
+// Route::get('/likes/categories', [CategoryController::class, 'likes']);
+// Route::get('/likes/users', [UserController::class, 'likes']);
+
 // TODO make and add and test middleware

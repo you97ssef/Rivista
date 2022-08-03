@@ -20,4 +20,5 @@ interface IRivistaRepo
     public function delete(Rivista $rivista): bool;
 
     public function views();
+    public function likes();
 }
