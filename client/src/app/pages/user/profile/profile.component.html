@@ -5,6 +5,13 @@
   <h1 class="mt-4 fs-1 text-center">
     {{ user.first_name }} {{ user.last_name }}
   </h1>
+  <div class="row justify-content-center my-2">
+    <div class="col-auto" style="width: 200px;">
+      <select class="form-select" (change)="changeRole()" *ngIf="isAdmin" [(ngModel)]="userRole">
+        <option *ngFor="let role of roles" [value]="role.value">{{role.name}}</option>
+      </select>
+    </div>
+  </div>
   <div class="text-center" *ngIf="currentUser">
     <a class="btn btn-primary" routerLink="/edit-profile">
       <i class="fa fa-edit me-2"></i> Edit Profile

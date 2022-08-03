@@ -25,4 +25,8 @@ export class UserService {
   delete(data: any) {
     return this.http.delete(`${this.api}/user`, { body: data });
   }
+
+  changeRole(user: any) {
+    return this.http.put(`${this.api}/user-role`, user);
+  }
 }
