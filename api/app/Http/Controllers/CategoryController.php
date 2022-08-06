@@ -79,4 +79,9 @@ class CategoryController extends Controller
     {
         return Response::Ok($this->categoryRepo->views());
     }
+
+    public function likes()
+    {
+        return Response::Ok($this->categoryRepo->likes());
+    }
 }

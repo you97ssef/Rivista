@@ -55,4 +55,12 @@ class CategoryRepo implements ICategoryRepo
     {
         return Rivista::with('category')->selectRaw('category_id, SUM(views) as views')->groupBy('category_id')->orderBy('views', 'desc')->get();
     }
+
+    public function likes()
+    {
+        return Category::selectRaw('categories.*, count(likes.id) as likes')
+            ->leftJoin('rivistas', 'rivistas.category_id', '=', 'categories.id')
+            ->leftJoin('likes', 'rivistas.id', '=', 'likes.rivista_id')
+            ->groupBy('categories.id')->orderBy('likes', 'desc')->get();
+    }
 }
