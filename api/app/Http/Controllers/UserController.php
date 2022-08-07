@@ -95,4 +95,9 @@ class UserController extends Controller
     {
         return Response::Ok($this->userRepo->views());
     }
+
+    public function likes()
+    {
+        return Response::Ok($this->userRepo->likes());
+    }
 }

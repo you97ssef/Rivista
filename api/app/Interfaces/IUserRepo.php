@@ -20,4 +20,5 @@ interface IUserRepo
     public function delete(User $user): Bool;
 
     public function views();
+    public function likes();
 }

@@ -77,4 +77,12 @@ class UserRepo implements IUserRepo
     {
         return Rivista::with('user')->selectRaw('user_id, SUM(views) as views')->groupBy('user_id')->orderBy('views', 'desc')->get();
     }
+
+    public function likes()
+    {
+        return User::selectRaw('users.*, count(likes.id) as likes')
+            ->leftJoin('rivistas', 'rivistas.user_id', '=', 'users.id')
+            ->leftJoin('likes', 'rivistas.id', '=', 'likes.rivista_id')
+            ->groupBy('users.id')->orderBy('likes', 'desc')->get();
+    }
 }
