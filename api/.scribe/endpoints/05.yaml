@@ -23,21 +23,21 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: aspernatur
+        example: facere
         type: string
         custom: []
       text:
         name: text
         description: ''
         required: true
-        example: excepturi
+        example: adipisci
         type: string
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 18
+        example: 2
         type: integer
         custom: []
     responses: []
@@ -69,28 +69,28 @@ endpoints:
         name: title
         description: ''
         required: false
-        example: omnis
+        example: aut
         type: string
         custom: []
       slug:
         name: slug
         description: ''
         required: false
-        example: excepturi
+        example: sit
         type: string
         custom: []
       text:
         name: text
         description: ''
         required: false
-        example: aspernatur
+        example: tempore
         type: string
         custom: []
       category_id:
         name: category_id
         description: ''
         required: false
-        example: 13
+        example: 4
         type: integer
         custom: []
     responses: []

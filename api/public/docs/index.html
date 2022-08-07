@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var baseUrl = "https://api-rivista.herokuapp.com/";
+        var baseUrl = "https://api-rivista.herokuapp.com";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -278,8 +278,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"eblick@example.com\",
-    \"password\": \"ducimus\"
+    \"email\": \"imiller@example.org\",
+    \"password\": \"id\"
 }"
 </code></pre></div>
 
@@ -295,8 +295,8 @@ const headers = {
 };
 
 let body = {
-    "email": "eblick@example.com",
-    "password": "ducimus"
+    "email": "imiller@example.org",
+    "password": "id"
 };
 
 fetch(url, {
@@ -354,7 +354,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-login"
-               value="eblick@example.com"
+               value="imiller@example.org"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -364,7 +364,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-login"
-               value="ducimus"
+               value="id"
                data-component="body" hidden>
     <br>
 
@@ -388,10 +388,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"tenetur\",
-    \"last_name\": \"ut\",
-    \"email\": \"quincy.wyman@example.com\",
-    \"password\": \"non\"
+    \"first_name\": \"non\",
+    \"last_name\": \"aspernatur\",
+    \"email\": \"judson.hammes@example.com\",
+    \"password\": \"atque\"
 }"
 </code></pre></div>
 
@@ -407,10 +407,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "tenetur",
-    "last_name": "ut",
-    "email": "quincy.wyman@example.com",
-    "password": "non"
+    "first_name": "non",
+    "last_name": "aspernatur",
+    "email": "judson.hammes@example.com",
+    "password": "atque"
 };
 
 fetch(url, {
@@ -468,7 +468,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="POSTapi-register"
-               value="tenetur"
+               value="non"
                data-component="body" hidden>
     <br>
 
@@ -478,7 +478,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="POSTapi-register"
-               value="ut"
+               value="aspernatur"
                data-component="body" hidden>
     <br>
 
@@ -488,7 +488,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-register"
-               value="quincy.wyman@example.com"
+               value="judson.hammes@example.com"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -498,7 +498,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-register"
-               value="non"
+               value="atque"
                data-component="body" hidden>
     <br>
 
@@ -522,7 +522,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"cmorar@example.net\"
+    \"email\": \"heller.rafael@example.org\"
 }"
 </code></pre></div>
 
@@ -538,7 +538,7 @@ const headers = {
 };
 
 let body = {
-    "email": "cmorar@example.net"
+    "email": "heller.rafael@example.org"
 };
 
 fetch(url, {
@@ -596,7 +596,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-forgot-password"
-               value="cmorar@example.net"
+               value="heller.rafael@example.org"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -620,9 +620,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"laborum\",
-    \"email\": \"jessie41@example.net\",
-    \"password\": \"q\"
+    \"token\": \"quod\",
+    \"email\": \"luella.ruecker@example.net\",
+    \"password\": \"\"
 }"
 </code></pre></div>
 
@@ -638,9 +638,9 @@ const headers = {
 };
 
 let body = {
-    "token": "laborum",
-    "email": "jessie41@example.net",
-    "password": "q"
+    "token": "quod",
+    "email": "luella.ruecker@example.net",
+    "password": ""
 };
 
 fetch(url, {
@@ -698,7 +698,7 @@ fetch(url, {
                 <input type="text"
                name="token"
                data-endpoint="PUTapi-reset-password"
-               value="laborum"
+               value="quod"
                data-component="body" hidden>
     <br>
 
@@ -708,7 +708,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="PUTapi-reset-password"
-               value="jessie41@example.net"
+               value="luella.ruecker@example.net"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -718,7 +718,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTapi-reset-password"
-               value="q"
+               value=""
                data-component="body" hidden>
     <br>
 <p>Must be at least 8 characters.</p>
@@ -917,7 +917,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://api-rivista.herokuapp.com/api/email/verify/rerum/debitis" \
+    --get "https://api-rivista.herokuapp.com/api/email/verify/nisi/qui" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -925,7 +925,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api-rivista.herokuapp.com/api/email/verify/rerum/debitis"
+    "https://api-rivista.herokuapp.com/api/email/verify/nisi/qui"
 );
 
 const headers = {
@@ -996,7 +996,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="GETapi-email-verify--id---hash-"
-               value="rerum"
+               value="nisi"
                data-component="url" hidden>
     <br>
 <p>The ID of the verify.</p>
@@ -1006,7 +1006,7 @@ fetch(url, {
                 <input type="text"
                name="hash"
                data-endpoint="GETapi-email-verify--id---hash-"
-               value="debitis"
+               value="qui"
                data-component="url" hidden>
     <br>
 
@@ -1125,8 +1125,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"mqxyfcapbftnxmgtpzhpecuucrywcaokymfiyyfjbfrgvkxdyohcifxbheixzbazvttpqshxaajxsygavqqxnavbnxczvs\",
-    \"description\": \"hbaapwsxlqxjfnpwlybmdgdrdeup\"
+    \"name\": \"rutcpauhtfygzimfskuofligrjweubooumutdyavntmkrlygcjkwgpznzeotqjzuvbqbrritjwrvqckuygwjxakkodbqlrnlkkpvujenekrjsydedtgrjexkjufsxxcsrpwofytdvyl\",
+    \"description\": \"dyeusgnykczrhnopjykmswwqowdot\"
 }"
 </code></pre></div>
 
@@ -1143,8 +1143,8 @@ const headers = {
 };
 
 let body = {
-    "name": "mqxyfcapbftnxmgtpzhpecuucrywcaokymfiyyfjbfrgvkxdyohcifxbheixzbazvttpqshxaajxsygavqqxnavbnxczvs",
-    "description": "hbaapwsxlqxjfnpwlybmdgdrdeup"
+    "name": "rutcpauhtfygzimfskuofligrjweubooumutdyavntmkrlygcjkwgpznzeotqjzuvbqbrritjwrvqckuygwjxakkodbqlrnlkkpvujenekrjsydedtgrjexkjufsxxcsrpwofytdvyl",
+    "description": "dyeusgnykczrhnopjykmswwqowdot"
 };
 
 fetch(url, {
@@ -1210,7 +1210,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-categories"
-               value="mqxyfcapbftnxmgtpzhpecuucrywcaokymfiyyfjbfrgvkxdyohcifxbheixzbazvttpqshxaajxsygavqqxnavbnxczvs"
+               value="rutcpauhtfygzimfskuofligrjweubooumutdyavntmkrlygcjkwgpznzeotqjzuvbqbrritjwrvqckuygwjxakkodbqlrnlkkpvujenekrjsydedtgrjexkjufsxxcsrpwofytdvyl"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1220,7 +1220,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="POSTapi-categories"
-               value="hbaapwsxlqxjfnpwlybmdgdrdeup"
+               value="dyeusgnykczrhnopjykmswwqowdot"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1246,8 +1246,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"engxbzedsyxcfvpphqeluclasnrvorvktnyktrvtdbfusfrcyryfcxrukuxypgtmxumiokkvbtpspzreawxlbjmjinwdticoaiklkmojwsanlrohkhczildebncugvbprlfxcznblhiexfixylkbcffbqursqzyntnuuthwvzsyjzxtfzfjcppjvtrnzlmhurjmynifuxoxxlzsepliuzfejxesamigpggx\",
-    \"description\": \"bbbrvuhtjoqftajbbdvvsguvevhzydkgzozagrmoevpccoalgagzsbepiguwzcjbpytgyljzkxonfxupqfdtqbnyrgryspnyjzplgrzaemzswvjletlijhnfkzpykottmdnakmpjhsuxqpfjuqollukxuxrrwtjmdcndvfltdmntnnxwwzzpyypkgehkoyimtkzkfzxllswefrioyrxtrkdaotoppgtcnooxrpbyv\"
+    \"name\": \"pgqhjbpehwcweflmlowijussyznglugriqvxxlciiqafuwrebmcbnzufpjxsutqqwmwfwdkmnxbroivfqlsswuobqmpdl\",
+    \"description\": \"hyn\"
 }"
 </code></pre></div>
 
@@ -1264,8 +1264,8 @@ const headers = {
 };
 
 let body = {
-    "name": "engxbzedsyxcfvpphqeluclasnrvorvktnyktrvtdbfusfrcyryfcxrukuxypgtmxumiokkvbtpspzreawxlbjmjinwdticoaiklkmojwsanlrohkhczildebncugvbprlfxcznblhiexfixylkbcffbqursqzyntnuuthwvzsyjzxtfzfjcppjvtrnzlmhurjmynifuxoxxlzsepliuzfejxesamigpggx",
-    "description": "bbbrvuhtjoqftajbbdvvsguvevhzydkgzozagrmoevpccoalgagzsbepiguwzcjbpytgyljzkxonfxupqfdtqbnyrgryspnyjzplgrzaemzswvjletlijhnfkzpykottmdnakmpjhsuxqpfjuqollukxuxrrwtjmdcndvfltdmntnnxwwzzpyypkgehkoyimtkzkfzxllswefrioyrxtrkdaotoppgtcnooxrpbyv"
+    "name": "pgqhjbpehwcweflmlowijussyznglugriqvxxlciiqafuwrebmcbnzufpjxsutqqwmwfwdkmnxbroivfqlsswuobqmpdl",
+    "description": "hyn"
 };
 
 fetch(url, {
@@ -1342,7 +1342,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-categories--slug-"
-               value="engxbzedsyxcfvpphqeluclasnrvorvktnyktrvtdbfusfrcyryfcxrukuxypgtmxumiokkvbtpspzreawxlbjmjinwdticoaiklkmojwsanlrohkhczildebncugvbprlfxcznblhiexfixylkbcffbqursqzyntnuuthwvzsyjzxtfzfjcppjvtrnzlmhurjmynifuxoxxlzsepliuzfejxesamigpggx"
+               value="pgqhjbpehwcweflmlowijussyznglugriqvxxlciiqafuwrebmcbnzufpjxsutqqwmwfwdkmnxbroivfqlsswuobqmpdl"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1352,7 +1352,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="PUTapi-categories--slug-"
-               value="bbbrvuhtjoqftajbbdvvsguvevhzydkgzozagrmoevpccoalgagzsbepiguwzcjbpytgyljzkxonfxupqfdtqbnyrgryspnyjzplgrzaemzswvjletlijhnfkzpykottmdnakmpjhsuxqpfjuqollukxuxrrwtjmdcndvfltdmntnnxwwzzpyypkgehkoyimtkzkfzxllswefrioyrxtrkdaotoppgtcnooxrpbyv"
+               value="hyn"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2200,7 +2200,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"rivista_id\": 2
+    \"rivista_id\": 11
 }"
 </code></pre></div>
 
@@ -2217,7 +2217,7 @@ const headers = {
 };
 
 let body = {
-    "rivista_id": 2
+    "rivista_id": 11
 };
 
 fetch(url, {
@@ -2283,7 +2283,7 @@ fetch(url, {
                 <input type="number"
                name="rivista_id"
                data-endpoint="POSTapi-likes"
-               value="2"
+               value="11"
                data-component="body" hidden>
     <br>
 
@@ -2309,7 +2309,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"rivista_id\": 13
+    \"rivista_id\": 6
 }"
 </code></pre></div>
 
@@ -2326,7 +2326,7 @@ const headers = {
 };
 
 let body = {
-    "rivista_id": 13
+    "rivista_id": 6
 };
 
 fetch(url, {
@@ -2392,7 +2392,7 @@ fetch(url, {
                 <input type="number"
                name="rivista_id"
                data-endpoint="DELETEapi-likes"
-               value="13"
+               value="6"
                data-component="body" hidden>
     <br>
 
@@ -2422,9 +2422,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"aspernatur\",
-    \"text\": \"excepturi\",
-    \"category_id\": 18
+    \"title\": \"facere\",
+    \"text\": \"adipisci\",
+    \"category_id\": 2
 }"
 </code></pre></div>
 
@@ -2441,9 +2441,9 @@ const headers = {
 };
 
 let body = {
-    "title": "aspernatur",
-    "text": "excepturi",
-    "category_id": 18
+    "title": "facere",
+    "text": "adipisci",
+    "category_id": 2
 };
 
 fetch(url, {
@@ -2509,7 +2509,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="POSTapi-rivistas"
-               value="aspernatur"
+               value="facere"
                data-component="body" hidden>
     <br>
 
@@ -2519,7 +2519,7 @@ fetch(url, {
                 <input type="text"
                name="text"
                data-endpoint="POSTapi-rivistas"
-               value="excepturi"
+               value="adipisci"
                data-component="body" hidden>
     <br>
 
@@ -2529,7 +2529,7 @@ fetch(url, {
                 <input type="number"
                name="category_id"
                data-endpoint="POSTapi-rivistas"
-               value="18"
+               value="2"
                data-component="body" hidden>
     <br>
 
@@ -2555,10 +2555,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"omnis\",
-    \"slug\": \"excepturi\",
-    \"text\": \"aspernatur\",
-    \"category_id\": 13
+    \"title\": \"aut\",
+    \"slug\": \"sit\",
+    \"text\": \"tempore\",
+    \"category_id\": 4
 }"
 </code></pre></div>
 
@@ -2575,10 +2575,10 @@ const headers = {
 };
 
 let body = {
-    "title": "omnis",
-    "slug": "excepturi",
-    "text": "aspernatur",
-    "category_id": 13
+    "title": "aut",
+    "slug": "sit",
+    "text": "tempore",
+    "category_id": 4
 };
 
 fetch(url, {
@@ -2655,7 +2655,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="PUTapi-rivistas--id-"
-               value="omnis"
+               value="aut"
                data-component="body" hidden>
     <br>
 
@@ -2665,7 +2665,7 @@ fetch(url, {
                 <input type="text"
                name="slug"
                data-endpoint="PUTapi-rivistas--id-"
-               value="excepturi"
+               value="sit"
                data-component="body" hidden>
     <br>
 
@@ -2675,7 +2675,7 @@ fetch(url, {
                 <input type="text"
                name="text"
                data-endpoint="PUTapi-rivistas--id-"
-               value="aspernatur"
+               value="tempore"
                data-component="body" hidden>
     <br>
 
@@ -2685,7 +2685,7 @@ fetch(url, {
                 <input type="number"
                name="category_id"
                data-endpoint="PUTapi-rivistas--id-"
-               value="13"
+               value="4"
                data-component="body" hidden>
     <br>
 
@@ -3227,9 +3227,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"quaerat\",
-    \"last_name\": \"suscipit\",
-    \"password\": \"accusamus\"
+    \"first_name\": \"tempora\",
+    \"last_name\": \"optio\",
+    \"password\": \"sed\"
 }"
 </code></pre></div>
 
@@ -3246,9 +3246,9 @@ const headers = {
 };
 
 let body = {
-    "first_name": "quaerat",
-    "last_name": "suscipit",
-    "password": "accusamus"
+    "first_name": "tempora",
+    "last_name": "optio",
+    "password": "sed"
 };
 
 fetch(url, {
@@ -3314,7 +3314,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="PUTapi-user"
-               value="quaerat"
+               value="tempora"
                data-component="body" hidden>
     <br>
 
@@ -3324,7 +3324,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="PUTapi-user"
-               value="suscipit"
+               value="optio"
                data-component="body" hidden>
     <br>
 
@@ -3334,7 +3334,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTapi-user"
-               value="accusamus"
+               value="sed"
                data-component="body" hidden>
     <br>
 
@@ -3360,7 +3360,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"password\": \"et\"
+    \"password\": \"sunt\"
 }"
 </code></pre></div>
 
@@ -3377,7 +3377,7 @@ const headers = {
 };
 
 let body = {
-    "password": "et"
+    "password": "sunt"
 };
 
 fetch(url, {
@@ -3443,7 +3443,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="DELETEapi-user"
-               value="et"
+               value="sunt"
                data-component="body" hidden>
     <br>
 
@@ -3469,7 +3469,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 19
+    \"user_id\": 15
 }"
 </code></pre></div>
 
@@ -3486,7 +3486,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": 19
+    "user_id": 15
 };
 
 fetch(url, {
@@ -3562,7 +3562,7 @@ fetch(url, {
                 <input type="number"
                name="user_id"
                data-endpoint="PUTapi-user-role"
-               value="19"
+               value="15"
                data-component="body" hidden>
     <br>
 

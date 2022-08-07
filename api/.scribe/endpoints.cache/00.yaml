@@ -24,14 +24,14 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: eblick@example.com
+        example: imiller@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: ducimus
+        example: id
         type: string
         custom: []
     responses: []
@@ -55,28 +55,28 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: tenetur
+        example: non
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: true
-        example: ut
+        example: aspernatur
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: quincy.wyman@example.com
+        example: judson.hammes@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: non
+        example: atque
         type: string
         custom: []
     responses: []
@@ -100,7 +100,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: cmorar@example.net
+        example: heller.rafael@example.org
         type: string
         custom: []
     responses: []
@@ -124,21 +124,21 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: laborum
+        example: quod
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: jessie41@example.net
+        example: luella.ruecker@example.net
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: q
+        example: ''
         type: string
         custom: []
     responses: []
@@ -197,14 +197,14 @@ endpoints:
         name: id
         description: 'The ID of the verify.'
         required: true
-        example: rerum
+        example: nisi
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: debitis
+        example: qui
         type: string
         custom: []
     queryParameters: []
