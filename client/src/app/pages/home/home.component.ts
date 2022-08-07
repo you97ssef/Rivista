@@ -11,10 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-    this.categoryService.all().subscribe((response: any) => {
-      this.categories = response.data;
-      console.log(response);
-    });
+    this.getByLikes();
   }
 
   isVerified() {
@@ -25,5 +22,21 @@ export class HomeComponent implements OnInit {
     if (JSON.parse(user).email_verified_at) return true;
 
     return false;
+  }
+
+  getByLikes() {
+    this.categoryService.allByLikes().subscribe((response: any) => {
+      this.categories = response.data;
+    });
+  }
+
+  getByViews() {
+    this.categoryService.allByViews().subscribe((response: any) => {
+      this.categories = response.data.map((category: any) => {
+        let cat = category.category;
+        cat.views = category.views;
+        return cat
+      });
+    });
   }
 }

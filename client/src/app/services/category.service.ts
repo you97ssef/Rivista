@@ -14,6 +14,14 @@ export class CategoryService {
     return this.http.get(`${this.api}/categories`);
   }
 
+  allByLikes() {
+    return this.http.get(`${this.api}/likes/categories`);
+  }
+
+  allByViews() {
+    return this.http.get(`${this.api}/views/categories`);
+  }
+
   get(slug: string) {
     return this.http.get(`${this.api}/categories/${slug}`);
   }

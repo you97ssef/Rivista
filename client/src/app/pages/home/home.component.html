@@ -11,6 +11,19 @@
   </p>
   <div class="row justify-content-center" *ngIf="categories">
     <div class="col-12 text-center fs-2">Our Categories</div>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked (change)="this.getByLikes()">
+      <label class="btn btn-outline-primary" for="btnradio1">
+        <i class="far fa-thumbs-up"></i> 
+        By likes
+      </label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" (change)="this.getByViews()">
+      <label class="btn btn-outline-primary" for="btnradio2">
+        <i class="far fa-eye"></i> 
+        By views
+      </label>
+    </div>
     <div
       class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
       *ngFor="let category of categories"
@@ -23,6 +36,14 @@
           <h5 class="fs-3 text-center">
             {{ category.name }}
           </h5>
+          <h6 class="text-center" *ngIf="category.likes">
+            <i class="far fa-thumbs-up"></i> 
+            {{ category.likes }}
+          </h6>
+          <h6 class="text-center" *ngIf="category.views">
+            <i class="far fa-eye"></i> 
+            {{ category.views }}
+          </h6>
           <p class="m-0">{{ category.description }}</p>
         </div>
       </a>
