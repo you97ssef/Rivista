@@ -13,6 +13,14 @@ export class UserService {
   all() {
     return this.http.get(`${this.api}/users`);
   }
+  
+  allByLikes() {
+    return this.http.get(`${this.api}/likes/users`);
+  }
+
+  allByViews() {
+    return this.http.get(`${this.api}/views/users`);
+  }
 
   get(slug: string) {
     return this.http.get(`${this.api}/users/${slug}`);

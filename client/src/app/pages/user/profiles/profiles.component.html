@@ -1,5 +1,20 @@
 <div class="container" *ngIf="profiles">
   <p class="mt-4 fs-1 text-center">All Profiles</p>
+  <div class="row">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked (change)="this.getByLikes()">
+      <label class="btn btn-outline-primary" for="btnradio1">
+        <i class="far fa-thumbs-up"></i> 
+        By likes
+      </label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" (change)="this.getByViews()">
+      <label class="btn btn-outline-primary" for="btnradio2">
+        <i class="far fa-eye"></i> 
+        By views
+      </label>
+    </div>
+  </div>
   <div class="row justify-content-center">
     <div
       class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
@@ -13,6 +28,12 @@
           <h5 class="fs-5 text-center my-1">
             {{ profile.first_name }} {{ profile.last_name }}
           </h5>
+          <div class="fs-6 text-center my-1" *ngIf="profile.views">
+            <i class="far fa-eye"></i> {{ profile.views }}
+          </div>
+          <div class="fs-6 text-center my-1" *ngIf="profile.likes">
+            <i class="far fa-thumbs-up"></i> {{ profile.likes }}
+          </div>
           <p class="my-1 text-center">{{ profile.email }}</p>
           <small class="text-center my-1">
             User since: {{ profile.created_at | date }}
