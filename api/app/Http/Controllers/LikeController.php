@@ -7,6 +7,11 @@ use App\Interfaces\ILikeRepo;
 use App\Models\Like;
 use Illuminate\Http\Request;
 
+/**
+ * @group Like management
+ *
+ * APIs for managing Likes
+ */
 class LikeController extends Controller
 {
     private $likeRepo;

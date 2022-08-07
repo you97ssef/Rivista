@@ -8,6 +8,11 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Comment management
+ *
+ * APIs for managing Comments
+ */
 class CommentController extends Controller
 {
     private $commentRepo;
