@@ -1,0 +1,39 @@
+<form class="card-body" #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      [(ngModel)]="rivista.title"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select
+      [(ngModel)]="rivista.category_id"
+      class="form-control"
+      name="category"
+      required
+    >
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="text" class="form-label">Text</label>
+    <textarea
+      class="form-control"
+      id="text"
+      name="text"
+      [(ngModel)]="rivista.text"
+      required
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+    Post Rivista
+  </button>
+</form>

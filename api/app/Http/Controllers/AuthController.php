@@ -54,7 +54,7 @@ class AuthController extends Controller
         $validatedData['views'] = 0;
 
         if ($this->userRepo->save($user = new User(), $validatedData)) {
-            
+
             $user->sendEmailVerificationNotification();
 
             $responseData['token'] = $user->createToken('authToken')->plainTextToken;

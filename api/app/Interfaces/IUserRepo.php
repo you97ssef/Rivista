@@ -4,7 +4,7 @@ namespace App\Interfaces;
 
 use App\Models\User;
 
-interface IUserRepo 
+interface IUserRepo
 {
     public function all();
     public function get(int $id): ?User;
@@ -16,6 +16,9 @@ interface IUserRepo
     // public function comments($id);
 
     public function save(User $user, array $data): bool;
-    
+
     public function delete(User $user): Bool;
+
+    public function views();
+    public function likes();
 }

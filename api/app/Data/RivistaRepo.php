@@ -10,18 +10,18 @@ class RivistaRepo implements IRivistaRepo
 {
     public function paginate()
     {
-        return Rivista::paginate();
+        return Rivista::withCount('likes')->paginate();
     }
-    
+
     public function get($id): ?Rivista
     {
         return Rivista::find($id);
     }
-    
+
     // TODO refactor or better performance
     public function getWithSlug(String $slug): ?Rivista
     {
-        return Rivista::with('comments')->withCount('likes')->where('slug', $slug)->first();
+        return Rivista::with('comments', 'comments.user')->withCount('likes')->where('slug', $slug)->first();
     }
 
     // public function likes($id)
@@ -62,5 +62,15 @@ class RivistaRepo implements IRivistaRepo
     public function delete(Rivista $rivista): bool
     {
         return $rivista->delete();
+    }
+    
+    public function views()
+    {
+        return Rivista::withCount('likes')->orderBy('views', 'desc')->paginate();
+    }
+
+    public function likes()
+    {
+        return Rivista::withCount('likes')->orderBy('likes_count', 'desc')->paginate();
     }
 }

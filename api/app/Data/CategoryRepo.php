@@ -4,6 +4,7 @@ namespace App\Data;
 
 use App\Interfaces\ICategoryRepo;
 use App\Models\Category;
+use App\Models\Rivista;
 use Illuminate\Support\Str;
 
 class CategoryRepo implements ICategoryRepo
@@ -13,11 +14,11 @@ class CategoryRepo implements ICategoryRepo
         return Category::all();
     }
 
-    // public function get($id): ?Category
-    // {
-    //     return Category::find($id);
-    // }
-    
+    public function get($slug): ?Category
+    {
+        return Category::where('slug', $slug)->first();
+    }
+
     public function getWithSlug(String $slug): ?Category
     {
         return Category::with(['rivistas' => function ($query) {
@@ -48,5 +49,18 @@ class CategoryRepo implements ICategoryRepo
     public function delete(Category $category): bool
     {
         return $category->delete();
+    }
+
+    public function views()
+    {
+        return Rivista::with('category')->selectRaw('category_id, SUM(views) as views')->groupBy('category_id')->orderBy('views', 'desc')->get();
+    }
+
+    public function likes()
+    {
+        return Category::selectRaw('categories.*, count(likes.id) as likes')
+            ->leftJoin('rivistas', 'rivistas.category_id', '=', 'categories.id')
+            ->leftJoin('likes', 'rivistas.id', '=', 'likes.rivista_id')
+            ->groupBy('categories.id')->orderBy('likes', 'desc')->get();
     }
 }

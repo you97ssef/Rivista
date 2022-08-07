@@ -22,7 +22,7 @@ use App\Http\Response;
 // AUTH ROUTES
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
-Route::get('/forgot-password', [AuthController::class, 'forgotPassword']);
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
 Route::put('/reset-password', [AuthController::class, 'resetPassword'])->name('password.reset');
 
 
@@ -30,12 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // AUTH ROUTES   
     Route::delete('/logout', [AuthController::class, 'logout']);
     Route::post('/resend-email-verification', [AuthController::class, 'resendEmailVerification']);
-    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification.verify');
-
-    // CATEGORY ROUTES
-    Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
-    Route::put('/categories/{slug}', [CategoryController::class, 'update']); // ADMIN ONLY
-    Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
+    Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verify'])->middleware('signed')->name('verification');
 
     // RIVISTA ROUTES
     Route::post('/rivistas', [RivistaController::class, 'new']);
@@ -43,7 +38,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/rivistas/{id}', [RivistaController::class, 'delete']);
 
     // COMMENT ROUTES
-    Route::post('/connected/comments', [CommentController::class, 'save']);
+    Route::post('/connected-comments', [CommentController::class, 'save']);
     Route::delete('/comments/{id}', [CommentController::class, 'delete']);
 
     // LIKE ROUTES
@@ -51,10 +46,19 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/likes', [LikeController::class, 'unlike']);
 
     // USER ROUTES
-    Route::get('/user', [UserController::class, 'get']); //TODO test
+    Route::get('/user', [UserController::class, 'get']);
     Route::put('/user', [UserController::class, 'update']);
-    Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
     Route::delete('/user', [UserController::class, 'delete']);
+    
+    Route::middleware('admin')->group(function () {
+        // CATEGORY ROUTES
+        Route::get('/admin/categories/{slug}', [CategoryController::class, 'get']); // ADMIN ONLY
+        Route::post('/categories', [CategoryController::class, 'new']); // ADMIN ONLY
+        Route::put('/categories/{slug}', [CategoryController::class, 'update']); // ADMIN ONLY
+        Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
+        
+        Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
+    });
 });
 
 // COMMENT ROUTE
@@ -75,5 +79,15 @@ Route::get('/rivistas/{slug}', [RivistaController::class, 'getWithSlug']);
 // USER ROUTES
 Route::get('/users', [UserController::class, 'all']);
 Route::get('/users/{slug}', [UserController::class, 'getWithSlug']);
+
+// VIEWS ROUTES
+Route::get('/views/rivistas', [RivistaController::class, 'views']);
+Route::get('/views/categories', [CategoryController::class, 'views']);
+Route::get('/views/users', [UserController::class, 'views']);
+
+// LIKES ROUTES
+Route::get('/likes/rivistas', [RivistaController::class, 'likes']);
+Route::get('/likes/categories', [CategoryController::class, 'likes']);
+Route::get('/likes/users', [UserController::class, 'likes']);
 
 // TODO make and add and test middleware

@@ -1,0 +1,34 @@
+<div class="container" *ngIf="user">
+  <div class="text-center mt-5">
+    <img src="assets/images/profile.svg" alt="" width="250px" />
+  </div>
+  <h1 class="mt-4 fs-1 text-center">
+    {{ user.first_name }} {{ user.last_name }}
+  </h1>
+  <div class="row justify-content-center my-2">
+    <div class="col-auto" style="width: 200px;">
+      <select class="form-select" (change)="changeRole()" *ngIf="isAdmin" [(ngModel)]="userRole">
+        <option *ngFor="let role of roles" [value]="role.value">{{role.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="currentUser">
+    <a class="btn btn-primary" routerLink="/edit-profile">
+      <i class="fa fa-edit me-2"></i> Edit Profile
+    </a>
+  </div>
+  <div class="text-center my-4">
+    <p class="m-0">{{ user.email }}</p>
+    <small>User since: {{ user.created_at | date }}</small>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 text-center fs-2">Rivistas</div>
+    <div
+      class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+      *ngFor="let rivista of user.rivistas"
+    >
+      <app-rivista-card [rivista]="rivista"></app-rivista-card>
+    </div>
+  </div>
+</div>
