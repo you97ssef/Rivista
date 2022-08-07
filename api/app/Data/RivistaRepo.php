@@ -66,7 +66,7 @@ class RivistaRepo implements IRivistaRepo
     
     public function views()
     {
-        return Rivista::orderBy('views', 'desc')->paginate();
+        return Rivista::withCount('likes')->orderBy('views', 'desc')->paginate();
     }
 
     public function likes()

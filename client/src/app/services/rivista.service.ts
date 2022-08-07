@@ -18,6 +18,14 @@ export class RivistaService {
     return this.http.get(`${this.api}/rivistas`, { params: { page } });
   }
 
+  paginateByViews(page: number = 1) {
+    return this.http.get(`${this.api}/views/rivistas`, { params: { page } });
+  }
+
+  paginateByLikes(page: number = 1) {
+    return this.http.get(`${this.api}/likes/rivistas`, { params: { page } });
+  }
+
   new(rivista: any) {
     return this.http.post(`${this.api}/rivistas`, rivista);
   }
