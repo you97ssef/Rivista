@@ -1,6 +1,6 @@
 [build]
 command = "ng build"
-publish = "/client/dist/client"
+publish = "/dist/client"
 base = "/client"
 
 [[redirects]]
