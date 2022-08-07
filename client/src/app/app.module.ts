@@ -39,6 +39,7 @@ import { UpdateProfileComponent } from './pages/user/update-profile/update-profi
 import { NewCategoryComponent } from './pages/category/new-category/new-category.component';
 import { CategoryFormComponent } from './components/category-form/category-form.component';
 import { UpdateCategoryComponent } from './pages/category/update-category/update-category.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { UpdateCategoryComponent } from './pages/category/update-category/update
     UpdateProfileComponent,
     NewCategoryComponent,
     CategoryFormComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
