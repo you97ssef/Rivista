@@ -1,0 +1,53 @@
+name: 'Like management'
+description: |-
+
+  APIs for managing Likes
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/likes
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      rivista_id:
+        name: rivista_id
+        description: ''
+        required: true
+        example: 12
+        type: integer
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/likes
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      rivista_id:
+        name: rivista_id
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        custom: []
+    responses: []
+    responseFields: []

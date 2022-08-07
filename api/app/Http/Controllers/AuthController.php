@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
+/**
+ * @group Auth management
+ *
+ * APIs for managing authentication
+ */
 class AuthController extends Controller
 {
     private $userRepo;

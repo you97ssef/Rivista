@@ -7,6 +7,11 @@ use App\Interfaces\ICategoryRepo;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+/**
+ * @group Category management
+ *
+ * APIs for managing Categories
+ */
 class CategoryController extends Controller
 {
     private $categoryRepo;

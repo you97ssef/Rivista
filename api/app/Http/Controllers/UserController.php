@@ -8,6 +8,11 @@ use App\Interfaces\IUserRepo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group User management
+ *
+ * APIs for managing Users
+ */
 class UserController extends Controller
 {
     private $userRepo;

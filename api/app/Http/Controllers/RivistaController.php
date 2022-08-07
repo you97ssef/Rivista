@@ -7,8 +7,12 @@ use App\Interfaces\ILikeRepo;
 use App\Interfaces\IRivistaRepo;
 use App\Models\Rivista;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Rivista management
+ *
+ * APIs for managing Rivistas
+ */
 class RivistaController extends Controller
 {
     private $rivistaRepo, $likeRepo;
