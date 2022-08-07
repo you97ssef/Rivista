@@ -25,7 +25,7 @@ endpoints:
         name: rivista_id
         description: ''
         required: true
-        example: 2
+        example: 11
         type: integer
         custom: []
     responses: []
@@ -50,7 +50,7 @@ endpoints:
         name: rivista_id
         description: ''
         required: true
-        example: 13
+        example: 6
         type: integer
         custom: []
     responses: []

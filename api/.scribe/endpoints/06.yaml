@@ -41,21 +41,21 @@ endpoints:
         name: first_name
         description: ''
         required: false
-        example: quaerat
+        example: tempora
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: false
-        example: suscipit
+        example: optio
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: accusamus
+        example: sed
         type: string
         custom: []
     responses: []
@@ -80,7 +80,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: et
+        example: sunt
         type: string
         custom: []
     responses: []
@@ -112,7 +112,7 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: 19
+        example: 15
         type: integer
         custom: []
     responses: []

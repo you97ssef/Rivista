@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "https:\/\/api-rivista.herokuapp.com\/"
+            "value": "https:\/\/api-rivista.herokuapp.com"
         }
     ],
     "info": {
         "name": "Rivista",
-        "_postman_id": "8a8c8e07-50c8-404d-821d-a22d64e3bb02",
+        "_postman_id": "01ba77ea-a15d-49fa-959e-81bf6b190da3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"eblick@example.com\",\"password\":\"ducimus\"}"
+                            "raw": "{\"email\":\"imiller@example.org\",\"password\":\"id\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"tenetur\",\"last_name\":\"ut\",\"email\":\"quincy.wyman@example.com\",\"password\":\"non\"}"
+                            "raw": "{\"first_name\":\"non\",\"last_name\":\"aspernatur\",\"email\":\"judson.hammes@example.com\",\"password\":\"atque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"cmorar@example.net\"}"
+                            "raw": "{\"email\":\"heller.rafael@example.org\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"laborum\",\"email\":\"jessie41@example.net\",\"password\":\"q\"}"
+                            "raw": "{\"token\":\"quod\",\"email\":\"luella.ruecker@example.net\",\"password\":\"\"}"
                         },
                         "description": "",
                         "auth": {
@@ -205,13 +205,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "rerum",
+                                    "value": "nisi",
                                     "description": "The ID of the verify."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "debitis",
+                                    "value": "qui",
                                     "description": ""
                                 }
                             ]
@@ -296,7 +296,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"mqxyfcapbftnxmgtpzhpecuucrywcaokymfiyyfjbfrgvkxdyohcifxbheixzbazvttpqshxaajxsygavqqxnavbnxczvs\",\"description\":\"hbaapwsxlqxjfnpwlybmdgdrdeup\"}"
+                            "raw": "{\"name\":\"rutcpauhtfygzimfskuofligrjweubooumutdyavntmkrlygcjkwgpznzeotqjzuvbqbrritjwrvqckuygwjxakkodbqlrnlkkpvujenekrjsydedtgrjexkjufsxxcsrpwofytdvyl\",\"description\":\"dyeusgnykczrhnopjykmswwqowdot\"}"
                         },
                         "description": ""
                     },
@@ -332,7 +332,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"engxbzedsyxcfvpphqeluclasnrvorvktnyktrvtdbfusfrcyryfcxrukuxypgtmxumiokkvbtpspzreawxlbjmjinwdticoaiklkmojwsanlrohkhczildebncugvbprlfxcznblhiexfixylkbcffbqursqzyntnuuthwvzsyjzxtfzfjcppjvtrnzlmhurjmynifuxoxxlzsepliuzfejxesamigpggx\",\"description\":\"bbbrvuhtjoqftajbbdvvsguvevhzydkgzozagrmoevpccoalgagzsbepiguwzcjbpytgyljzkxonfxupqfdtqbnyrgryspnyjzplgrzaemzswvjletlijhnfkzpykottmdnakmpjhsuxqpfjuqollukxuxrrwtjmdcndvfltdmntnnxwwzzpyypkgehkoyimtkzkfzxllswefrioyrxtrkdaotoppgtcnooxrpbyv\"}"
+                            "raw": "{\"name\":\"pgqhjbpehwcweflmlowijussyznglugriqvxxlciiqafuwrebmcbnzufpjxsutqqwmwfwdkmnxbroivfqlsswuobqmpdl\",\"description\":\"hyn\"}"
                         },
                         "description": ""
                     },
@@ -639,7 +639,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rivista_id\":2}"
+                            "raw": "{\"rivista_id\":11}"
                         },
                         "description": ""
                     },
@@ -667,7 +667,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rivista_id\":13}"
+                            "raw": "{\"rivista_id\":6}"
                         },
                         "description": ""
                     },
@@ -701,7 +701,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"aspernatur\",\"text\":\"excepturi\",\"category_id\":18}"
+                            "raw": "{\"title\":\"facere\",\"text\":\"adipisci\",\"category_id\":2}"
                         },
                         "description": ""
                     },
@@ -737,7 +737,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"omnis\",\"slug\":\"excepturi\",\"text\":\"aspernatur\",\"category_id\":13}"
+                            "raw": "{\"title\":\"aut\",\"slug\":\"sit\",\"text\":\"tempore\",\"category_id\":4}"
                         },
                         "description": ""
                     },
@@ -949,7 +949,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"quaerat\",\"last_name\":\"suscipit\",\"password\":\"accusamus\"}"
+                            "raw": "{\"first_name\":\"tempora\",\"last_name\":\"optio\",\"password\":\"sed\"}"
                         },
                         "description": ""
                     },
@@ -977,7 +977,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"et\"}"
+                            "raw": "{\"password\":\"sunt\"}"
                         },
                         "description": ""
                     },
@@ -1005,7 +1005,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":19}"
+                            "raw": "{\"user_id\":15}"
                         },
                         "description": ""
                     },

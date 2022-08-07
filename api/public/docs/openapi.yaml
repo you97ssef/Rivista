@@ -39,11 +39,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: eblick@example.com
+                  example: imiller@example.org
                 password:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: id
               required:
                 - email
                 - password
@@ -80,19 +80,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: tenetur
+                  example: non
                 last_name:
                   type: string
                   description: ''
-                  example: ut
+                  example: aspernatur
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: quincy.wyman@example.com
+                  example: judson.hammes@example.com
                 password:
                   type: string
                   description: ''
-                  example: non
+                  example: atque
               required:
                 - first_name
                 - last_name
@@ -131,7 +131,7 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: cmorar@example.net
+                  example: heller.rafael@example.org
               required:
                 - email
       security: []
@@ -167,15 +167,15 @@ paths:
                 token:
                   type: string
                   description: ''
-                  example: laborum
+                  example: quod
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: jessie41@example.net
+                  example: luella.ruecker@example.net
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: q
+                  example: ''
               required:
                 - token
                 - email
@@ -273,7 +273,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the verify.'
-        example: rerum
+        example: nisi
         required: true
         schema:
           type: string
@@ -281,7 +281,7 @@ paths:
         in: path
         name: hash
         description: ''
-        example: debitis
+        example: qui
         required: true
         schema:
           type: string
@@ -356,11 +356,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: mqxyfcapbftnxmgtpzhpecuucrywcaokymfiyyfjbfrgvkxdyohcifxbheixzbazvttpqshxaajxsygavqqxnavbnxczvs
+                  example: rutcpauhtfygzimfskuofligrjweubooumutdyavntmkrlygcjkwgpznzeotqjzuvbqbrritjwrvqckuygwjxakkodbqlrnlkkpvujenekrjsydedtgrjexkjufsxxcsrpwofytdvyl
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: hbaapwsxlqxjfnpwlybmdgdrdeup
+                  example: dyeusgnykczrhnopjykmswwqowdot
               required:
                 - name
     get:
@@ -424,11 +424,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: engxbzedsyxcfvpphqeluclasnrvorvktnyktrvtdbfusfrcyryfcxrukuxypgtmxumiokkvbtpspzreawxlbjmjinwdticoaiklkmojwsanlrohkhczildebncugvbprlfxcznblhiexfixylkbcffbqursqzyntnuuthwvzsyjzxtfzfjcppjvtrnzlmhurjmynifuxoxxlzsepliuzfejxesamigpggx
+                  example: pgqhjbpehwcweflmlowijussyznglugriqvxxlciiqafuwrebmcbnzufpjxsutqqwmwfwdkmnxbroivfqlsswuobqmpdl
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bbbrvuhtjoqftajbbdvvsguvevhzydkgzozagrmoevpccoalgagzsbepiguwzcjbpytgyljzkxonfxupqfdtqbnyrgryspnyjzplgrzaemzswvjletlijhnfkzpykottmdnakmpjhsuxqpfjuqollukxuxrrwtjmdcndvfltdmntnnxwwzzpyypkgehkoyimtkzkfzxllswefrioyrxtrkdaotoppgtcnooxrpbyv
+                  example: hyn
               required:
                 - name
     delete:
@@ -700,7 +700,7 @@ paths:
                 rivista_id:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 11
               required:
                 - rivista_id
     delete:
@@ -741,7 +741,7 @@ paths:
                 rivista_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 6
               required:
                 - rivista_id
   /api/rivistas:
@@ -783,15 +783,15 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: aspernatur
+                  example: facere
                 text:
                   type: string
                   description: ''
-                  example: excepturi
+                  example: adipisci
                 category_id:
                   type: integer
                   description: ''
-                  example: 18
+                  example: 2
               required:
                 - title
                 - text
@@ -857,19 +857,19 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: omnis
+                  example: aut
                 slug:
                   type: string
                   description: ''
-                  example: excepturi
+                  example: sit
                 text:
                   type: string
                   description: ''
-                  example: aspernatur
+                  example: tempore
                 category_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 4
     delete:
       summary: ''
       description: ''
@@ -1052,15 +1052,15 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: quaerat
+                  example: tempora
                 last_name:
                   type: string
                   description: ''
-                  example: suscipit
+                  example: optio
                 password:
                   type: string
                   description: ''
-                  example: accusamus
+                  example: sed
               required:
                 - password
     delete:
@@ -1101,7 +1101,7 @@ paths:
                 password:
                   type: string
                   description: ''
-                  example: et
+                  example: sunt
               required:
                 - password
   /api/user-role:
@@ -1147,7 +1147,7 @@ paths:
                 user_id:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 15
               required:
                 - user_id
   /api/users:
