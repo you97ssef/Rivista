@@ -12,9 +12,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -24,21 +25,21 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: beatae
+        example: dolor
         type: string
         custom: []
       text:
         name: text
         description: ''
         required: true
-        example: quis
+        example: voluptatem
         type: string
         custom: []
       category_id:
         name: category_id
         description: ''
         required: true
-        example: 4
+        example: 5
         type: integer
         custom: []
     responses: []
@@ -50,9 +51,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -69,28 +71,28 @@ endpoints:
         name: title
         description: ''
         required: false
-        example: recusandae
+        example: aliquid
         type: string
         custom: []
       slug:
         name: slug
         description: ''
         required: false
-        example: est
+        example: aut
         type: string
         custom: []
       text:
         name: text
         description: ''
         required: false
-        example: itaque
+        example: voluptate
         type: string
         custom: []
       category_id:
         name: category_id
         description: ''
         required: false
-        example: 8
+        example: 20
         type: integer
         custom: []
     responses: []
@@ -102,9 +104,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:

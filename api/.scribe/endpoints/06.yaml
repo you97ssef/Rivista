@@ -10,9 +10,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -386,9 +387,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -398,21 +400,21 @@ endpoints:
         name: first_name
         description: ''
         required: false
-        example: consequatur
+        example: eum
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: false
-        example: aut
+        example: laborum
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: eaque
+        example: laboriosam
         type: string
         custom: []
     responses: []
@@ -424,9 +426,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -436,7 +439,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: sit
+        example: eligendi
         type: string
         custom: []
     responses: []
@@ -448,9 +451,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -467,7 +471,7 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: 18
+        example: 15
         type: integer
         custom: []
     responses: []

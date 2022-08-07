@@ -23,11 +23,17 @@ class RivistaController extends Controller
         $this->likeRepo = $likeRepo;
     }
 
+    /**
+     * @unauthenticated
+     */
     public function paginate()
     {
         return Response::Ok($this->rivistaRepo->paginate());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function getWithSlug(String $slug)
     {
         // TODO get likes count and comments with
@@ -92,11 +98,17 @@ class RivistaController extends Controller
         return Response::BadRequest('Could not delete this rivista.');
     }
 
+    /**
+     * @unauthenticated
+     */
     public function views()
     {
         return Response::Ok($this->rivistaRepo->views());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function likes()
     {
         return Response::Ok($this->rivistaRepo->likes());

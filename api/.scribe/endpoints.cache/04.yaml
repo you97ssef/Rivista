@@ -12,9 +12,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -24,7 +25,7 @@ endpoints:
         name: rivista_id
         description: ''
         required: true
-        example: 12
+        example: 16
         type: integer
         custom: []
     responses: []
@@ -36,9 +37,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -48,7 +50,7 @@ endpoints:
         name: rivista_id
         description: ''
         required: true
-        example: 16
+        example: 2
         type: integer
         custom: []
     responses: []

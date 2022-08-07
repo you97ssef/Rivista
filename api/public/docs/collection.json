@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Rivista",
-        "_postman_id": "1108bbbe-f852-49d4-9be4-8b5574404204",
+        "_postman_id": "0eb02843-3d58-44fe-a8b8-2b2491aa9c85",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"heber10@example.com\",\"password\":\"est\"}"
+                            "raw": "{\"email\":\"ogleason@example.com\",\"password\":\"nostrum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"eos\",\"last_name\":\"facilis\",\"email\":\"agislason@example.org\",\"password\":\"exercitationem\"}"
+                            "raw": "{\"first_name\":\"perspiciatis\",\"last_name\":\"illo\",\"email\":\"brisa09@example.com\",\"password\":\"libero\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"alexander43@example.net\"}"
+                            "raw": "{\"email\":\"blick.letha@example.net\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"perspiciatis\",\"email\":\"kristoffer.okuneva@example.org\",\"password\":\"u\"}"
+                            "raw": "{\"token\":\"dolores\",\"email\":\"wbailey@example.net\",\"password\":\"k\"}"
                         },
                         "description": "",
                         "auth": {
@@ -164,10 +164,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -192,10 +189,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -211,13 +205,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quidem",
+                                    "value": "quia",
                                     "description": "The ID of the verify."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "illum",
+                                    "value": "eum",
                                     "description": ""
                                 }
                             ]
@@ -234,10 +228,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -345,12 +336,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"wiptv\",\"description\":\"hdmhicclwtxjraancxqrwaaifmyrcdfngmkvzy\"}"
+                            "raw": "{\"name\":\"npffhdfjqtbuiilvznspqynhlovipfvxcstzabcggjwhynkyjkigibafsyyddpsghkjqxphtalgqopcfcvmesmgoghvgwcjtofmrvgyzzbwcnhfzsmyfiohdwenhoqsoltjlxpsnzydnwlzvclnplzjnksikndqbpepjadjkfnuybwvwwntfirzoozjiklrrqwruyoqxixzcsybqofklzyqpyhsqnbewzdnefszpa\",\"description\":\"vwxaegpxmieehamtywlvsrlzlddddygpqheihrdsxzqzmdiyiodtehormzxvtyqwvirhvnbemfxmelotuknytqtgdexaauqnpdvwbwvouanuvtpbcscmndhaeoualvcwxxcvlkjwrhdlunzewjvohijfutsismwnalpsjvffzffzzzuclwsxjpzcila\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -384,12 +372,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"kfdfhgbjchncfsecsfdrdjxcsrbcedmblvkjtqbpfvvleedv\",\"description\":\"deoywvybcexmdriqcgqdkykeipuvynrvntedyumvdzwwzaaeungrygdtndeyuqslywzgtzdlprqudkifmvyqhovndpysalthcwiyfcirxy\"}"
+                            "raw": "{\"name\":\"jyxkswxlwiglqyoqpxijvhgpozrfukcxqmyldsnmfytyqjsonytskgvvodkfjhendotlzgwdoyfsafwmvqzgnwqoaowacovifsfrcxmtjpkyatdyljlfqvcupkjvctnkxbtodksvfskkmrepqannxrhkfiqokueromoikicfgohibyiqutrddvfdnedtnwixeotqlfidtsijsuptqskxhbyrongdwqwg\",\"description\":\"mclsljxwhohchdelxnpttdewzojfayqhhrwfuesayttzurfgyxfaiyvowajzfzdlzwfjfvyjnkpgaggmnwlwnkvagcbtqhfogbyftvtsksehqnygesifjkszzjoweqcjuzpnaanysvtdnlxvhbzlftdkdvmhaspxqrxulfmobffxqysjskrjhzbnqkbhnfyimbwahuuuzwxcwbcpexniknrtisuythnmtixabetsqdmujkmwjgvws\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -422,10 +407,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -656,10 +638,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -692,10 +671,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -720,10 +696,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }
@@ -754,10 +727,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -809,12 +779,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rivista_id\":12}"
+                            "raw": "{\"rivista_id\":16}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -840,12 +807,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rivista_id\":16}"
+                            "raw": "{\"rivista_id\":2}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }
@@ -877,12 +841,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"beatae\",\"text\":\"quis\",\"category_id\":4}"
+                            "raw": "{\"title\":\"dolor\",\"text\":\"voluptatem\",\"category_id\":5}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -916,12 +877,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"recusandae\",\"slug\":\"est\",\"text\":\"itaque\",\"category_id\":8}"
+                            "raw": "{\"title\":\"aliquid\",\"slug\":\"aut\",\"text\":\"voluptate\",\"category_id\":20}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -954,10 +912,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1188,10 +1143,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -1237,12 +1189,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"consequatur\",\"last_name\":\"aut\",\"password\":\"eaque\"}"
+                            "raw": "{\"first_name\":\"eum\",\"last_name\":\"laborum\",\"password\":\"laboriosam\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1268,12 +1217,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"password\":\"sit\"}"
+                            "raw": "{\"password\":\"eligendi\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1299,12 +1245,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":18}"
+                            "raw": "{\"user_id\":15}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1512,6 +1455,6 @@
         }
     ],
     "auth": {
-        "type": "noauth"
+        "type": "bearer"
     }
 }

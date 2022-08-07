@@ -253,7 +253,9 @@ You can switch the language used with the tabs at the top right (or from the nav
 <pre><code class="language-yaml">https://api-rivista.herokuapp.com/</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="auth-management">Auth management</h1>
 
@@ -276,8 +278,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"heber10@example.com\",
-    \"password\": \"est\"
+    \"email\": \"ogleason@example.com\",
+    \"password\": \"nostrum\"
 }"
 </code></pre></div>
 
@@ -293,8 +295,8 @@ const headers = {
 };
 
 let body = {
-    "email": "heber10@example.com",
-    "password": "est"
+    "email": "ogleason@example.com",
+    "password": "nostrum"
 };
 
 fetch(url, {
@@ -352,7 +354,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-login"
-               value="heber10@example.com"
+               value="ogleason@example.com"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -362,7 +364,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-login"
-               value="est"
+               value="nostrum"
                data-component="body" hidden>
     <br>
 
@@ -386,10 +388,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"eos\",
-    \"last_name\": \"facilis\",
-    \"email\": \"agislason@example.org\",
-    \"password\": \"exercitationem\"
+    \"first_name\": \"perspiciatis\",
+    \"last_name\": \"illo\",
+    \"email\": \"brisa09@example.com\",
+    \"password\": \"libero\"
 }"
 </code></pre></div>
 
@@ -405,10 +407,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "eos",
-    "last_name": "facilis",
-    "email": "agislason@example.org",
-    "password": "exercitationem"
+    "first_name": "perspiciatis",
+    "last_name": "illo",
+    "email": "brisa09@example.com",
+    "password": "libero"
 };
 
 fetch(url, {
@@ -466,7 +468,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="POSTapi-register"
-               value="eos"
+               value="perspiciatis"
                data-component="body" hidden>
     <br>
 
@@ -476,7 +478,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="POSTapi-register"
-               value="facilis"
+               value="illo"
                data-component="body" hidden>
     <br>
 
@@ -486,7 +488,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-register"
-               value="agislason@example.org"
+               value="brisa09@example.com"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -496,7 +498,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-register"
-               value="exercitationem"
+               value="libero"
                data-component="body" hidden>
     <br>
 
@@ -520,7 +522,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"alexander43@example.net\"
+    \"email\": \"blick.letha@example.net\"
 }"
 </code></pre></div>
 
@@ -536,7 +538,7 @@ const headers = {
 };
 
 let body = {
-    "email": "alexander43@example.net"
+    "email": "blick.letha@example.net"
 };
 
 fetch(url, {
@@ -594,7 +596,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-forgot-password"
-               value="alexander43@example.net"
+               value="blick.letha@example.net"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -618,9 +620,9 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"perspiciatis\",
-    \"email\": \"kristoffer.okuneva@example.org\",
-    \"password\": \"u\"
+    \"token\": \"dolores\",
+    \"email\": \"wbailey@example.net\",
+    \"password\": \"k\"
 }"
 </code></pre></div>
 
@@ -636,9 +638,9 @@ const headers = {
 };
 
 let body = {
-    "token": "perspiciatis",
-    "email": "kristoffer.okuneva@example.org",
-    "password": "u"
+    "token": "dolores",
+    "email": "wbailey@example.net",
+    "password": "k"
 };
 
 fetch(url, {
@@ -696,7 +698,7 @@ fetch(url, {
                 <input type="text"
                name="token"
                data-endpoint="PUTapi-reset-password"
-               value="perspiciatis"
+               value="dolores"
                data-component="body" hidden>
     <br>
 
@@ -706,7 +708,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="PUTapi-reset-password"
-               value="kristoffer.okuneva@example.org"
+               value="wbailey@example.net"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address.</p>
@@ -716,7 +718,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTapi-reset-password"
-               value="u"
+               value="k"
                data-component="body" hidden>
     <br>
 <p>Must be at least 8 characters.</p>
@@ -726,6 +728,7 @@ fetch(url, {
             <h2 id="auth-management-DELETEapi-logout">DELETE api/logout</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -737,6 +740,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://api-rivista.herokuapp.com/api/logout" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -747,6 +751,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -772,10 +777,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-logout" data-method="DELETE"
       data-path="api/logout"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-logout', this);">
     <h3>
@@ -799,11 +804,20 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>api/logout</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-DELETEapi-logout" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-logout"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="auth-management-POSTapi-resend-email-verification">POST api/resend-email-verification</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -815,6 +829,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://api-rivista.herokuapp.com/api/resend-email-verification" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -825,6 +840,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -850,10 +866,10 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-resend-email-verification" data-method="POST"
       data-path="api/resend-email-verification"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-resend-email-verification', this);">
     <h3>
@@ -877,11 +893,20 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/resend-email-verification</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-POSTapi-resend-email-verification" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-resend-email-verification"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="auth-management-GETapi-email-verify--id---hash-">GET api/email/verify/{id}/{hash}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -892,17 +917,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://api-rivista.herokuapp.com/api/email/verify/quidem/illum" \
+    --get "https://api-rivista.herokuapp.com/api/email/verify/quia/eum" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api-rivista.herokuapp.com/api/email/verify/quidem/illum"
+    "https://api-rivista.herokuapp.com/api/email/verify/quia/eum"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1293,10 +1320,10 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-email-verify--id---hash-" data-method="GET"
       data-path="api/email/verify/{id}/{hash}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETapi-email-verify--id---hash-', this);">
     <h3>
@@ -1320,13 +1347,21 @@ access-control-allow-origin: *
             <small class="badge badge-green">GET</small>
             <b><code>api/email/verify/{id}/{hash}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-GETapi-email-verify--id---hash-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-email-verify--id---hash-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="GETapi-email-verify--id---hash-"
-               value="quidem"
+               value="quia"
                data-component="url" hidden>
     <br>
 <p>The ID of the verify.</p>
@@ -1336,7 +1371,7 @@ access-control-allow-origin: *
                 <input type="text"
                name="hash"
                data-endpoint="GETapi-email-verify--id---hash-"
-               value="illum"
+               value="eum"
                data-component="url" hidden>
     <br>
 
@@ -1804,6 +1839,7 @@ access-control-allow-origin: *
             <h2 id="category-management-POSTapi-categories">POST api/categories</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1815,11 +1851,12 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://api-rivista.herokuapp.com/api/categories" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"wiptv\",
-    \"description\": \"hdmhicclwtxjraancxqrwaaifmyrcdfngmkvzy\"
+    \"name\": \"npffhdfjqtbuiilvznspqynhlovipfvxcstzabcggjwhynkyjkigibafsyyddpsghkjqxphtalgqopcfcvmesmgoghvgwcjtofmrvgyzzbwcnhfzsmyfiohdwenhoqsoltjlxpsnzydnwlzvclnplzjnksikndqbpepjadjkfnuybwvwwntfirzoozjiklrrqwruyoqxixzcsybqofklzyqpyhsqnbewzdnefszpa\",
+    \"description\": \"vwxaegpxmieehamtywlvsrlzlddddygpqheihrdsxzqzmdiyiodtehormzxvtyqwvirhvnbemfxmelotuknytqtgdexaauqnpdvwbwvouanuvtpbcscmndhaeoualvcwxxcvlkjwrhdlunzewjvohijfutsismwnalpsjvffzffzzzuclwsxjpzcila\"
 }"
 </code></pre></div>
 
@@ -1830,13 +1867,14 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "wiptv",
-    "description": "hdmhicclwtxjraancxqrwaaifmyrcdfngmkvzy"
+    "name": "npffhdfjqtbuiilvznspqynhlovipfvxcstzabcggjwhynkyjkigibafsyyddpsghkjqxphtalgqopcfcvmesmgoghvgwcjtofmrvgyzzbwcnhfzsmyfiohdwenhoqsoltjlxpsnzydnwlzvclnplzjnksikndqbpepjadjkfnuybwvwwntfirzoozjiklrrqwruyoqxixzcsybqofklzyqpyhsqnbewzdnefszpa",
+    "description": "vwxaegpxmieehamtywlvsrlzlddddygpqheihrdsxzqzmdiyiodtehormzxvtyqwvirhvnbemfxmelotuknytqtgdexaauqnpdvwbwvouanuvtpbcscmndhaeoualvcwxxcvlkjwrhdlunzewjvohijfutsismwnalpsjvffzffzzzuclwsxjpzcila"
 };
 
 fetch(url, {
@@ -1861,10 +1899,10 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-categories" data-method="POST"
       data-path="api/categories"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-categories', this);">
     <h3>
@@ -1888,13 +1926,21 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/categories</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-POSTapi-categories" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-categories"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-categories"
-               value="wiptv"
+               value="npffhdfjqtbuiilvznspqynhlovipfvxcstzabcggjwhynkyjkigibafsyyddpsghkjqxphtalgqopcfcvmesmgoghvgwcjtofmrvgyzzbwcnhfzsmyfiohdwenhoqsoltjlxpsnzydnwlzvclnplzjnksikndqbpepjadjkfnuybwvwwntfirzoozjiklrrqwruyoqxixzcsybqofklzyqpyhsqnbewzdnefszpa"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1904,7 +1950,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="POSTapi-categories"
-               value="hdmhicclwtxjraancxqrwaaifmyrcdfngmkvzy"
+               value="vwxaegpxmieehamtywlvsrlzlddddygpqheihrdsxzqzmdiyiodtehormzxvtyqwvirhvnbemfxmelotuknytqtgdexaauqnpdvwbwvouanuvtpbcscmndhaeoualvcwxxcvlkjwrhdlunzewjvohijfutsismwnalpsjvffzffzzzuclwsxjpzcila"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1914,6 +1960,7 @@ fetch(url, {
             <h2 id="category-management-PUTapi-categories--slug-">PUT api/categories/{slug}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1925,11 +1972,12 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://api-rivista.herokuapp.com/api/categories/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"kfdfhgbjchncfsecsfdrdjxcsrbcedmblvkjtqbpfvvleedv\",
-    \"description\": \"deoywvybcexmdriqcgqdkykeipuvynrvntedyumvdzwwzaaeungrygdtndeyuqslywzgtzdlprqudkifmvyqhovndpysalthcwiyfcirxy\"
+    \"name\": \"jyxkswxlwiglqyoqpxijvhgpozrfukcxqmyldsnmfytyqjsonytskgvvodkfjhendotlzgwdoyfsafwmvqzgnwqoaowacovifsfrcxmtjpkyatdyljlfqvcupkjvctnkxbtodksvfskkmrepqannxrhkfiqokueromoikicfgohibyiqutrddvfdnedtnwixeotqlfidtsijsuptqskxhbyrongdwqwg\",
+    \"description\": \"mclsljxwhohchdelxnpttdewzojfayqhhrwfuesayttzurfgyxfaiyvowajzfzdlzwfjfvyjnkpgaggmnwlwnkvagcbtqhfogbyftvtsksehqnygesifjkszzjoweqcjuzpnaanysvtdnlxvhbzlftdkdvmhaspxqrxulfmobffxqysjskrjhzbnqkbhnfyimbwahuuuzwxcwbcpexniknrtisuythnmtixabetsqdmujkmwjgvws\"
 }"
 </code></pre></div>
 
@@ -1940,13 +1988,14 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "kfdfhgbjchncfsecsfdrdjxcsrbcedmblvkjtqbpfvvleedv",
-    "description": "deoywvybcexmdriqcgqdkykeipuvynrvntedyumvdzwwzaaeungrygdtndeyuqslywzgtzdlprqudkifmvyqhovndpysalthcwiyfcirxy"
+    "name": "jyxkswxlwiglqyoqpxijvhgpozrfukcxqmyldsnmfytyqjsonytskgvvodkfjhendotlzgwdoyfsafwmvqzgnwqoaowacovifsfrcxmtjpkyatdyljlfqvcupkjvctnkxbtodksvfskkmrepqannxrhkfiqokueromoikicfgohibyiqutrddvfdnedtnwixeotqlfidtsijsuptqskxhbyrongdwqwg",
+    "description": "mclsljxwhohchdelxnpttdewzojfayqhhrwfuesayttzurfgyxfaiyvowajzfzdlzwfjfvyjnkpgaggmnwlwnkvagcbtqhfogbyftvtsksehqnygesifjkszzjoweqcjuzpnaanysvtdnlxvhbzlftdkdvmhaspxqrxulfmobffxqysjskrjhzbnqkbhnfyimbwahuuuzwxcwbcpexniknrtisuythnmtixabetsqdmujkmwjgvws"
 };
 
 fetch(url, {
@@ -1971,10 +2020,10 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-categories--slug-" data-method="PUT"
       data-path="api/categories/{slug}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-categories--slug-', this);">
     <h3>
@@ -1998,7 +2047,15 @@ fetch(url, {
             <small class="badge badge-darkblue">PUT</small>
             <b><code>api/categories/{slug}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-PUTapi-categories--slug-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-categories--slug-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>slug</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -2015,7 +2072,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-categories--slug-"
-               value="kfdfhgbjchncfsecsfdrdjxcsrbcedmblvkjtqbpfvvleedv"
+               value="jyxkswxlwiglqyoqpxijvhgpozrfukcxqmyldsnmfytyqjsonytskgvvodkfjhendotlzgwdoyfsafwmvqzgnwqoaowacovifsfrcxmtjpkyatdyljlfqvcupkjvctnkxbtodksvfskkmrepqannxrhkfiqokueromoikicfgohibyiqutrddvfdnedtnwixeotqlfidtsijsuptqskxhbyrongdwqwg"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2025,7 +2082,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="PUTapi-categories--slug-"
-               value="deoywvybcexmdriqcgqdkykeipuvynrvntedyumvdzwwzaaeungrygdtndeyuqslywzgtzdlprqudkifmvyqhovndpysalthcwiyfcirxy"
+               value="mclsljxwhohchdelxnpttdewzojfayqhhrwfuesayttzurfgyxfaiyvowajzfzdlzwfjfvyjnkpgaggmnwlwnkvagcbtqhfogbyftvtsksehqnygesifjkszzjoweqcjuzpnaanysvtdnlxvhbzlftdkdvmhaspxqrxulfmobffxqysjskrjhzbnqkbhnfyimbwahuuuzwxcwbcpexniknrtisuythnmtixabetsqdmujkmwjgvws"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2035,6 +2092,7 @@ fetch(url, {
             <h2 id="category-management-DELETEapi-categories--slug-">DELETE api/categories/{slug}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -2046,6 +2104,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://api-rivista.herokuapp.com/api/categories/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -2056,6 +2115,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -2081,10 +2141,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-categories--slug-" data-method="DELETE"
       data-path="api/categories/{slug}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-categories--slug-', this);">
     <h3>
@@ -2108,7 +2168,15 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>api/categories/{slug}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEapi-categories--slug-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-categories--slug-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>slug</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -3911,6 +3979,7 @@ access-control-allow-origin: *
             <h2 id="comment-management-POSTapi-connected-comments">POST api/connected-comments</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -3922,6 +3991,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://api-rivista.herokuapp.com/api/connected-comments" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -3932,6 +4002,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -3957,10 +4028,10 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-connected-comments" data-method="POST"
       data-path="api/connected-comments"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-connected-comments', this);">
     <h3>
@@ -3984,11 +4055,20 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/connected-comments</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-POSTapi-connected-comments" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-connected-comments"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="comment-management-DELETEapi-comments--id-">DELETE api/comments/{id}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4000,6 +4080,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://api-rivista.herokuapp.com/api/comments/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4010,6 +4091,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4035,10 +4117,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-comments--id-" data-method="DELETE"
       data-path="api/comments/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-comments--id-', this);">
     <h3>
@@ -4062,7 +4144,15 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>api/comments/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEapi-comments--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-comments--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -4078,6 +4168,7 @@ fetch(url, {
             <h2 id="comment-management-POSTapi-guest-comments">POST api/guest-comments</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4089,6 +4180,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://api-rivista.herokuapp.com/api/guest-comments" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4099,6 +4191,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4124,10 +4217,10 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-guest-comments" data-method="POST"
       data-path="api/guest-comments"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-guest-comments', this);">
     <h3>
@@ -4151,7 +4244,15 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/guest-comments</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-POSTapi-guest-comments" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-guest-comments"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
         <h1 id="endpoints">Endpoints</h1>
 
@@ -4160,6 +4261,7 @@ fetch(url, {
             <h2 id="endpoints-GETapi-test">GET api/test</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4171,6 +4273,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "https://api-rivista.herokuapp.com/api/test" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -4181,6 +4284,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -4571,10 +4675,10 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-test" data-method="GET"
       data-path="api/test"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETapi-test', this);">
     <h3>
@@ -4618,7 +4722,15 @@ access-control-allow-origin: *
             <small class="badge badge-grey">OPTIONS</small>
             <b><code>api/test</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-GETapi-test" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-test"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
         <h1 id="like-management">Like management</h1>
 
@@ -4627,6 +4739,7 @@ access-control-allow-origin: *
             <h2 id="like-management-POSTapi-likes">POST api/likes</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4638,10 +4751,11 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://api-rivista.herokuapp.com/api/likes" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"rivista_id\": 12
+    \"rivista_id\": 16
 }"
 </code></pre></div>
 
@@ -4652,12 +4766,13 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "rivista_id": 12
+    "rivista_id": 16
 };
 
 fetch(url, {
@@ -4682,10 +4797,10 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-likes" data-method="POST"
       data-path="api/likes"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-likes', this);">
     <h3>
@@ -4709,13 +4824,21 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/likes</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-POSTapi-likes" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-likes"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>rivista_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
                name="rivista_id"
                data-endpoint="POSTapi-likes"
-               value="12"
+               value="16"
                data-component="body" hidden>
     <br>
 
@@ -4725,6 +4848,7 @@ fetch(url, {
             <h2 id="like-management-DELETEapi-likes">DELETE api/likes</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4736,10 +4860,11 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://api-rivista.herokuapp.com/api/likes" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"rivista_id\": 16
+    \"rivista_id\": 2
 }"
 </code></pre></div>
 
@@ -4750,12 +4875,13 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "rivista_id": 16
+    "rivista_id": 2
 };
 
 fetch(url, {
@@ -4780,10 +4906,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-likes" data-method="DELETE"
       data-path="api/likes"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-likes', this);">
     <h3>
@@ -4807,13 +4933,21 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>api/likes</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEapi-likes" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-likes"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>rivista_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
                name="rivista_id"
                data-endpoint="DELETEapi-likes"
-               value="16"
+               value="2"
                data-component="body" hidden>
     <br>
 
@@ -4827,6 +4961,7 @@ fetch(url, {
             <h2 id="rivista-management-POSTapi-rivistas">POST api/rivistas</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4838,12 +4973,13 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "https://api-rivista.herokuapp.com/api/rivistas" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"beatae\",
-    \"text\": \"quis\",
-    \"category_id\": 4
+    \"title\": \"dolor\",
+    \"text\": \"voluptatem\",
+    \"category_id\": 5
 }"
 </code></pre></div>
 
@@ -4854,14 +4990,15 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "title": "beatae",
-    "text": "quis",
-    "category_id": 4
+    "title": "dolor",
+    "text": "voluptatem",
+    "category_id": 5
 };
 
 fetch(url, {
@@ -4886,10 +5023,10 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-rivistas" data-method="POST"
       data-path="api/rivistas"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-rivistas', this);">
     <h3>
@@ -4913,13 +5050,21 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>api/rivistas</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-POSTapi-rivistas" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-rivistas"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="title"
                data-endpoint="POSTapi-rivistas"
-               value="beatae"
+               value="dolor"
                data-component="body" hidden>
     <br>
 
@@ -4929,7 +5074,7 @@ fetch(url, {
                 <input type="text"
                name="text"
                data-endpoint="POSTapi-rivistas"
-               value="quis"
+               value="voluptatem"
                data-component="body" hidden>
     <br>
 
@@ -4939,7 +5084,7 @@ fetch(url, {
                 <input type="number"
                name="category_id"
                data-endpoint="POSTapi-rivistas"
-               value="4"
+               value="5"
                data-component="body" hidden>
     <br>
 
@@ -4949,6 +5094,7 @@ fetch(url, {
             <h2 id="rivista-management-PUTapi-rivistas--id-">PUT api/rivistas/{id}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -4960,13 +5106,14 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://api-rivista.herokuapp.com/api/rivistas/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"recusandae\",
-    \"slug\": \"est\",
-    \"text\": \"itaque\",
-    \"category_id\": 8
+    \"title\": \"aliquid\",
+    \"slug\": \"aut\",
+    \"text\": \"voluptate\",
+    \"category_id\": 20
 }"
 </code></pre></div>
 
@@ -4977,15 +5124,16 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "title": "recusandae",
-    "slug": "est",
-    "text": "itaque",
-    "category_id": 8
+    "title": "aliquid",
+    "slug": "aut",
+    "text": "voluptate",
+    "category_id": 20
 };
 
 fetch(url, {
@@ -5010,10 +5158,10 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-rivistas--id-" data-method="PUT"
       data-path="api/rivistas/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-rivistas--id-', this);">
     <h3>
@@ -5037,7 +5185,15 @@ fetch(url, {
             <small class="badge badge-darkblue">PUT</small>
             <b><code>api/rivistas/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-PUTapi-rivistas--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-rivistas--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -5054,7 +5210,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="PUTapi-rivistas--id-"
-               value="recusandae"
+               value="aliquid"
                data-component="body" hidden>
     <br>
 
@@ -5064,7 +5220,7 @@ fetch(url, {
                 <input type="text"
                name="slug"
                data-endpoint="PUTapi-rivistas--id-"
-               value="est"
+               value="aut"
                data-component="body" hidden>
     <br>
 
@@ -5074,7 +5230,7 @@ fetch(url, {
                 <input type="text"
                name="text"
                data-endpoint="PUTapi-rivistas--id-"
-               value="itaque"
+               value="voluptate"
                data-component="body" hidden>
     <br>
 
@@ -5084,7 +5240,7 @@ fetch(url, {
                 <input type="number"
                name="category_id"
                data-endpoint="PUTapi-rivistas--id-"
-               value="8"
+               value="20"
                data-component="body" hidden>
     <br>
 
@@ -5094,6 +5250,7 @@ fetch(url, {
             <h2 id="rivista-management-DELETEapi-rivistas--id-">DELETE api/rivistas/{id}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -5105,6 +5262,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://api-rivista.herokuapp.com/api/rivistas/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -5115,6 +5273,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -5140,10 +5299,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-rivistas--id-" data-method="DELETE"
       data-path="api/rivistas/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-rivistas--id-', this);">
     <h3>
@@ -5167,7 +5326,15 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>api/rivistas/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEapi-rivistas--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-rivistas--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -6970,6 +7137,7 @@ access-control-allow-origin: *
             <h2 id="user-management-GETapi-user">GET api/user</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -6981,6 +7149,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "https://api-rivista.herokuapp.com/api/user" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -6991,6 +7160,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -7381,10 +7551,10 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-user" data-method="GET"
       data-path="api/user"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
     <h3>
@@ -7408,11 +7578,20 @@ access-control-allow-origin: *
             <small class="badge badge-green">GET</small>
             <b><code>api/user</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-GETapi-user" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-user"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="user-management-PUTapi-user">PUT api/user</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -7424,12 +7603,13 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://api-rivista.herokuapp.com/api/user" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"consequatur\",
-    \"last_name\": \"aut\",
-    \"password\": \"eaque\"
+    \"first_name\": \"eum\",
+    \"last_name\": \"laborum\",
+    \"password\": \"laboriosam\"
 }"
 </code></pre></div>
 
@@ -7440,14 +7620,15 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "first_name": "consequatur",
-    "last_name": "aut",
-    "password": "eaque"
+    "first_name": "eum",
+    "last_name": "laborum",
+    "password": "laboriosam"
 };
 
 fetch(url, {
@@ -7472,10 +7653,10 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-user" data-method="PUT"
       data-path="api/user"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-user', this);">
     <h3>
@@ -7499,13 +7680,21 @@ fetch(url, {
             <small class="badge badge-darkblue">PUT</small>
             <b><code>api/user</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-PUTapi-user" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-user"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="first_name"
                data-endpoint="PUTapi-user"
-               value="consequatur"
+               value="eum"
                data-component="body" hidden>
     <br>
 
@@ -7515,7 +7704,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="PUTapi-user"
-               value="aut"
+               value="laborum"
                data-component="body" hidden>
     <br>
 
@@ -7525,7 +7714,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTapi-user"
-               value="eaque"
+               value="laboriosam"
                data-component="body" hidden>
     <br>
 
@@ -7535,6 +7724,7 @@ fetch(url, {
             <h2 id="user-management-DELETEapi-user">DELETE api/user</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -7546,10 +7736,11 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "https://api-rivista.herokuapp.com/api/user" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"password\": \"sit\"
+    \"password\": \"eligendi\"
 }"
 </code></pre></div>
 
@@ -7560,12 +7751,13 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "password": "sit"
+    "password": "eligendi"
 };
 
 fetch(url, {
@@ -7590,10 +7782,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-user" data-method="DELETE"
       data-path="api/user"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user', this);">
     <h3>
@@ -7617,13 +7809,21 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>api/user</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEapi-user" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-user"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="password"
                data-endpoint="DELETEapi-user"
-               value="sit"
+               value="eligendi"
                data-component="body" hidden>
     <br>
 
@@ -7633,6 +7833,7 @@ fetch(url, {
             <h2 id="user-management-PUTapi-user-role">PUT api/user-role</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -7644,10 +7845,11 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "https://api-rivista.herokuapp.com/api/user-role" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 18
+    \"user_id\": 15
 }"
 </code></pre></div>
 
@@ -7658,12 +7860,13 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "user_id": 18
+    "user_id": 15
 };
 
 fetch(url, {
@@ -7688,10 +7891,10 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-user-role" data-method="PUT"
       data-path="api/user-role"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-user-role', this);">
     <h3>
@@ -7715,7 +7918,15 @@ fetch(url, {
             <small class="badge badge-darkblue">PUT</small>
             <b><code>api/user-role</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-PUTapi-user-role" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-user-role"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>role</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
                 <input type="text"
@@ -7731,7 +7942,7 @@ fetch(url, {
                 <input type="number"
                name="user_id"
                data-endpoint="PUTapi-user-role"
-               value="18"
+               value="15"
                data-component="body" hidden>
     <br>
 

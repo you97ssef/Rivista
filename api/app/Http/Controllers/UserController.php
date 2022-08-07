@@ -84,11 +84,17 @@ class UserController extends Controller
         return Response::Ok($request->user());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function all()
     {
         return Response::Ok($this->userRepo->all());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function getWithSlug($slug)
     {
         if (!$user = $this->userRepo->getWithSlug($slug)) return Response::BadRequest('User dose not exist');
@@ -96,11 +102,17 @@ class UserController extends Controller
         return Response::Ok($user);
     }
 
+    /**
+     * @unauthenticated
+     */
     public function views()
     {
         return Response::Ok($this->userRepo->views());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function likes()
     {
         return Response::Ok($this->userRepo->likes());

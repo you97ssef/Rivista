@@ -395,9 +395,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -407,14 +408,14 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: wiptv
+        example: npffhdfjqtbuiilvznspqynhlovipfvxcstzabcggjwhynkyjkigibafsyyddpsghkjqxphtalgqopcfcvmesmgoghvgwcjtofmrvgyzzbwcnhfzsmyfiohdwenhoqsoltjlxpsnzydnwlzvclnplzjnksikndqbpepjadjkfnuybwvwwntfirzoozjiklrrqwruyoqxixzcsybqofklzyqpyhsqnbewzdnefszpa
         type: string
         custom: []
       description:
         name: description
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: hdmhicclwtxjraancxqrwaaifmyrcdfngmkvzy
+        example: vwxaegpxmieehamtywlvsrlzlddddygpqheihrdsxzqzmdiyiodtehormzxvtyqwvirhvnbemfxmelotuknytqtgdexaauqnpdvwbwvouanuvtpbcscmndhaeoualvcwxxcvlkjwrhdlunzewjvohijfutsismwnalpsjvffzffzzzuclwsxjpzcila
         type: string
         custom: []
     responses: []
@@ -426,9 +427,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -445,14 +447,14 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: kfdfhgbjchncfsecsfdrdjxcsrbcedmblvkjtqbpfvvleedv
+        example: jyxkswxlwiglqyoqpxijvhgpozrfukcxqmyldsnmfytyqjsonytskgvvodkfjhendotlzgwdoyfsafwmvqzgnwqoaowacovifsfrcxmtjpkyatdyljlfqvcupkjvctnkxbtodksvfskkmrepqannxrhkfiqokueromoikicfgohibyiqutrddvfdnedtnwixeotqlfidtsijsuptqskxhbyrongdwqwg
         type: string
         custom: []
       description:
         name: description
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: deoywvybcexmdriqcgqdkykeipuvynrvntedyumvdzwwzaaeungrygdtndeyuqslywzgtzdlprqudkifmvyqhovndpysalthcwiyfcirxy
+        example: mclsljxwhohchdelxnpttdewzojfayqhhrwfuesayttzurfgyxfaiyvowajzfzdlzwfjfvyjnkpgaggmnwlwnkvagcbtqhfogbyftvtsksehqnygesifjkszzjoweqcjuzpnaanysvtdnlxvhbzlftdkdvmhaspxqrxulfmobffxqysjskrjhzbnqkbhnfyimbwahuuuzwxcwbcpexniknrtisuythnmtixabetsqdmujkmwjgvws
         type: string
         custom: []
     responses: []
@@ -464,9 +466,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:

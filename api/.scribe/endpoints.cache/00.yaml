@@ -24,14 +24,14 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: heber10@example.com
+        example: ogleason@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: est
+        example: nostrum
         type: string
         custom: []
     responses: []
@@ -55,28 +55,28 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: eos
+        example: perspiciatis
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: true
-        example: facilis
+        example: illo
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: agislason@example.org
+        example: brisa09@example.com
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: exercitationem
+        example: libero
         type: string
         custom: []
     responses: []
@@ -100,7 +100,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: alexander43@example.net
+        example: blick.letha@example.net
         type: string
         custom: []
     responses: []
@@ -124,21 +124,21 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: perspiciatis
+        example: dolores
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: kristoffer.okuneva@example.org
+        example: wbailey@example.net
         type: string
         custom: []
       password:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: u
+        example: k
         type: string
         custom: []
     responses: []
@@ -150,9 +150,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -167,9 +168,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -184,9 +186,10 @@ endpoints:
     metadata:
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -194,14 +197,14 @@ endpoints:
         name: id
         description: 'The ID of the verify.'
         required: true
-        example: quidem
+        example: quia
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: illum
+        example: eum
         type: string
         custom: []
     queryParameters: []
