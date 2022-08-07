@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Response;
+use App\Interfaces\ILikeRepo;
 use App\Interfaces\IRivistaRepo;
 use App\Models\Rivista;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RivistaController extends Controller
 {
-    private $rivistaRepo;
+    private $rivistaRepo, $likeRepo;
 
-    public function __construct(IRivistaRepo $rivistaRepo)
+    public function __construct(IRivistaRepo $rivistaRepo, ILikeRepo $likeRepo)
     {
         $this->rivistaRepo = $rivistaRepo;
+        $this->likeRepo = $likeRepo;
     }
 
     public function paginate()
@@ -24,13 +27,17 @@ class RivistaController extends Controller
     public function getWithSlug(String $slug)
     {
         // TODO get likes count and comments with
-        if (!$rivista = $this->rivistaRepo->getWithSlug($slug)) return Response::BadRequest('Rivista not found');
+        // TODO get user with
+        if (!$rivista = $this->rivistaRepo->getWithSlug($slug)) return Response::NotFound('Rivista not found');
 
         $data['views'] = $rivista->views + 1;
 
         $this->rivistaRepo->save($rivista, $data);
 
-        return Response::Ok($this->rivistaRepo->getWithSlug($slug));
+        if ($user = auth('sanctum')->user())
+            $rivista->liked = $this->likeRepo->getByUserAndRivista($user->id, $rivista->id);
+
+        return Response::Ok($rivista);
     }
 
     public function new(Request $request)
@@ -64,7 +71,7 @@ class RivistaController extends Controller
         ]);
 
         if ($this->rivistaRepo->save($rivista, $validatedData))
-            return Response::NoContent();
+            return Response::Ok($rivista);
 
         return Response::BadRequest('Could not update this rivista.');
     }
@@ -79,5 +86,15 @@ class RivistaController extends Controller
             return Response::NoContent();
 
         return Response::BadRequest('Could not delete this rivista.');
+    }
+
+    public function views()
+    {
+        return Response::Ok($this->rivistaRepo->views());
+    }
+
+    public function likes()
+    {
+        return Response::Ok($this->rivistaRepo->likes());
     }
 }

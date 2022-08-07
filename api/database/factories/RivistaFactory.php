@@ -21,7 +21,7 @@ class RivistaFactory extends Factory
             'slug' => $this->faker->slug,
             'text' => $this->faker->text,
             'image' => $this->faker->imageUrl(),
-            'views' => $this->faker->randomNumber(),
+            'views' => $this->faker->numberBetween(1, 10),
             'user_id' => $this->faker->numberBetween(1, 10),
             'category_id' => $this->faker->numberBetween(1, 10),
         ];

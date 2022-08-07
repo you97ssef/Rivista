@@ -1,0 +1,79 @@
+<div class="container" *ngIf="rivista">
+  <h1 class="fs-1 text-center mt-5 mb-3">{{ rivista.title }}</h1>
+  <div class="text-center" *ngIf="user && user.id == this.rivista.user_id">
+    <a
+      class="btn btn-primary btn-sm m-1 mb-3"
+      [routerLink]="'/update-rivista/' + rivista.slug"
+    >
+      <i class="fa-solid fa-pen-to-square me-2"></i>Update rivista
+    </a>
+    <button class="btn btn-danger btn-sm m-1 mb-3" (click)="deleteRivista()">
+      <i class="fa-solid fa-trash me-2"></i>Delete rivista
+    </button>
+  </div>
+  <h6 class="text-center my-1">Post date: {{ rivista.updated_at | date }}</h6>
+  <div class="row text-center my-1 mb-3">
+    <div class="col"><i class="far fa-eye"></i> Views: {{ rivista.views }}</div>
+    <div class="col">
+      <i class="far fa-thumbs-up"></i> Likes: {{ rivista.likes_count }}
+    </div>
+  </div>
+  <p>{{ rivista.text }}</p>
+  <div class="text-center" *ngIf="user">
+    <button class="btn btn-primary shadow" *ngIf="!rivista.liked" (click)="like()">
+      <i class="fa-solid fa-thumbs-up me-2"></i> Like
+    </button>
+    <button class="btn btn-outline-primary shadow" *ngIf="rivista.liked" (click)="unlike()">
+      <i class="fa-solid fa-thumbs-down me-2"></i> Unlike
+    </button>
+  </div>
+  <hr />
+  <div class="row justify-content-center">
+    <div class="col-12 text-center fs-2">Comments</div>
+    <div
+      class="col-sm-12 col-md-6 py-3"
+      *ngFor="let comment of rivista.comments"
+    >
+      <div class="shadow card border border-dark border-2 h-100">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <p class="my-1">{{ comment.text }}</p>
+          <hr />
+          <div *ngIf="comment.user">
+            <div *ngIf="user && comment.user.id == user.id">
+              <button
+                class="btn btn-sm btn-danger m-1"
+                (click)="deleteComment(comment.id)"
+              >
+                <i class="fa-solid fa-trash me-2"></i>
+                Delete comment
+              </button>
+            </div>
+            <div>
+              <a [routerLink]="'/profiles/' + comment.user.slug">
+                <i class="me-2 fa-solid fa-user"></i>
+                {{ comment.user.first_name + " " + comment.user.last_name }}
+              </a>
+            </div>
+            <div>
+              <i class="me-2 fa-solid fa-at"></i>
+              {{ comment.user.email }}
+            </div>
+            <small> Commented on: {{ comment.created_at | date }} </small>
+          </div>
+          <div *ngIf="!comment.user">
+            <div><i class="me-2 fa-solid fa-user"></i>{{ comment.name }}</div>
+            <div><i class="me-2 fa-solid fa-at"></i>{{ comment.email }}</div>
+            <small> Commented on: {{ comment.created_at | date }} </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center my-5">
+    <div class="col-12 text-center fs-2">New Comment</div>
+    <app-new-comment
+      [rivista_id]="rivista.id"
+      (commentPosted)="newComment($event)"
+    ></app-new-comment>
+  </div>
+</div>

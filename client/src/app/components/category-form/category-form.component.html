@@ -1,0 +1,27 @@
+<form class="card-body" #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        [(ngModel)]="category.name"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        [(ngModel)]="category.description"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+      Save category
+    </button>
+  </form>
+  

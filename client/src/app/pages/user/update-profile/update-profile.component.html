@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="mt-5 row align-items-center justify-content-center">
+    <div class="col-12 p-3">
+      <div class="card shadow border border-2 border-primary">
+        <form class="card-body" #form="ngForm" (ngSubmit)="edit()">
+          <p class="text-center fs-1 mb-3">Update your Profile</p>
+          <div class="mb-3">
+            <label for="first_name" class="form-label">First name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="first_name"
+              name="first_name"
+              [(ngModel)]="newData.first_name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              name="last_name"
+              [(ngModel)]="newData.last_name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              [(ngModel)]="newData.password"
+              required
+            />
+          </div>
+          <button class="btn btn-primary shadow" [disabled]="!form.valid">
+            <i class="me-2 fas fa-edit"></i>
+            Update profile
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 row align-items-center justify-content-center">
+    <div class="col-12 p-3">
+      <div class="card shadow border border-2 border-primary bg-danger bg-opacity-10">
+        <form class="card-body" #deleteForm="ngForm" (ngSubmit)="delete()">
+          <p class="text-center fs-1 mb-3">Delete your Profile</p>
+          <div class="mb-3">
+            <label for="delete-password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="delete-password"
+              name="delete-password"
+              [(ngModel)]="deleteData.password"
+              required
+            />
+          </div>
+          <button class="btn btn-danger shadow" [disabled]="!deleteForm.valid">
+            <i class="me-2 fas fa-trash"></i>
+            Delete profile
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

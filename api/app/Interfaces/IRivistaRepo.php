@@ -18,4 +18,7 @@ interface IRivistaRepo
     public function save(Rivista $rivista, array $data): bool;
 
     public function delete(Rivista $rivista): bool;
+
+    public function views();
+    public function likes();
 }

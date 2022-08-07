@@ -25,7 +25,8 @@ class CommentController extends Controller
                 'rivista_id' => 'required|integer',
             ]);
 
-            $validatedData['user_id'] = Auth::user()->id;
+            $user = Auth::user();
+            $validatedData['user_id'] = $user->id;
         } else {
             $validatedData = request()->validate([
                 'name' => 'required|string|max:255',
@@ -35,8 +36,11 @@ class CommentController extends Controller
             ]);
         }
 
-        if ($this->commentRepo->save($comment = new Comment(), $validatedData))
+        if ($this->commentRepo->save($comment = new Comment(), $validatedData)) {
+            if (Auth::check()) $comment->user = $user;
+
             return Response::Created($comment);
+        }
 
         return Response::BadRequest('Could not create comment.');
     }

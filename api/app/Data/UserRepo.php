@@ -3,6 +3,7 @@
 namespace App\Data;
 
 use App\Interfaces\IUserRepo;
+use App\Models\Rivista;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -27,7 +28,11 @@ class UserRepo implements IUserRepo
 
     public function getWithSlug(String $slug): ?User
     {
-        return User::where('slug', $slug)->first();
+        return User::with(['rivistas' => function ($query) {
+            $query->select('id', 'user_id', 'title', 'slug', 'created_at', 'updated_at', 'views');
+            $query->selectRaw('SUBSTR(text, 0, 30) as text');
+            $query->withcount('likes');
+        }])->where('slug', $slug)->first();
     }
 
     // public function rivistas($id)
@@ -66,5 +71,18 @@ class UserRepo implements IUserRepo
     public function delete(User $user): bool
     {
         return $user->delete();
+    }
+
+    public function views()
+    {
+        return Rivista::with('user')->selectRaw('user_id, SUM(views) as views')->groupBy('user_id')->orderBy('views', 'desc')->get();
+    }
+
+    public function likes()
+    {
+        return User::selectRaw('users.*, count(likes.id) as likes')
+            ->leftJoin('rivistas', 'rivistas.user_id', '=', 'users.id')
+            ->leftJoin('likes', 'rivistas.id', '=', 'likes.rivista_id')
+            ->groupBy('users.id')->orderBy('likes', 'desc')->get();
     }
 }

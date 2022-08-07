@@ -1,0 +1,8 @@
+<div class="container" *ngIf="categories">
+  <p class="mt-4 fs-1 text-center">New rivista</p>
+  <div
+    class="shadow card border border-dark border-2 col-12 my-3"
+  >
+    <app-rivista-form [categories]="categories" [rivista]="rivista" [submit]="newRivista"></app-rivista-form>
+  </div>
+</div>
