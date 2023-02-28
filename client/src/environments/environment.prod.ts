@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://rivistas.000webhostapp.com/api',
+  apiUrl: 'https://rivista.azurewebsites.net/api',
 };

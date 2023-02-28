@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
         
         $user->save();
 
-        \App\Models\User::factory(100)->create();
-        \App\Models\Category::factory(10)->create();
-        \App\Models\Rivista::factory(1000)->create();
-        \App\Models\Comment::factory(5000)->create();
-        \App\Models\Like::factory(10000)->create();
+        // \App\Models\User::factory(100)->create();
+        // \App\Models\Category::factory(10)->create();
+        // \App\Models\Rivista::factory(1000)->create();
+        // \App\Models\Comment::factory(5000)->create();
+        // \App\Models\Like::factory(10000)->create();
     }
 }

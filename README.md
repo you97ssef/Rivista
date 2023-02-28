@@ -1,7 +1,13 @@
 # Rivista
 
-Rivisita is an italian word for newspaper.
+Rivisita is an italian word for newspaper. It is a simple web application that allows you to create a new articles and view them and you can also edit them and delete them. Other users can also comment on the articles and like them.
 
-## About this project
+-   The backend of the application is developed with Laravel. And its deployed on Azure.
+-   The frontend is developed with Angular. And its deployed on netlify.
+-   (Soon)The mobile application will be developed with flutter.
 
-Open source project, like a blueprint of how to use laravel as a backend the right way as well as Angular. This project is a simple web application that allows you to create a new Rivista and put it online.
+## Links
+
+-   API documentation: [https://rivista.azurewebsites.net/docs/](https://rivista.azurewebsites.net/docs/)
+-   API: [https://rivista.azurewebsites.net/api](https://rivista.azurewebsites.net/api)
+-   Frontend: [https://rivistas.netlify.app/](https://rivistas.netlify.app/)

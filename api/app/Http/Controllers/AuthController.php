@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
+/**
+ * @group Auth management
+ *
+ * APIs for managing authentication
+ */
 class AuthController extends Controller
 {
     private $userRepo;
@@ -22,6 +27,9 @@ class AuthController extends Controller
         $this->userRepo = $userRepo;
     }
 
+    /**
+     * @unauthenticated
+     */
     public function login(Request $request)
     {
         $validatedData = $request->validate([
@@ -41,6 +49,9 @@ class AuthController extends Controller
         return Response::Ok($responseData);
     }
 
+    /**
+     * @unauthenticated
+     */
     public function register(Request $request)
     {
         $validatedData = $request->validate([
@@ -84,6 +95,9 @@ class AuthController extends Controller
         return Response::Ok(null, 'Verification email sent successfully');
     }
 
+    /**
+     * @unauthenticated
+     */
     public function forgotPassword(Request $request)
     {
         $validated = $request->validate(['email' => 'required|email']);
@@ -95,6 +109,9 @@ class AuthController extends Controller
             : Response::BadRequest(__($status));
     }
 
+    /**
+     * @unauthenticated
+     */
     public function resetPassword(Request $request)
     {
         $validated = $request->validate([
