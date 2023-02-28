@@ -7,6 +7,11 @@ use App\Interfaces\ICategoryRepo;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+/**
+ * @group Category management
+ *
+ * APIs for managing Categories
+ */
 class CategoryController extends Controller
 {
     private $categoryRepo;
@@ -16,11 +21,17 @@ class CategoryController extends Controller
         $this->categoryRepo = $categoryRepo;
     }
 
+    /**
+     * @unauthenticated
+     */
     public function all()
     {
         return Response::Ok($this->categoryRepo->all());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function getWithSlug(String $slug)
     {
         // TODO get rivistats with
@@ -68,6 +79,9 @@ class CategoryController extends Controller
         return Response::BadRequest('Could not delete category.');
     }
 
+    /**
+     * @unauthenticated
+     */
     public function get($slug)
     {
         if (!$category = $this->categoryRepo->get($slug)) return Response::BadRequest('Category not found.');
@@ -75,11 +89,17 @@ class CategoryController extends Controller
         return Response::Ok($category);
     }
 
+    /**
+     * @unauthenticated
+     */
     public function views()
     {
         return Response::Ok($this->categoryRepo->views());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function likes()
     {
         return Response::Ok($this->categoryRepo->likes());

@@ -7,8 +7,12 @@ use App\Interfaces\ILikeRepo;
 use App\Interfaces\IRivistaRepo;
 use App\Models\Rivista;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Rivista management
+ *
+ * APIs for managing Rivistas
+ */
 class RivistaController extends Controller
 {
     private $rivistaRepo, $likeRepo;
@@ -19,11 +23,17 @@ class RivistaController extends Controller
         $this->likeRepo = $likeRepo;
     }
 
+    /**
+     * @unauthenticated
+     */
     public function paginate()
     {
         return Response::Ok($this->rivistaRepo->paginate());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function getWithSlug(String $slug)
     {
         // TODO get likes count and comments with
@@ -88,11 +98,17 @@ class RivistaController extends Controller
         return Response::BadRequest('Could not delete this rivista.');
     }
 
+    /**
+     * @unauthenticated
+     */
     public function views()
     {
         return Response::Ok($this->rivistaRepo->views());
     }
 
+    /**
+     * @unauthenticated
+     */
     public function likes()
     {
         return Response::Ok($this->rivistaRepo->likes());
