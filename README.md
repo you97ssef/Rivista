@@ -10,4 +10,4 @@ Rivisita is an italian word for newspaper. It is a simple web application that a
 
 -   API documentation: [https://rivista.azurewebsites.net/docs/](https://rivista.azurewebsites.net/docs/)
 -   API: [https://rivista.azurewebsites.net/api](https://rivista.azurewebsites.net/api)
--   Frontend: [https://rivistas.netlify.app/](https://rivistas.netlify.app/)
+-   Frontend: [https://rivista.bahi.ovh/](https://rivista.bahi.ovh/)
