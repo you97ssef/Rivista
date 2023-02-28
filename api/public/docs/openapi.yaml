@@ -1,34 +1,31 @@
 openapi: 3.0.3
 info:
   title: Rivista
-  description: ''
+  description: ""
   version: 1.0.0
 servers:
-  -
-    url: 'https://api-rivista.herokuapp.com'
+  - url: "https://rivista.azurewebsites.net"
 paths:
   /api/login:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
+        - "Auth management"
       requestBody:
         required: true
         content:
@@ -38,11 +35,11 @@ paths:
               properties:
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
+                  description: "Must be a valid email address."
                   example: imiller@example.org
                 password:
                   type: string
-                  description: ''
+                  description: ""
                   example: id
               required:
                 - email
@@ -50,26 +47,24 @@ paths:
       security: []
   /api/register:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
+        - "Auth management"
       requestBody:
         required: true
         content:
@@ -79,19 +74,19 @@ paths:
               properties:
                 first_name:
                   type: string
-                  description: ''
+                  description: ""
                   example: non
                 last_name:
                   type: string
-                  description: ''
+                  description: ""
                   example: aspernatur
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
+                  description: "Must be a valid email address."
                   example: judson.hammes@example.com
                 password:
                   type: string
-                  description: ''
+                  description: ""
                   example: atque
               required:
                 - first_name
@@ -101,26 +96,24 @@ paths:
       security: []
   /api/forgot-password:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
+        - "Auth management"
       requestBody:
         required: true
         content:
@@ -130,33 +123,31 @@ paths:
               properties:
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
+                  description: "Must be a valid email address."
                   example: heller.rafael@example.org
               required:
                 - email
       security: []
   /api/reset-password:
     put:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
+        - "Auth management"
       requestBody:
         required: true
         content:
@@ -166,16 +157,16 @@ paths:
               properties:
                 token:
                   type: string
-                  description: ''
+                  description: ""
                   example: quod
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
+                  description: "Must be a valid email address."
                   example: luella.ruecker@example.net
                 password:
                   type: string
-                  description: 'Must be at least 8 characters.'
-                  example: ''
+                  description: "Must be at least 8 characters."
+                  example: ""
               required:
                 - token
                 - email
@@ -183,169 +174,152 @@ paths:
       security: []
   /api/logout:
     delete:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
+        - "Auth management"
   /api/resend-email-verification:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
-  '/api/email/verify/{id}/{hash}':
+        - "Auth management"
+  "/api/email/verify/{id}/{hash}":
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Auth management'
+        - "Auth management"
     parameters:
-      -
-        in: path
+      - in: path
         name: id
-        description: 'The ID of the verify.'
+        description: "The ID of the verify."
         example: nisi
         required: true
         schema:
           type: string
-      -
-        in: path
+      - in: path
         name: hash
-        description: ''
+        description: ""
         example: qui
         required: true
         schema:
           type: string
-  '/api/admin/categories/{slug}':
+  "/api/admin/categories/{slug}":
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       security: []
     parameters:
-      -
-        in: path
+      - in: path
         name: slug
-        description: 'The slug of the category.'
+        description: "The slug of the category."
         example: 1
         required: true
         schema:
           type: integer
   /api/categories:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       requestBody:
         required: true
         content:
@@ -355,65 +329,60 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
+                  description: "Must not be greater than 255 characters."
                   example: rutcpauhtfygzimfskuofligrjweubooumutdyavntmkrlygcjkwgpznzeotqjzuvbqbrritjwrvqckuygwjxakkodbqlrnlkkpvujenekrjsydedtgrjexkjufsxxcsrpwofytdvyl
                 description:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
+                  description: "Must not be greater than 255 characters."
                   example: dyeusgnykczrhnopjykmswwqowdot
               required:
                 - name
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       security: []
-  '/api/categories/{slug}':
+  "/api/categories/{slug}":
     put:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       requestBody:
         required: true
         content:
@@ -423,273 +392,247 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
+                  description: "Must not be greater than 255 characters."
                   example: pgqhjbpehwcweflmlowijussyznglugriqvxxlciiqafuwrebmcbnzufpjxsutqqwmwfwdkmnxbroivfqlsswuobqmpdl
                 description:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
+                  description: "Must not be greater than 255 characters."
                   example: hyn
               required:
                 - name
     delete:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       security: []
     parameters:
-      -
-        in: path
+      - in: path
         name: slug
-        description: 'The slug of the category.'
+        description: "The slug of the category."
         example: 1
         required: true
         schema:
           type: integer
   /api/views/categories:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       security: []
   /api/likes/categories:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Category management'
+        - "Category management"
       security: []
   /api/connected-comments:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Comment management'
-  '/api/comments/{id}':
+        - "Comment management"
+  "/api/comments/{id}":
     delete:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Comment management'
+        - "Comment management"
     parameters:
-      -
-        in: path
+      - in: path
         name: id
-        description: 'The ID of the comment.'
+        description: "The ID of the comment."
         example: 1
         required: true
         schema:
           type: integer
   /api/guest-comments:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Comment management'
+        - "Comment management"
   /api/test:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
         - Endpoints
   /api/likes:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Like management'
+        - "Like management"
       requestBody:
         required: true
         content:
@@ -699,38 +642,35 @@ paths:
               properties:
                 rivista_id:
                   type: integer
-                  description: ''
+                  description: ""
                   example: 11
               required:
                 - rivista_id
     delete:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Like management'
+        - "Like management"
       requestBody:
         required: true
         content:
@@ -740,39 +680,36 @@ paths:
               properties:
                 rivista_id:
                   type: integer
-                  description: ''
+                  description: ""
                   example: 6
               required:
                 - rivista_id
   /api/rivistas:
     post:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
       requestBody:
         required: true
         content:
@@ -782,71 +719,66 @@ paths:
               properties:
                 title:
                   type: string
-                  description: ''
+                  description: ""
                   example: facere
                 text:
                   type: string
-                  description: ''
+                  description: ""
                   example: adipisci
                 category_id:
                   type: integer
-                  description: ''
+                  description: ""
                   example: 2
               required:
                 - title
                 - text
                 - category_id
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
       security: []
-  '/api/rivistas/{id}':
+  "/api/rivistas/{id}":
     put:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
       requestBody:
         required: false
         content:
@@ -856,192 +788,175 @@ paths:
               properties:
                 title:
                   type: string
-                  description: ''
+                  description: ""
                   example: aut
                 slug:
                   type: string
-                  description: ''
+                  description: ""
                   example: sit
                 text:
                   type: string
-                  description: ''
+                  description: ""
                   example: tempore
                 category_id:
                   type: integer
-                  description: ''
+                  description: ""
                   example: 4
     delete:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
     parameters:
-      -
-        in: path
+      - in: path
         name: id
-        description: 'The ID of the rivista.'
+        description: "The ID of the rivista."
         example: 1
         required: true
         schema:
           type: integer
-  '/api/rivistas/{slug}':
+  "/api/rivistas/{slug}":
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
       security: []
     parameters:
-      -
-        in: path
+      - in: path
         name: slug
-        description: 'The slug of the rivista.'
+        description: "The slug of the rivista."
         example: 1
         required: true
         schema:
           type: integer
   /api/views/rivistas:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
       security: []
   /api/likes/rivistas:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'Rivista management'
+        - "Rivista management"
       security: []
   /api/user:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
     put:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       requestBody:
         required: true
         content:
@@ -1051,46 +966,43 @@ paths:
               properties:
                 first_name:
                   type: string
-                  description: ''
+                  description: ""
                   example: tempora
                 last_name:
                   type: string
-                  description: ''
+                  description: ""
                   example: optio
                 password:
                   type: string
-                  description: ''
+                  description: ""
                   example: sed
               required:
                 - password
     delete:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       requestBody:
         required: true
         content:
@@ -1100,39 +1012,36 @@ paths:
               properties:
                 password:
                   type: string
-                  description: ''
+                  description: ""
                   example: sunt
               required:
                 - password
   /api/user-role:
     put:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Authorization
-          description: ''
-          example: 'Bearer {YOUR_AUTH_KEY}'
+          description: ""
+          example: "Bearer {YOUR_AUTH_KEY}"
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       requestBody:
         required: true
         content:
@@ -1142,143 +1051,126 @@ paths:
               properties:
                 role:
                   type: string
-                  description: ''
+                  description: ""
                   example: null
                 user_id:
                   type: integer
-                  description: ''
+                  description: ""
                   example: 15
               required:
                 - user_id
   /api/users:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       security: []
-  '/api/users/{slug}':
+  "/api/users/{slug}":
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       security: []
     parameters:
-      -
-        in: path
+      - in: path
         name: slug
-        description: 'The slug of the user.'
+        description: "The slug of the user."
         example: 1
         required: true
         schema:
           type: integer
   /api/views/users:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       security: []
   /api/likes/users:
     get:
-      summary: ''
-      description: ''
+      summary: ""
+      description: ""
       parameters:
-        -
-          in: header
+        - in: header
           name: Content-Type
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-        -
-          in: header
+        - in: header
           name: Accept
-          description: ''
+          description: ""
           example: application/json
           schema:
             type: string
-      responses: {  }
+      responses: {}
       tags:
-        - 'User management'
+        - "User management"
       security: []
 tags:
-  -
-    name: 'Auth management'
+  - name: "Auth management"
     description: "\nAPIs for managing authentication"
-  -
-    name: 'Category management'
+  - name: "Category management"
     description: "\nAPIs for managing Categories"
-  -
-    name: 'Comment management'
+  - name: "Comment management"
     description: "\nAPIs for managing Comments"
-  -
-    name: Endpoints
-    description: ''
-  -
-    name: 'Like management'
+  - name: Endpoints
+    description: ""
+  - name: "Like management"
     description: "\nAPIs for managing Likes"
-  -
-    name: 'Rivista management'
+  - name: "Rivista management"
     description: "\nAPIs for managing Rivistas"
-  -
-    name: 'User management'
+  - name: "User management"
     description: "\nAPIs for managing Users"
 components:
   securitySchemes:
     default:
       type: http
       scheme: bearer
-      description: ''
+      description: ""
 security:
-  -
-    default: []
+  - default: []

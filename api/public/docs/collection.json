@@ -5,14 +5,14 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "https:\/\/api-rivista.herokuapp.com"
+            "value": "https://rivista.azurewebsites.net"
         }
     ],
     "info": {
         "name": "Rivista",
         "_postman_id": "01ba77ea-a15d-49fa-959e-81bf6b190da3",
         "description": "",
-        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
         {
@@ -20,23 +20,23 @@
             "description": "\nAPIs for managing authentication",
             "item": [
                 {
-                    "name": "api\/login",
+                    "name": "api/login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/login",
+                            "path": "api/login",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/login"
+                            "raw": "{{baseUrl}}/api/login"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -51,23 +51,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/register",
+                    "name": "api/register",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/register",
+                            "path": "api/register",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/register"
+                            "raw": "{{baseUrl}}/api/register"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -82,23 +82,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/forgot-password",
+                    "name": "api/forgot-password",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/forgot-password",
+                            "path": "api/forgot-password",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/forgot-password"
+                            "raw": "{{baseUrl}}/api/forgot-password"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -113,23 +113,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/reset-password",
+                    "name": "api/reset-password",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/reset-password",
+                            "path": "api/reset-password",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/reset-password"
+                            "raw": "{{baseUrl}}/api/reset-password"
                         },
                         "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -144,23 +144,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/logout",
+                    "name": "api/logout",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/logout",
+                            "path": "api/logout",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/logout"
+                            "raw": "{{baseUrl}}/api/logout"
                         },
                         "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -169,23 +169,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/resend-email-verification",
+                    "name": "api/resend-email-verification",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/resend-email-verification",
+                            "path": "api/resend-email-verification",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/resend-email-verification"
+                            "raw": "{{baseUrl}}/api/resend-email-verification"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -194,13 +194,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/email\/verify\/{id}\/{hash}",
+                    "name": "api/email/verify/{id}/{hash}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/email\/verify\/:id\/:hash",
+                            "path": "api/email/verify/:id/:hash",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/email\/verify\/:id\/:hash",
+                            "raw": "{{baseUrl}}/api/email/verify/:id/:hash",
                             "variable": [
                                 {
                                     "id": "id",
@@ -220,11 +220,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -239,13 +239,13 @@
             "description": "\nAPIs for managing Categories",
             "item": [
                 {
-                    "name": "api\/admin\/categories\/{slug}",
+                    "name": "api/admin/categories/{slug}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/admin\/categories\/:slug",
+                            "path": "api/admin/categories/:slug",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/admin\/categories\/:slug",
+                            "raw": "{{baseUrl}}/api/admin/categories/:slug",
                             "variable": [
                                 {
                                     "id": "slug",
@@ -259,11 +259,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -275,23 +275,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/categories",
+                    "name": "api/categories",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/categories",
+                            "path": "api/categories",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/categories"
+                            "raw": "{{baseUrl}}/api/categories"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -303,13 +303,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/categories\/{slug}",
+                    "name": "api/categories/{slug}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/categories\/:slug",
+                            "path": "api/categories/:slug",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/categories\/:slug",
+                            "raw": "{{baseUrl}}/api/categories/:slug",
                             "variable": [
                                 {
                                     "id": "slug",
@@ -323,11 +323,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -339,13 +339,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/categories\/{slug}",
+                    "name": "api/categories/{slug}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/categories\/:slug",
+                            "path": "api/categories/:slug",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/categories\/:slug",
+                            "raw": "{{baseUrl}}/api/categories/:slug",
                             "variable": [
                                 {
                                     "id": "slug",
@@ -359,11 +359,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -372,23 +372,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/categories",
+                    "name": "api/categories",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/categories",
+                            "path": "api/categories",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/categories"
+                            "raw": "{{baseUrl}}/api/categories"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -400,13 +400,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/categories\/{slug}",
+                    "name": "api/categories/{slug}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/categories\/:slug",
+                            "path": "api/categories/:slug",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/categories\/:slug",
+                            "raw": "{{baseUrl}}/api/categories/:slug",
                             "variable": [
                                 {
                                     "id": "slug",
@@ -420,11 +420,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -436,23 +436,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/views\/categories",
+                    "name": "api/views/categories",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/views\/categories",
+                            "path": "api/views/categories",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/views\/categories"
+                            "raw": "{{baseUrl}}/api/views/categories"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -464,23 +464,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/likes\/categories",
+                    "name": "api/likes/categories",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/likes\/categories",
+                            "path": "api/likes/categories",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/likes\/categories"
+                            "raw": "{{baseUrl}}/api/likes/categories"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -498,23 +498,23 @@
             "description": "\nAPIs for managing Comments",
             "item": [
                 {
-                    "name": "api\/connected-comments",
+                    "name": "api/connected-comments",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/connected-comments",
+                            "path": "api/connected-comments",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/connected-comments"
+                            "raw": "{{baseUrl}}/api/connected-comments"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -523,13 +523,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/comments\/{id}",
+                    "name": "api/comments/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/comments\/:id",
+                            "path": "api/comments/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/comments\/:id",
+                            "raw": "{{baseUrl}}/api/comments/:id",
                             "variable": [
                                 {
                                     "id": "id",
@@ -543,11 +543,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -556,23 +556,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/guest-comments",
+                    "name": "api/guest-comments",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/guest-comments",
+                            "path": "api/guest-comments",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/guest-comments"
+                            "raw": "{{baseUrl}}/api/guest-comments"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -587,23 +587,23 @@
             "description": "",
             "item": [
                 {
-                    "name": "api\/test",
+                    "name": "api/test",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/test",
+                            "path": "api/test",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/test"
+                            "raw": "{{baseUrl}}/api/test"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -618,23 +618,23 @@
             "description": "\nAPIs for managing Likes",
             "item": [
                 {
-                    "name": "api\/likes",
+                    "name": "api/likes",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/likes",
+                            "path": "api/likes",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/likes"
+                            "raw": "{{baseUrl}}/api/likes"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -646,23 +646,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/likes",
+                    "name": "api/likes",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/likes",
+                            "path": "api/likes",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/likes"
+                            "raw": "{{baseUrl}}/api/likes"
                         },
                         "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -680,23 +680,23 @@
             "description": "\nAPIs for managing Rivistas",
             "item": [
                 {
-                    "name": "api\/rivistas",
+                    "name": "api/rivistas",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/rivistas",
+                            "path": "api/rivistas",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/rivistas"
+                            "raw": "{{baseUrl}}/api/rivistas"
                         },
                         "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -708,13 +708,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/rivistas\/{id}",
+                    "name": "api/rivistas/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/rivistas\/:id",
+                            "path": "api/rivistas/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/rivistas\/:id",
+                            "raw": "{{baseUrl}}/api/rivistas/:id",
                             "variable": [
                                 {
                                     "id": "id",
@@ -728,11 +728,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -744,13 +744,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/rivistas\/{id}",
+                    "name": "api/rivistas/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/rivistas\/:id",
+                            "path": "api/rivistas/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/rivistas\/:id",
+                            "raw": "{{baseUrl}}/api/rivistas/:id",
                             "variable": [
                                 {
                                     "id": "id",
@@ -764,11 +764,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -777,23 +777,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/rivistas",
+                    "name": "api/rivistas",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/rivistas",
+                            "path": "api/rivistas",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/rivistas"
+                            "raw": "{{baseUrl}}/api/rivistas"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -805,13 +805,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/rivistas\/{slug}",
+                    "name": "api/rivistas/{slug}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/rivistas\/:slug",
+                            "path": "api/rivistas/:slug",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/rivistas\/:slug",
+                            "raw": "{{baseUrl}}/api/rivistas/:slug",
                             "variable": [
                                 {
                                     "id": "slug",
@@ -825,11 +825,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -841,23 +841,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/views\/rivistas",
+                    "name": "api/views/rivistas",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/views\/rivistas",
+                            "path": "api/views/rivistas",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/views\/rivistas"
+                            "raw": "{{baseUrl}}/api/views/rivistas"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -869,23 +869,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/likes\/rivistas",
+                    "name": "api/likes/rivistas",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/likes\/rivistas",
+                            "path": "api/likes/rivistas",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/likes\/rivistas"
+                            "raw": "{{baseUrl}}/api/likes/rivistas"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -903,23 +903,23 @@
             "description": "\nAPIs for managing Users",
             "item": [
                 {
-                    "name": "api\/user",
+                    "name": "api/user",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user",
+                            "path": "api/user",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
+                            "raw": "{{baseUrl}}/api/user"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -928,23 +928,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/user",
+                    "name": "api/user",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user",
+                            "path": "api/user",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
+                            "raw": "{{baseUrl}}/api/user"
                         },
                         "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -956,23 +956,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/user",
+                    "name": "api/user",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user",
+                            "path": "api/user",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
+                            "raw": "{{baseUrl}}/api/user"
                         },
                         "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -984,23 +984,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/user-role",
+                    "name": "api/user-role",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user-role",
+                            "path": "api/user-role",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user-role"
+                            "raw": "{{baseUrl}}/api/user-role"
                         },
                         "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": {
@@ -1012,23 +1012,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/users",
+                    "name": "api/users",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/users",
+                            "path": "api/users",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/users"
+                            "raw": "{{baseUrl}}/api/users"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -1040,13 +1040,13 @@
                     "response": []
                 },
                 {
-                    "name": "api\/users\/{slug}",
+                    "name": "api/users/{slug}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/users\/:slug",
+                            "path": "api/users/:slug",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:slug",
+                            "raw": "{{baseUrl}}/api/users/:slug",
                             "variable": [
                                 {
                                     "id": "slug",
@@ -1060,11 +1060,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -1076,23 +1076,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/views\/users",
+                    "name": "api/views/users",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/views\/users",
+                            "path": "api/views/users",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/views\/users"
+                            "raw": "{{baseUrl}}/api/views/users"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
@@ -1104,23 +1104,23 @@
                     "response": []
                 },
                 {
-                    "name": "api\/likes\/users",
+                    "name": "api/likes/users",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/likes\/users",
+                            "path": "api/likes/users",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/likes\/users"
+                            "raw": "{{baseUrl}}/api/likes/users"
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "application/json"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "application/json"
                             }
                         ],
                         "body": null,
