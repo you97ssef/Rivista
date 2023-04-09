@@ -18,7 +18,9 @@
       <i class="far fa-thumbs-up"></i> Likes: {{ rivista.likes_count }}
     </div>
   </div>
-  <p>{{ rivista.text }}</p>
+  <div class="my-3 card border border-dark border-2 h-100 bg-light">
+    <div class="card-body" [innerHtml]="rivista.text | htmlSanitizer"></div>
+  </div>
   <div class="text-center" *ngIf="user">
     <button class="btn btn-primary shadow" *ngIf="!rivista.liked" (click)="like()">
       <i class="fa-solid fa-thumbs-up me-2"></i> Like

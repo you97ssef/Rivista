@@ -13,4 +13,9 @@ export class RivistaCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  format(content: string) {
+    const tmp = document.createElement('DIV');
+    tmp.innerHTML = content;
+    return tmp.textContent || tmp.innerText || '';
+  }
 }
