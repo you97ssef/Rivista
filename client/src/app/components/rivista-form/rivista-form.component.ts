@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-rivista-form',
@@ -6,9 +7,23 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rivista-form.component.scss'],
 })
 export class RivistaFormComponent implements OnInit {
-  @Input() rivista: any;
+  @Input() rivista: any = {
+    text: ''
+  };
   @Input() categories: any;
   @Input() submit: () => void = (): void => {};
+
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    translate: 'no',
+    sanitize: false,
+    toolbarHiddenButtons: [
+      ['superscript', 'subscript'],
+      ['fontSize', 'fontName'],
+      ['textColor', 'backgroundColor', 'insertImage', 'insertVideo']
+    ],
+  };
 
   constructor() {}
 

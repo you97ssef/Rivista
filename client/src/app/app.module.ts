@@ -40,6 +40,8 @@ import { NewCategoryComponent } from './pages/category/new-category/new-category
 import { CategoryFormComponent } from './components/category-form/category-form.component';
 import { UpdateCategoryComponent } from './pages/category/update-category/update-category.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HtmlSanitizerPipe } from './pipes/html-sanitizer.pipe';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NewCategoryComponent,
     CategoryFormComponent,
     UpdateCategoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HtmlSanitizerPipe
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ),
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AngularEditorModule
   ],
   providers: [
     {
