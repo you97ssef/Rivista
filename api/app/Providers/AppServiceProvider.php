@@ -13,6 +13,8 @@ use App\Interfaces\IRivistaRepo;
 use App\Data\RivistaRepo;
 use App\Interfaces\IUserRepo;
 use App\Data\UserRepo;
+use App\Interfaces\IMediaService;
+use App\Services\MediaService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ILikeRepo::class, LikeRepo::class);
         $this->app->bind(IRivistaRepo::class, RivistaRepo::class);
         $this->app->bind(IUserRepo::class, UserRepo::class);
+
+        $this->app->bind(IMediaService::class, MediaService::class);
     }
 
     /**
