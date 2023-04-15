@@ -33,5 +33,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Rivista::factory(1000)->create();
         // \App\Models\Comment::factory(5000)->create();
         // \App\Models\Like::factory(10000)->create();
+        // \App\Models\Media::factory(500)->create();
     }
 }
