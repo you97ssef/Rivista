@@ -1,5 +1,16 @@
 <form class="card-body" #form="ngForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input
+      type="file"
+      class="form-control"
+      id="image"
+      name="image"
+      (change)="selectImage($event)"
+      required
+    />
+  </div>
+  <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input
       type="text"

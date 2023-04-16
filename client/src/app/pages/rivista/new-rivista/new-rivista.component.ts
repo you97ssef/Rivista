@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import { MediaService } from 'src/app/services/media.service';
 import { RivistaService } from 'src/app/services/rivista.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class NewRivistaComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private rivistaService: RivistaService,
+    private mediaService: MediaService,
     private router: Router
   ) {}
 
@@ -23,9 +25,16 @@ export class NewRivistaComponent implements OnInit {
       this.categories = response.data;
     });
   }
+
   newRivista = (): void => {
     this.rivistaService.new(this.rivista).subscribe((response: any) => {
-      this.router.navigate(['/rivistas', response.data.slug]);
+      if (this.rivista.image)
+        this.mediaService.uploadImage(response.data.id, this.rivista.image).subscribe({
+          complete: () => { 
+            this.router.navigate(['/rivistas', response.data.slug]);
+          }
+        })
+      else this.router.navigate(['/rivistas', response.data.slug]);
     });
   }
 }

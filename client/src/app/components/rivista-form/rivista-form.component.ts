@@ -32,4 +32,8 @@ export class RivistaFormComponent implements OnInit {
   onSubmit() {
     this.submit();
   }
+
+  selectImage(event: any) {
+    this.rivista.image = event.target.files[0];
+  }
 }
