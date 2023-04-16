@@ -96,7 +96,7 @@ class MediaController extends Controller
                     $this->userRepo->save($user, ['image' => null]);
                     $this->repo->delete($media);
 
-                    return Response::Ok(null, 'Image deleted successfully');
+                    return Response::Ok($user, 'Image deleted successfully');
                 }
         }
 

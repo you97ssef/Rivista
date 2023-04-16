@@ -48,9 +48,9 @@
   <div class="mt-5 row align-items-center justify-content-center">
     <div class="col-12 p-3">
       <div class="card shadow border border-2 border-primary">
-        <form class="card-body" #imageForm="ngForm" (ngSubmit)="changeImage()">
+        <div class="card-body">
           <p class="text-center fs-1 mb-3">Update your Profile Picture</p>
-          <div class="mb-3">
+          <div class="mb-3" *ngIf="!imageIsLink()">
             <label for="picture" class="form-label">Profile picture</label>
             <input
               type="file"
@@ -61,11 +61,18 @@
               required
             />
           </div>
-          <button class="btn btn-primary shadow" [disabled]="!image">
+          <div class="text-center my-3" *ngIf="imageIsLink()">
+            <img class="profile" [src]="image" alt="" width="250px" />
+          </div>
+          <button type="button" *ngIf="!imageIsLink()" (click)="changeImage()" class="btn btn-primary mb-2 me-2 shadow" [disabled]="!image">
             <i class="me-2 fas fa-edit"></i>
             Update profile picture
           </button>
-        </form>
+          <button type="button" *ngIf="imageIsLink()" (click)="deleteImage()" class="btn btn-danger mb-2 me-2 shadow" [disabled]="!image">
+            <i class="me-2 fas fa-trash"></i>
+            Delete profile picture
+          </button>
+        </div>
       </div>
     </div>
   </div>

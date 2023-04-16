@@ -26,4 +26,8 @@ export class MediaService {
     form.append('image', image);
     return this.http.post(`${this.api}/media/profile`, form);
   }
+
+  deleteProfileImage() {
+    return this.http.delete(`${this.api}/media/profile`, {});
+  }
 }

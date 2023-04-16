@@ -21,7 +21,9 @@ export class UpdateProfileComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.image = this.auth.getUser().image
+  }
 
   edit() {
     this.userService.update(this.newData).subscribe((response: any) => {
@@ -43,7 +45,17 @@ export class UpdateProfileComponent implements OnInit {
 
   changeImage() {
     this.mediaService.uploadProfileImage(this.image).subscribe((response: any) => {
-      console.log(response);
+      this.auth.setUser(response.data);
+      this.router.navigate(['/profiles', response.data.slug]);
+    });
+  }
+
+  imageIsLink() {
+    return typeof this.image == 'string';
+  }
+
+  deleteImage() {
+    this.mediaService.deleteProfileImage().subscribe((response: any) => {
       this.auth.setUser(response.data);
       this.router.navigate(['/profiles', response.data.slug]);
     });
