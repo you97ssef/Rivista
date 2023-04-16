@@ -16,4 +16,8 @@ export class MediaService {
     form.append('rivista', id);
     return this.http.post(`${this.api}/media/rivistas`, form);
   }
+
+  deleteImage(id: string) {
+    return this.http.delete(`${this.api}/media/rivistas/${id}`, {});
+  }
 }
