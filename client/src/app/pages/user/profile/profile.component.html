@@ -1,6 +1,6 @@
 <div class="container" *ngIf="user">
   <div class="text-center mt-5">
-    <img src="assets/images/profile.svg" alt="" width="250px" />
+    <img class="profile" [src]="user.image ? user.image : 'assets/images/profile.svg'" alt="" width="250px" />
   </div>
   <h1 class="mt-4 fs-1 text-center">
     {{ user.first_name }} {{ user.last_name }}
