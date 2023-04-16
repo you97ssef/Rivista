@@ -29,7 +29,7 @@ class UserRepo implements IUserRepo
     public function getWithSlug(String $slug): ?User
     {
         return User::with(['rivistas' => function ($query) {
-            $query->select('id', 'user_id', 'title', 'slug', 'created_at', 'updated_at', 'views');
+            $query->select('id', 'user_id', 'image', 'title', 'slug', 'created_at', 'updated_at', 'views');
             $query->selectRaw('SUBSTR(text, 0, 30) as text');
             $query->withcount('likes');
         }])->where('slug', $slug)->first();

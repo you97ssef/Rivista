@@ -1,5 +1,6 @@
 <div class="container" *ngIf="rivista">
   <h1 class="fs-1 text-center mt-5 mb-3">{{ rivista.title }}</h1>
+  <img class="rivista-image my-3 shadow" [src]="rivista.image" alt="rivista-image" *ngIf="rivista.image">
   <div class="text-center" *ngIf="user && user.id == this.rivista.user_id">
     <a
       class="btn btn-primary btn-sm m-1 mb-3"
