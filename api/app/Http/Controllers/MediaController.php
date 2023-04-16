@@ -56,7 +56,7 @@ class MediaController extends Controller
 
         if ($rivista->user_id != $request->user()->id) return Response::Unauthorized('You are not authorized to upload media for this rivista.');
 
-        if ($media = $this->service->upload($validatedData['file'], $validatedData['type'])) {
+        if ($media = $this->service->upload($validatedData['image'], MediaType::IMAGE)) {
             $media['type'] = MediaType::IMAGE;
             
             if ($this->repo->save(new Media(), $media)) 
