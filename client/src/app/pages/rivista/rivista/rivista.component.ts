@@ -56,14 +56,14 @@ export class RivistaComponent implements OnInit {
 
   like() {
     this.likeService.like({ rivista_id: this.rivista.id }).subscribe(() => {
-      this.rivista.likes += 1;
+      this.rivista.likes_count += 1;
       this.rivista.liked = true;
     });
   }
 
   unlike() {
     this.likeService.unlike({ rivista_id: this.rivista.id }).subscribe(() => {
-      this.rivista.likes -= 1;
+      this.rivista.likes_count -= 1;
       this.rivista.liked = false;
     });
   }
