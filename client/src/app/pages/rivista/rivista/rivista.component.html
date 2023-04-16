@@ -1,6 +1,8 @@
 <div class="container" *ngIf="rivista">
   <h1 class="fs-1 text-center mt-5 mb-3">{{ rivista.title }}</h1>
-  <img class="rivista-image my-3 shadow" [src]="rivista.image" alt="rivista-image" *ngIf="rivista.image">
+  <h6 class="fw-normal text-center mb-1">
+    Post date: {{ rivista.updated_at | date }}
+  </h6>
   <div class="text-center" *ngIf="user && user.id == this.rivista.user_id">
     <a
       class="btn btn-primary btn-sm m-1 mb-3"
@@ -12,21 +14,34 @@
       <i class="fa-solid fa-trash me-2"></i>Delete rivista
     </button>
   </div>
-  <h6 class="text-center my-1">Post date: {{ rivista.updated_at | date }}</h6>
-  <div class="row text-center my-1 mb-3">
+  <div class="row text-center my-1">
     <div class="col"><i class="far fa-eye"></i> Views: {{ rivista.views }}</div>
     <div class="col">
       <i class="far fa-thumbs-up"></i> Likes: {{ rivista.likes_count }}
     </div>
   </div>
+  <img
+    class="rivista-image my-3 shadow"
+    [src]="rivista.image"
+    alt="rivista-image"
+    *ngIf="rivista.image"
+  />
   <div class="my-3 card border border-dark border-2 h-100 bg-light">
     <div class="card-body" [innerHtml]="rivista.text | htmlSanitizer"></div>
   </div>
   <div class="text-center" *ngIf="user">
-    <button class="btn btn-primary shadow" *ngIf="!rivista.liked" (click)="like()">
+    <button
+      class="btn btn-primary shadow"
+      *ngIf="!rivista.liked"
+      (click)="like()"
+    >
       <i class="fa-solid fa-thumbs-up me-2"></i> Like
     </button>
-    <button class="btn btn-outline-primary shadow" *ngIf="rivista.liked" (click)="unlike()">
+    <button
+      class="btn btn-outline-primary shadow"
+      *ngIf="rivista.liked"
+      (click)="unlike()"
+    >
       <i class="fa-solid fa-thumbs-down me-2"></i> Unlike
     </button>
   </div>
