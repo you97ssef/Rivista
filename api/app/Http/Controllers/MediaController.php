@@ -75,12 +75,12 @@ class MediaController extends Controller
 
         $user = $request->user();
 
-        if ($media = $this->service->upload($validatedData['file'], $validatedData['type'])) {
+        if ($media = $this->service->upload($validatedData['image'], MediaType::IMAGE)) {
             $media['type'] = MediaType::IMAGE;
             
             if ($this->repo->save(new Media(), $media)) 
                 if ($this->userRepo->save($user, ['image' => $media['link']])) 
-                    return Response::Ok(null, 'Media uploaded successfully');
+                    return Response::Ok($user, 'Media uploaded successfully');
         }
         
         return Response::BadRequest('Could not upload media');

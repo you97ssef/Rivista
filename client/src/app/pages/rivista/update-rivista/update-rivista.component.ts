@@ -40,7 +40,7 @@ export class UpdateRivistaComponent implements OnInit {
   updateRivista = (): void => {
     this.rivistaService.update(this.rivista).subscribe((response: any) => {
       if (this.rivista.image && !this.isImageLink())
-        this.mediaService.uploadImage(response.data.id, this.rivista.image).subscribe({
+        this.mediaService.uploadRivistaImage(response.data.id, this.rivista.image).subscribe({
           complete: () => { 
             this.router.navigateByUrl('/rivistas/' + response.data.slug);
           }
@@ -50,7 +50,7 @@ export class UpdateRivistaComponent implements OnInit {
   };
 
   deleteImage() {
-    this.mediaService.deleteImage(this.rivista.id).subscribe(() => {
+    this.mediaService.deleteRivistaImage(this.rivista.id).subscribe(() => {
       this.rivista.image = null;
     });
   }

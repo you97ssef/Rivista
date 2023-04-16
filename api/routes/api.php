@@ -54,6 +54,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // MEDIA ROUTES
     Route::post('/media/rivistas', [MediaController::class, 'uploadRivista']);
+    Route::post('/media/profile', [MediaController::class, 'uploadProfile']);
     Route::delete('/media/rivistas/{id}', [MediaController::class, 'deleteRivista']);
     
     Route::middleware('admin')->group(function () {

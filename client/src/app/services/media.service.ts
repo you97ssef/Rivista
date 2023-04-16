@@ -10,14 +10,20 @@ export class MediaService {
 
   constructor(private http: HttpClient) {}
 
-  uploadImage(id: string, image: any) {
+  uploadRivistaImage(id: string, image: any) {
     const form = new FormData();
     form.append('image', image);
     form.append('rivista', id);
     return this.http.post(`${this.api}/media/rivistas`, form);
   }
 
-  deleteImage(id: string) {
+  deleteRivistaImage(id: string) {
     return this.http.delete(`${this.api}/media/rivistas/${id}`, {});
+  }
+
+  uploadProfileImage(image: any) {
+    const form = new FormData();
+    form.append('image', image);
+    return this.http.post(`${this.api}/media/profile`, form);
   }
 }

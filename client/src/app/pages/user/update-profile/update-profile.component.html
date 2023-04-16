@@ -47,6 +47,30 @@
   </div>
   <div class="mt-5 row align-items-center justify-content-center">
     <div class="col-12 p-3">
+      <div class="card shadow border border-2 border-primary">
+        <form class="card-body" #imageForm="ngForm" (ngSubmit)="changeImage()">
+          <p class="text-center fs-1 mb-3">Update your Profile Picture</p>
+          <div class="mb-3">
+            <label for="picture" class="form-label">Profile picture</label>
+            <input
+              type="file"
+              class="form-control"
+              id="picture"
+              name="picture"
+              (change)="selectImage($event)"
+              required
+            />
+          </div>
+          <button class="btn btn-primary shadow" [disabled]="!image">
+            <i class="me-2 fas fa-edit"></i>
+            Update profile picture
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 row align-items-center justify-content-center">
+    <div class="col-12 p-3">
       <div class="card shadow border border-2 border-primary bg-danger bg-opacity-10">
         <form class="card-body" #deleteForm="ngForm" (ngSubmit)="delete()">
           <p class="text-center fs-1 mb-3">Delete your Profile</p>

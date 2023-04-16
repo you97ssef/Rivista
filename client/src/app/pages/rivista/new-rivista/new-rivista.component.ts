@@ -29,7 +29,7 @@ export class NewRivistaComponent implements OnInit {
   newRivista = (): void => {
     this.rivistaService.new(this.rivista).subscribe((response: any) => {
       if (this.rivista.image)
-        this.mediaService.uploadImage(response.data.id, this.rivista.image).subscribe({
+        this.mediaService.uploadRivistaImage(response.data.id, this.rivista.image).subscribe({
           complete: () => { 
             this.router.navigate(['/rivistas', response.data.slug]);
           }
