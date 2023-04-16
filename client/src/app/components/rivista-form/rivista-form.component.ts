@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-rivista-form',
   templateUrl: './rivista-form.component.html',
   styleUrls: ['./rivista-form.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RivistaFormComponent implements OnInit {
   @Input() rivista: any = {
@@ -22,7 +23,7 @@ export class RivistaFormComponent implements OnInit {
     toolbarHiddenButtons: [
       ['superscript', 'subscript'],
       ['fontSize', 'fontName'],
-      ['textColor', 'backgroundColor', 'insertImage', 'insertVideo']
+      ['textColor', 'backgroundColor', 'insertVideo']
     ],
   };
 

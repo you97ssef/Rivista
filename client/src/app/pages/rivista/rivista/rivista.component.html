@@ -27,7 +27,7 @@
     *ngIf="rivista.image"
   />
   <div class="my-3 card border border-dark border-2 h-100 bg-light">
-    <div class="card-body" [innerHtml]="rivista.text | htmlSanitizer"></div>
+    <div class="card-body content" [innerHtml]="rivista.text | htmlSanitizer"></div>
   </div>
   <div class="text-center" *ngIf="user">
     <button
