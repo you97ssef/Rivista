@@ -11,7 +11,7 @@ class MediaService implements IMediaService {
         $response = Http::withHeaders([
                 'Authorization' => 'CLIENT-ID ' . env('IMGUR_CLIENT_ID'),
             ])->post('https://api.imgur.com/3/image', [
-                $type => $file
+                $type => base64_encode(file_get_contents($file))
             ])->json();
 
 
