@@ -16,6 +16,8 @@ export class RivistaCardComponent implements OnInit {
   format(content: string) {
     const tmp = document.createElement('DIV');
     tmp.innerHTML = content;
-    return tmp.textContent || tmp.innerText || '';
+    const text = tmp.textContent || tmp.innerText || '';
+
+    return text.slice(0, 25);
   }
 }
