@@ -1,10 +1,17 @@
 <div class="container" *ngIf="categories">
   <p class="mt-4 fs-1 text-center">Update rivista</p>
   <div class="shadow card border border-dark border-2 col-12 my-3">
+    <div class="card-body text-center" *ngIf="isImageLink()">
+      <img class="rivista-image my-3 shadow" [src]="rivista.image" alt="rivista-image" *ngIf="rivista.image">
+      <button class="btn btn-danger btn-sm m-1" (click)="deleteImage()">
+        <i class="fa-solid fa-trash me-2"></i>Delete image
+      </button>
+    </div>
     <app-rivista-form
       [categories]="categories"
       [rivista]="rivista"
       [submit]="updateRivista"
+      [chooseImage]="!isImageLink()"
     ></app-rivista-form>
   </div>
 </div>

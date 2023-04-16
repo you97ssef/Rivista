@@ -12,6 +12,7 @@ export class RivistaFormComponent implements OnInit {
   };
   @Input() categories: any;
   @Input() submit: () => void = (): void => {};
+  @Input() chooseImage: boolean = true;
 
   editorConfig: AngularEditorConfig = {
     editable: true,

@@ -1,5 +1,5 @@
 <form class="card-body" #form="ngForm" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
+  <div class="mb-3" *ngIf="chooseImage">
     <label for="image" class="form-label">Image</label>
     <input
       type="file"

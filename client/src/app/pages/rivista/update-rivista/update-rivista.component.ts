@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import { MediaService } from 'src/app/services/media.service';
 import { RivistaService } from 'src/app/services/rivista.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class UpdateRivistaComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private rivistaService: RivistaService,
+    private mediaService: MediaService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -37,7 +39,23 @@ export class UpdateRivistaComponent implements OnInit {
 
   updateRivista = (): void => {
     this.rivistaService.update(this.rivista).subscribe((response: any) => {
-      this.router.navigateByUrl('/rivistas/' + response.data.slug);
+      if (this.rivista.image && !this.isImageLink())
+        this.mediaService.uploadImage(response.data.id, this.rivista.image).subscribe({
+          complete: () => { 
+            this.router.navigateByUrl('/rivistas/' + response.data.slug);
+          }
+        })
+      else this.router.navigateByUrl('/rivistas/' + response.data.slug);
     });
   };
+
+  deleteImage() {
+    this.mediaService.deleteImage(this.rivista.id).subscribe(() => {
+      this.rivista.image = null;
+    });
+  }
+
+  isImageLink() {
+    return typeof this.rivista.image == 'string'
+  }
 }
