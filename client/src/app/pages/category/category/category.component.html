@@ -1,11 +1,17 @@
 <div class="container" *ngIf="category">
   <h1 class="mt-4 fs-1 text-center">{{ category.name }}</h1>
+  <img
+    class="rivista-image my-3 shadow"
+    [src]="category.image"
+    alt="rivista-image"
+    *ngIf="category.image"
+  />
   <div class="text-center" *ngIf="user && user.role == this.Admin">
     <a
       class="btn btn-primary btn-sm m-1 mb-3"
       [routerLink]="'/update-category/' + category.slug"
     >
-      <i class="fa-solid fa-pen-to-square me-2"></i>Update rivista
+      <i class="fa-solid fa-pen-to-square me-2"></i>Update category
     </a>
     <button class="btn btn-danger btn-sm m-1 mb-3" (click)="deleteCategory()">
       <i class="fa-solid fa-trash me-2"></i>Delete category
@@ -16,7 +22,7 @@
   <div class="row justify-content-center">
     <div class="col-12 text-center fs-2">Rivistas</div>
     <div
-      class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+      class="col-sm-12 col-md-6 col-lg-4 py-3"
       *ngFor="let rivista of category.rivistas"
     >
       <app-rivista-card [rivista]="rivista"></app-rivista-card>
