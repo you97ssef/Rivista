@@ -22,7 +22,7 @@ class CategoryRepo implements ICategoryRepo
     public function getWithSlug(String $slug): ?Category
     {
         return Category::with(['rivistas' => function ($query) {
-            $query->select('id', 'category_id', 'title', 'slug', 'created_at', 'updated_at', 'views');
+            $query->select('id', 'image', 'category_id', 'title', 'slug', 'created_at', 'updated_at', 'views');
             $query->selectRaw('SUBSTR(text, 0, 30) as text');
             $query->withcount('likes');
         }])->where('slug', $slug)->first();
