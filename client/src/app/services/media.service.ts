@@ -21,6 +21,17 @@ export class MediaService {
     return this.http.delete(`${this.api}/media/rivistas/${id}`, {});
   }
 
+  uploadCategoryImage(slug: string, image: any) {
+    const form = new FormData();
+    form.append('image', image);
+    form.append('category', slug);
+    return this.http.post(`${this.api}/media/categories`, form);
+  }
+
+  deleteCategoryImage(id: string) {
+    return this.http.delete(`${this.api}/media/categories/${id}`, {});
+  }
+
   uploadProfileImage(image: any) {
     const form = new FormData();
     form.append('image', image);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import { MediaService } from 'src/app/services/media.service';
 
 @Component({
   selector: 'app-update-category',
@@ -13,7 +14,8 @@ export class UpdateCategoryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private mediaService: MediaService
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +32,23 @@ export class UpdateCategoryComponent implements OnInit {
 
   updateCategory = (): void => {
     this.categoryService.update(this.category).subscribe((response: any) => {
-      this.router.navigateByUrl('/category/' + response.data.slug);
+      if (this.category.image && !this.isImageLink())
+        this.mediaService.uploadCategoryImage(response.data.slug, this.category.image).subscribe({
+          complete: () => { 
+            this.router.navigateByUrl('/category/' + response.data.slug);
+          }
+        })
+      else this.router.navigateByUrl('/category/' + response.data.slug);
     });
   };
+
+  deleteImage() {
+    this.mediaService.deleteCategoryImage(this.category.slug).subscribe(() => {
+      this.category.image = null;
+    });
+  }
+
+  isImageLink() {
+    return typeof this.category.image == 'string'
+  }
 }

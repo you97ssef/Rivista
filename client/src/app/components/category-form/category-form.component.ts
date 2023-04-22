@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CategoryFormComponent implements OnInit {
   @Input() category: any;
   @Input() submit: () => void = (): void => {};
+  @Input() chooseImage: boolean = true;
 
   constructor() {}
 
@@ -15,5 +16,9 @@ export class CategoryFormComponent implements OnInit {
 
   onSubmit() {
     this.submit();
+  }
+
+  selectImage(event: any) {
+    this.category.image = event.target.files[0];
   }
 }

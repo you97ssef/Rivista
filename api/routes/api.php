@@ -66,6 +66,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
         
         Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
+
+        // MEDIA ROUTES
+        Route::post('/media/categories', [MediaController::class, 'uploadCategory']);
+        Route::delete('/media/categories/{slug}', [MediaController::class, 'deleteCategory']);
     });
 });
 
