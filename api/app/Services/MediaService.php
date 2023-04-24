@@ -4,14 +4,13 @@ namespace App\Services;
 
 use App\Interfaces\IMediaService;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class MediaService implements IMediaService {
-    public function upload($file, string $type): ?array {
+    public function upload($file, string $type, bool $coded = false): ?array {
         $response = Http::withHeaders([
                 'Authorization' => 'CLIENT-ID ' . env('IMGUR_CLIENT_ID'),
             ])->post('https://api.imgur.com/3/image', [
-                $type => base64_encode(file_get_contents($file))
+                $type => $coded ? $file : base64_encode(file_get_contents($file))
             ])->json();
 
 
