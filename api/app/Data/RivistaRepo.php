@@ -18,7 +18,6 @@ class RivistaRepo implements IRivistaRepo
         return Rivista::find($id);
     }
 
-    // TODO refactor or better performance
     public function getWithSlug(String $slug): ?Rivista
     {
         return Rivista::with('comments', 'comments.user')->withCount('likes')->where('slug', $slug)->first();
@@ -52,7 +51,7 @@ class RivistaRepo implements IRivistaRepo
         }
         if (array_key_exists('text', $data)) $rivista->text = $data['text'];
         if (array_key_exists('image', $data)) $rivista->image = $data['image'];
-        if (array_key_exists('views', $data)) $rivista->views = $data['views']; // TODO seperate to other function for better performance
+        if (array_key_exists('views', $data)) $rivista->views = $data['views']; 
         if (array_key_exists('user_id', $data)) $rivista->user_id = $data['user_id'];
         if (array_key_exists('category_id', $data)) $rivista->category_id = $data['category_id'];
 

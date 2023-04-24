@@ -43,8 +43,6 @@ class RivistaController extends Controller
      */
     public function getWithSlug(String $slug)
     {
-        // TODO get likes count and comments with
-        // TODO get user with
         if (!$rivista = $this->rivistaRepo->getWithSlug($slug)) return Response::NotFound('Rivista not found');
 
         $data['views'] = $rivista->views + 1;

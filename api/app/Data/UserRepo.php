@@ -15,7 +15,6 @@ class UserRepo implements IUserRepo
         return User::all();
     }
 
-    // TODO refactor or better performance
     public function get(int $id): ?User
     {
         return User::find($id);

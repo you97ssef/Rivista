@@ -30,7 +30,6 @@ class CategoryRepo implements ICategoryRepo
 
     public function rivistas($id)
     {
-        // TODO: get only some data to improve performance
         return Category::find($id)->rivisitas;
     }
 

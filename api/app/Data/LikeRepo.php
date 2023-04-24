@@ -8,12 +8,6 @@ use App\Models\Rivista;
 
 class LikeRepo implements ILikeRepo
 {
-    // public function rivisitas($id)
-    // {
-    //     // TODO: get only some data to improve performance
-    //     return Rivista::find($id)->likes;
-    // }
-
     public function save(Like $like, array $data): bool
     {
         $like->user_id = $data['user_id'];
