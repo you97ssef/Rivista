@@ -12,7 +12,6 @@ use App\Interfaces\IMediaRepo;
 use App\Models\Media;
 use App\Enums\MediaType;
 use DOMDocument;
-use Illuminate\Support\Facades\Log;
 
 /**
  * @group Rivista management
@@ -85,9 +84,6 @@ class RivistaController extends Controller
                 
                 if (!$exist) {
                     $media = $this->mediaRepo->get($oldSrc);
-
-                    Log::info($media);
-                    Log::info($oldSrc);
                         
                     if ($media) {
                         $this->mediaService->remove($media->delete_hash);
@@ -156,6 +152,19 @@ class RivistaController extends Controller
         if (!$rivista = $this->rivistaRepo->get($id)) return Response::BadRequest('Rivista not found');
 
         if ($rivista->user_id != $request->user()->id) return Response::BadRequest('You are not the owner of this rivista');
+
+
+        $doc = new DOMDocument();
+        $doc->loadHTML($rivista->text);
+        $images = $doc->getElementsByTagName('img');
+        foreach ($images as $image) {
+            $src = $image->getAttribute('src');
+                        
+            if ($media = $this->mediaRepo->get($src)) {
+                $this->mediaService->remove($media->delete_hash);
+                $this->mediaRepo->delete($media);
+            }
+        }
 
         if ($this->rivistaRepo->delete($rivista))
             return Response::NoContent();
