@@ -13,16 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::table('media', function (Blueprint $table) {
+            $table->unique('link');
+        });
+
         Schema::table('rivistas', function (Blueprint $table) {
-            $table->foreign('image')->references('link')->on('medias')->nullOnDelete();
+            $table->foreign('image')->references('link')->on('media')->nullOnDelete();
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('image')->references('link')->on('medias')->nullOnDelete();
+            $table->foreign('image')->references('link')->on('media')->nullOnDelete();
         });
 
         Schema::table('categories', function (Blueprint $table) {
-            $table->foreign('image')->references('link')->on('medias')->nullOnDelete();
+            $table->foreign('image')->references('link')->on('media')->nullOnDelete();
         });
     }
 
