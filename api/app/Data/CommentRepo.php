@@ -13,12 +13,6 @@ class CommentRepo implements ICommentRepo
         return Comment::find($id);
     }
 
-    // public function rivisitas($id)
-    // {
-    //     // TODO: get only some data to improve performance
-    //     return Rivista::find($id)->comments;
-    // }
-
     public function save(Comment $comment, array $data): bool
     {
         if (array_key_exists('name', $data)) $comment->name = $data['name'];

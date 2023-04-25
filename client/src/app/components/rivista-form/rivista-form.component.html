@@ -1,4 +1,15 @@
 <form class="card-body" #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3" *ngIf="chooseImage">
+    <label for="image" class="form-label">Image</label>
+    <input
+      type="file"
+      class="form-control"
+      id="image"
+      name="image"
+      (change)="selectImage($event)"
+      required
+    />
+  </div>
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input
@@ -25,13 +36,7 @@
   </div>
   <div class="mb-3">
     <label for="text" class="form-label">Text</label>
-    <textarea
-      class="form-control"
-      id="text"
-      name="text"
-      [(ngModel)]="rivista.text"
-      required
-    ></textarea>
+    <angular-editor [placeholder]="'Enter text here...'" [name]="'text'" [id]="'text'" [className]="'form-control'" [required]="true" [(ngModel)]="rivista.text" [config]="editorConfig"></angular-editor>
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
     Post Rivista

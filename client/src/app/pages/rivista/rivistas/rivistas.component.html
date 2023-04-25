@@ -1,24 +1,43 @@
 <div class="container" *ngIf="rivistas">
   <p class="mt-4 fs-1 text-center">All rivistas</p>
   <div class="row">
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked (change)="this.getByLikes()">
+    <div
+      class="btn-group"
+      role="group"
+      aria-label="Basic radio toggle button group"
+    >
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio1"
+        autocomplete="off"
+        checked
+        (change)="this.getByLikes()"
+      />
       <label class="btn btn-outline-primary" for="btnradio1">
-        <i class="far fa-thumbs-up"></i> 
+        <i class="far fa-thumbs-up"></i>
         By likes
       </label>
-    
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" (change)="this.getByViews()">
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio2"
+        autocomplete="off"
+        (change)="this.getByViews()"
+      />
       <label class="btn btn-outline-primary" for="btnradio2">
-        <i class="far fa-eye"></i> 
+        <i class="far fa-eye"></i>
         By views
       </label>
     </div>
   </div>
   <div class="row justify-content-center">
     <div
-      class="col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
-      *ngFor="let rivista of rivistas | paginate: pageConfig"
+      class="col-sm-12 col-md-6 col-lg-4 py-3"
+      *ngFor="let rivista of rivistas | paginate : pageConfig"
     >
       <app-rivista-card [rivista]="rivista"></app-rivista-card>
     </div>

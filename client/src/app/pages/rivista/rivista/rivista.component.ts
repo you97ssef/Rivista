@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { CommentService } from 'src/app/services/comment.service';
@@ -9,6 +9,7 @@ import { RivistaService } from 'src/app/services/rivista.service';
   selector: 'app-rivista',
   templateUrl: './rivista.component.html',
   styleUrls: ['./rivista.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RivistaComponent implements OnInit {
   rivista: any = null;
@@ -56,18 +57,15 @@ export class RivistaComponent implements OnInit {
 
   like() {
     this.likeService.like({ rivista_id: this.rivista.id }).subscribe(() => {
-      this.rivista.likes += 1;
+      this.rivista.likes_count += 1;
       this.rivista.liked = true;
     });
   }
 
   unlike() {
     this.likeService.unlike({ rivista_id: this.rivista.id }).subscribe(() => {
-      this.rivista.likes -= 1;
+      this.rivista.likes_count -= 1;
       this.rivista.liked = false;
     });
   }
 }
-
-
-

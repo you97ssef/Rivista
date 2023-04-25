@@ -1,9 +1,16 @@
 <div class="container">
   <p class="mt-4 fs-1 text-center">Update category</p>
   <div class="shadow card border border-dark border-2 col-12 my-3">
+    <div class="card-body text-center" *ngIf="isImageLink()">
+      <img class="category-image my-3 shadow" [src]="category.image" alt="rivista-image" *ngIf="category.image">
+      <button class="btn btn-danger btn-sm m-1" (click)="deleteImage()">
+        <i class="fa-solid fa-trash me-2"></i>Delete image
+      </button>
+    </div>
     <app-category-form
       [category]="category"
       [submit]="updateCategory"
+      [chooseImage]="!isImageLink()"
     ></app-category-form>
   </div>
 </div>

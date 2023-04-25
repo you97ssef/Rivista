@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\RivistaController;
 use App\Http\Controllers\UserController;
 use App\Http\Response;
@@ -19,6 +20,7 @@ use App\Http\Response;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 // AUTH ROUTES
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
@@ -49,6 +51,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'get']);
     Route::put('/user', [UserController::class, 'update']);
     Route::delete('/user', [UserController::class, 'delete']);
+
+    // MEDIA ROUTES
+    Route::post('/media/rivistas', [MediaController::class, 'uploadRivista']);
+    Route::post('/media/profile', [MediaController::class, 'uploadProfile']);
+    Route::delete('/media/rivistas/{id}', [MediaController::class, 'deleteRivista']);
+    Route::delete('/media/profile', [MediaController::class, 'deleteProfile']);
     
     Route::middleware('admin')->group(function () {
         // CATEGORY ROUTES
@@ -58,6 +66,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/categories/{slug}', [CategoryController::class, 'delete']); // ADMIN ONLY
         
         Route::put('/user-role', [UserController::class, 'changeRole']); // ADMIN ONLY
+
+        // MEDIA ROUTES
+        Route::post('/media/categories', [MediaController::class, 'uploadCategory']);
+        Route::delete('/media/categories/{slug}', [MediaController::class, 'deleteCategory']);
     });
 });
 
@@ -89,5 +101,3 @@ Route::get('/views/users', [UserController::class, 'views']);
 Route::get('/likes/rivistas', [RivistaController::class, 'likes']);
 Route::get('/likes/categories', [CategoryController::class, 'likes']);
 Route::get('/likes/users', [UserController::class, 'likes']);
-
-// TODO make and add and test middleware
