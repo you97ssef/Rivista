@@ -8,5 +8,5 @@ You can switch the language used with the tabs at the top right (or from the nav
 > Base URL
 
 ```yaml
-https://rivista.azurewebsites.net/
+https://api-rivista.bahi.ovh/
 ```

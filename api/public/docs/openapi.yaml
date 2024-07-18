@@ -4,7 +4,7 @@ info:
   description: ""
   version: 1.0.0
 servers:
-  - url: "https://rivista.azurewebsites.net"
+  - url: "https://api-rivista.bahi.ovh"
 paths:
   /api/login:
     post:

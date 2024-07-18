@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var baseUrl = "https://rivista.azurewebsites.net";
+        var baseUrl = "https://api-rivista.bahi.ovh";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -250,7 +250,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">https://rivista.azurewebsites.net/</code></pre>
+<pre><code class="language-yaml">https://api-rivista.bahi.ovh/</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
@@ -274,7 +274,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/login" \
+    "https://api-rivista.bahi.ovh/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -286,7 +286,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/login"
+    "https://api-rivista.bahi.ovh/api/login"
 );
 
 const headers = {
@@ -384,7 +384,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/register" \
+    "https://api-rivista.bahi.ovh/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -398,7 +398,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/register"
+    "https://api-rivista.bahi.ovh/api/register"
 );
 
 const headers = {
@@ -518,7 +518,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/forgot-password" \
+    "https://api-rivista.bahi.ovh/api/forgot-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -529,7 +529,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/forgot-password"
+    "https://api-rivista.bahi.ovh/api/forgot-password"
 );
 
 const headers = {
@@ -616,7 +616,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://rivista.azurewebsites.net/api/reset-password" \
+    "https://api-rivista.bahi.ovh/api/reset-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -629,7 +629,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/reset-password"
+    "https://api-rivista.bahi.ovh/api/reset-password"
 );
 
 const headers = {
@@ -739,7 +739,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://rivista.azurewebsites.net/api/logout" \
+    "https://api-rivista.bahi.ovh/api/logout" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -747,7 +747,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/logout"
+    "https://api-rivista.bahi.ovh/api/logout"
 );
 
 const headers = {
@@ -828,7 +828,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/resend-email-verification" \
+    "https://api-rivista.bahi.ovh/api/resend-email-verification" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -836,7 +836,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/resend-email-verification"
+    "https://api-rivista.bahi.ovh/api/resend-email-verification"
 );
 
 const headers = {
@@ -917,7 +917,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/email/verify/nisi/qui" \
+    --get "https://api-rivista.bahi.ovh/api/email/verify/nisi/qui" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -925,7 +925,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/email/verify/nisi/qui"
+    "https://api-rivista.bahi.ovh/api/email/verify/nisi/qui"
 );
 
 const headers = {
@@ -1030,14 +1030,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/admin/categories/1" \
+    --get "https://api-rivista.bahi.ovh/api/admin/categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/admin/categories/1"
+    "https://api-rivista.bahi.ovh/api/admin/categories/1"
 );
 
 const headers = {
@@ -1120,7 +1120,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/categories" \
+    "https://api-rivista.bahi.ovh/api/categories" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1133,7 +1133,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/categories"
+    "https://api-rivista.bahi.ovh/api/categories"
 );
 
 const headers = {
@@ -1241,7 +1241,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://rivista.azurewebsites.net/api/categories/1" \
+    "https://api-rivista.bahi.ovh/api/categories/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1254,7 +1254,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/categories/1"
+    "https://api-rivista.bahi.ovh/api/categories/1"
 );
 
 const headers = {
@@ -1373,7 +1373,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://rivista.azurewebsites.net/api/categories/1" \
+    "https://api-rivista.bahi.ovh/api/categories/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1381,7 +1381,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/categories/1"
+    "https://api-rivista.bahi.ovh/api/categories/1"
 );
 
 const headers = {
@@ -1472,14 +1472,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/categories" \
+    --get "https://api-rivista.bahi.ovh/api/categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/categories"
+    "https://api-rivista.bahi.ovh/api/categories"
 );
 
 const headers = {
@@ -1550,14 +1550,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/categories/1" \
+    --get "https://api-rivista.bahi.ovh/api/categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/categories/1"
+    "https://api-rivista.bahi.ovh/api/categories/1"
 );
 
 const headers = {
@@ -1639,14 +1639,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/views/categories" \
+    --get "https://api-rivista.bahi.ovh/api/views/categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/views/categories"
+    "https://api-rivista.bahi.ovh/api/views/categories"
 );
 
 const headers = {
@@ -1717,14 +1717,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/likes/categories" \
+    --get "https://api-rivista.bahi.ovh/api/likes/categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/likes/categories"
+    "https://api-rivista.bahi.ovh/api/likes/categories"
 );
 
 const headers = {
@@ -1800,7 +1800,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/connected-comments" \
+    "https://api-rivista.bahi.ovh/api/connected-comments" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1808,7 +1808,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/connected-comments"
+    "https://api-rivista.bahi.ovh/api/connected-comments"
 );
 
 const headers = {
@@ -1889,7 +1889,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://rivista.azurewebsites.net/api/comments/1" \
+    "https://api-rivista.bahi.ovh/api/comments/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1897,7 +1897,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/comments/1"
+    "https://api-rivista.bahi.ovh/api/comments/1"
 );
 
 const headers = {
@@ -1989,7 +1989,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/guest-comments" \
+    "https://api-rivista.bahi.ovh/api/guest-comments" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1997,7 +1997,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/guest-comments"
+    "https://api-rivista.bahi.ovh/api/guest-comments"
 );
 
 const headers = {
@@ -2082,7 +2082,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/test" \
+    --get "https://api-rivista.bahi.ovh/api/test" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -2090,7 +2090,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/test"
+    "https://api-rivista.bahi.ovh/api/test"
 );
 
 const headers = {
@@ -2195,7 +2195,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/likes" \
+    "https://api-rivista.bahi.ovh/api/likes" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2207,7 +2207,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/likes"
+    "https://api-rivista.bahi.ovh/api/likes"
 );
 
 const headers = {
@@ -2304,7 +2304,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://rivista.azurewebsites.net/api/likes" \
+    "https://api-rivista.bahi.ovh/api/likes" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2316,7 +2316,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/likes"
+    "https://api-rivista.bahi.ovh/api/likes"
 );
 
 const headers = {
@@ -2417,7 +2417,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://rivista.azurewebsites.net/api/rivistas" \
+    "https://api-rivista.bahi.ovh/api/rivistas" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2431,7 +2431,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/rivistas"
+    "https://api-rivista.bahi.ovh/api/rivistas"
 );
 
 const headers = {
@@ -2550,7 +2550,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://rivista.azurewebsites.net/api/rivistas/1" \
+    "https://api-rivista.bahi.ovh/api/rivistas/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2565,7 +2565,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/rivistas/1"
+    "https://api-rivista.bahi.ovh/api/rivistas/1"
 );
 
 const headers = {
@@ -2706,7 +2706,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://rivista.azurewebsites.net/api/rivistas/1" \
+    "https://api-rivista.bahi.ovh/api/rivistas/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -2714,7 +2714,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/rivistas/1"
+    "https://api-rivista.bahi.ovh/api/rivistas/1"
 );
 
 const headers = {
@@ -2805,14 +2805,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/rivistas" \
+    --get "https://api-rivista.bahi.ovh/api/rivistas" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/rivistas"
+    "https://api-rivista.bahi.ovh/api/rivistas"
 );
 
 const headers = {
@@ -2883,14 +2883,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/rivistas/1" \
+    --get "https://api-rivista.bahi.ovh/api/rivistas/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/rivistas/1"
+    "https://api-rivista.bahi.ovh/api/rivistas/1"
 );
 
 const headers = {
@@ -2972,14 +2972,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/views/rivistas" \
+    --get "https://api-rivista.bahi.ovh/api/views/rivistas" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/views/rivistas"
+    "https://api-rivista.bahi.ovh/api/views/rivistas"
 );
 
 const headers = {
@@ -3050,14 +3050,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/likes/rivistas" \
+    --get "https://api-rivista.bahi.ovh/api/likes/rivistas" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/likes/rivistas"
+    "https://api-rivista.bahi.ovh/api/likes/rivistas"
 );
 
 const headers = {
@@ -3133,7 +3133,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/user" \
+    --get "https://api-rivista.bahi.ovh/api/user" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3141,7 +3141,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/user"
+    "https://api-rivista.bahi.ovh/api/user"
 );
 
 const headers = {
@@ -3222,7 +3222,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://rivista.azurewebsites.net/api/user" \
+    "https://api-rivista.bahi.ovh/api/user" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3236,7 +3236,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/user"
+    "https://api-rivista.bahi.ovh/api/user"
 );
 
 const headers = {
@@ -3355,7 +3355,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://rivista.azurewebsites.net/api/user" \
+    "https://api-rivista.bahi.ovh/api/user" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3367,7 +3367,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/user"
+    "https://api-rivista.bahi.ovh/api/user"
 );
 
 const headers = {
@@ -3464,7 +3464,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://rivista.azurewebsites.net/api/user-role" \
+    "https://api-rivista.bahi.ovh/api/user-role" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3476,7 +3476,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/user-role"
+    "https://api-rivista.bahi.ovh/api/user-role"
 );
 
 const headers = {
@@ -3582,14 +3582,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/users" \
+    --get "https://api-rivista.bahi.ovh/api/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/users"
+    "https://api-rivista.bahi.ovh/api/users"
 );
 
 const headers = {
@@ -3660,14 +3660,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/users/1" \
+    --get "https://api-rivista.bahi.ovh/api/users/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/users/1"
+    "https://api-rivista.bahi.ovh/api/users/1"
 );
 
 const headers = {
@@ -3749,14 +3749,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/views/users" \
+    --get "https://api-rivista.bahi.ovh/api/views/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/views/users"
+    "https://api-rivista.bahi.ovh/api/views/users"
 );
 
 const headers = {
@@ -3827,14 +3827,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://rivista.azurewebsites.net/api/likes/users" \
+    --get "https://api-rivista.bahi.ovh/api/likes/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://rivista.azurewebsites.net/api/likes/users"
+    "https://api-rivista.bahi.ovh/api/likes/users"
 );
 
 const headers = {

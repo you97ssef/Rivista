@@ -5,7 +5,7 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "https://rivista.azurewebsites.net"
+            "value": "https://api-rivista.bahi.ovh"
         }
     ],
     "info": {
